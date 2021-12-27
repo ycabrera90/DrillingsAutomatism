@@ -1,70 +1,85 @@
 import React from "react";
 import classes from "./Login.module.css";
 
-import { useState } from "react";
+import useInput from "../hooks/use-input";
 
 import Modal from "../UI/Modal/Modal";
 import LoginInput from "./LoginInput/LoginInput";
 import LogInButton from "./LogInButton/LogInButton";
+import SpyLogo from "../UI/SpyLogo/SpyLogo";
 
 const Login = () => {
-  const [userInputValue, setUserInputValue] = useState("");
-  const [passwordInputValue, setPasswordInputValue] = useState("");
-
-  const userInputChangeHandler = (e) => {
-    setUserInputValue(e.target.value);
+  const onLoginButtonHandler = () => {
+    console.log("everithing Ok");
   };
 
-  const autoCompleteInputUserHandler = (e) => {
-    if (e.key === "Unidentified") {
-      setTimeout(() => {
-        setUserInputValue(`${e.target.value} `);
-      }, 1);
+  const {
+    value: user,
+    isValid: userIsValid,
+    hasError: userInputHasError,
+    inputChangeHandler: userInputChangeHandler,
+    inputBlurHandler: userInputBlurHandler,
+    inputKeyDownHandler: userInputKeyDownHandler,
+    resetInput: resetUserInput,
+  } = useInput((value) => value.trim() !== "");
+
+  const {
+    value: password,
+    isValid: passwordIsValid,
+    hasError: passwordInputHasError,
+    inputChangeHandler: passwordInputChangeHandler,
+    inputBlurHandler: passwordInputBlurHandler,
+    inputKeyDownHandler: passwordInputKeyDownHandler,
+    resetInput: resetPasswordInput,
+  } = useInput((value) => value.trim() !== "");
+
+  let formIsValid = false;
+  if (userIsValid && passwordIsValid) {
+    formIsValid = true;
+  }
+
+  const formSubmissionHandler = (e) => {
+    e.preventDefault();
+
+    console.log("asdasdadadff");
+
+    if (!formIsValid) {
+      return;
     }
-  };
 
-  const passwordInputChangeHandler = (e) => {
-    setPasswordInputValue(e.target.value);
-  };
-
-  const autoCompleteInputPasswHandler = (e) => {
-    if (e.key === "Unidentified") {
-      setTimeout(() => {
-        setPasswordInputValue(`${e.target.value} `);
-      }, 1);
-    }
+    resetUserInput();
+    resetPasswordInput();
   };
 
   return (
     <Modal>
-      <form className={classes.form}>
+      <form onSubmit={formSubmissionHandler} className={classes.form}>
         <h1>Bienvenido</h1>
         <h3>Loguéate para continuar</h3>
         <LoginInput
           text="USUARIO"
-          // msg={cityInputHasError && "The city field must not be emty"}
+          msg={userInputHasError && "Inserte su usario de SPYMOVIL"}
           input={{
             type: "text",
             autoComplete: "username",
-            value: userInputValue,
-            // className: cityInputHasError ? classes.invalid : "",
+            value: user,
+            className: userInputHasError ? classes.invalid : "",
             onChange: userInputChangeHandler,
-            onKeyDown: autoCompleteInputUserHandler,
-            // onBlur: cityInputBlurHandler,
+            onBlur: userInputBlurHandler,
+            onKeyDown: userInputKeyDownHandler,
           }}
         />
         <LoginInput
           text="CONTRASEÑA"
-          // msg={cityInputHasError && "The city field must not be emty"}
+          msg={passwordInputHasError && "No olvide colocar su contraseña"}
           input={{
             type: "password",
-            // autoComplete: "new-password",
             autoComplete: "current-password",
-            value: passwordInputValue,
-            // className: cityInputHasError ? classes.invalid : "",
+            value: password,
+            className: passwordInputHasError ? classes.invalid : "",
             onChange: passwordInputChangeHandler,
-            onKeyDown: autoCompleteInputPasswHandler,
-            // onBlur: cityInputBlurHandler,
+            onBlur: passwordInputBlurHandler,
+            onKeyDown: passwordInputKeyDownHandler,
           }}
         />
         {
@@ -72,13 +87,14 @@ const Login = () => {
             className={classes["login-button"]}
             text="Ingresar"
             attrib={{
-              type: "button",
-              // onClick: props.onCancel,
-              // disabled: true,
+              type: "submit",
+              onClick: onLoginButtonHandler,
+              disabled: !formIsValid,
             }}
           />
         }
       </form>
+      <SpyLogo />
     </Modal>
   );
 };
