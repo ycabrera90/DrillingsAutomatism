@@ -1,0 +1,44 @@
+.logos {
+  margin: 1em 1.5rem;
+  text-align: center;
+}
+
+.logo {
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  font-style: italic;
+  display: inline-block;
+  text-align: left;
+  font-size: 1.35em;
+  color: #fff;
+  padding: 0.2em 0.5em;
+  letter-spacing: 0.5px;
+  z-index: 1;
+  position: relative;
+  -webkit-transform: translateX(-5px);
+  transform: translateX(-5px);
+  text-decoration: none;
+}
+
+.spy {
+  color: #fff;
+  text-shadow: 1px 1px 1px #000, 1px 1px 1px rgb(0 0 0 / 5%);
+}
+
+.sub {
+  font-size: 0.5em;
+  font-style: normal;
+  margin-top: -7px;
+  font-weight: lighter;
+  letter-spacing: 0;
+}
+
+.logos img {
+  position: absolute;
+  right: -25px;
+  top: 1px;
+  z-index: -2;
+  width: 60px;
+}
+
+

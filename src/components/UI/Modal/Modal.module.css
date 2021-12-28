@@ -1,0 +1,40 @@
+.backdrop {
+  position: fixed;
+  background-color: #072249;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+@media (max-height: 32rem) {
+  .backdrop {
+    align-items: flex-start;
+  }
+}
+
+.modalOverlay {
+  width: 90%;
+  max-width: 22rem;
+  min-width: 16.5rem;
+  background-color: #3d95fb;
+  color: black;
+  padding: 1rem;
+  border-radius: 8px;
+  animation: slide-down 300ms ease-out forwards;
+  box-shadow: 5px 5px 2px 0px #00000024;
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
