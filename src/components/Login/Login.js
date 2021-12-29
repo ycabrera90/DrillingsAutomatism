@@ -3,7 +3,8 @@ import classes from "./Login.module.css";
 
 import useInput from "../hooks/use-input";
 
-import Modal from "../UI/Modal/Modal";
+// import Modal from "../UI/Modal/Modal";
+import LoginModal from "./LoginModal/LoginModal";
 import LoginInput from "./LoginInput/LoginInput";
 import LogInButton from "./LogInButton/LogInButton";
 import SpyLogo from "../UI/SpyLogo/SpyLogo";
@@ -52,7 +53,7 @@ const Login = () => {
   };
 
   return (
-    <Modal>
+    <LoginModal>
       <form onSubmit={formSubmissionHandler} className={classes.form}>
         <h1>Bienvenido</h1>
         <h3>Loguéate para continuar</h3>
@@ -95,7 +96,7 @@ const Login = () => {
         }
       </form>
       <SpyLogo />
-    </Modal>
+    </LoginModal>
   );
 };
 
