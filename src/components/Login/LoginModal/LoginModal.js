@@ -8,18 +8,8 @@ const ModalOverLay = (props) => (
 );
 
 const Backdrop = (props) => {
-  const backdropOnClickHandler = (event) => {
-    if (event.target.id === "modalBackdrop") {
-      props.onClick();
-    }
-  };
-
   return (
-    <div
-      id="modalBackdrop"
-      onClick={backdropOnClickHandler}
-      className={classes.backdrop}
-    >
+    <div id="modalBackdrop" className={classes.backdrop}>
       {props.children}
     </div>
   );
@@ -31,7 +21,7 @@ const LoginModal = (props) => {
   return (
     <>
       {ReactDOM.createPortal(
-        <Backdrop onClick={props.onBackdropClick}>
+        <Backdrop>
           <ModalOverLay>{props.children}</ModalOverLay>
         </Backdrop>,
         overLaysPortal
