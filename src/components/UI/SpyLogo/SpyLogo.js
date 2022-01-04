@@ -2,9 +2,9 @@ import React from "react";
 import classes from "./SpyLogo.module.css";
 import logo from "./logo.png";
 
-const SpyLogo = () => {
+const SpyLogo = (props) => {
   return (
-    <div className={classes.logos}>
+    <div className={`${props.className} ${classes.logos}`}>
       <a href="http://www.spymovil.com" className={classes.logo}>
         <div className={classes.spy}>
           <span>SPYMOVIL</span>

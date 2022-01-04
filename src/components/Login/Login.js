@@ -42,12 +42,10 @@ const Login = () => {
   const formSubmissionHandler = (e) => {
     e.preventDefault();
 
-    console.log("asdasdadadff");
-
     if (!formIsValid) {
       return;
     }
-
+    
     resetUserInput();
     resetPasswordInput();
   };
