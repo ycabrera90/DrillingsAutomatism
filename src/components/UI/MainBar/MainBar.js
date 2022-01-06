@@ -6,16 +6,19 @@ import SpyLogo from "../SpyLogo/SpyLogo";
 const MainBar = () => {
   return (
     <header className={classes["main-bar"]}>
-      <SpyLogo className={classes.logo}/>
-
-      <ul className={classes["nav-bar"]}>
-        <li>Servicios</li>
-        <li>Listado</li>
-        <li>Sistemas</li>
-        <li>Históricos</li>
-        <li>Ayuda</li>
-        <span>YC</span>
-      </ul>
+      <SpyLogo className={classes.logo} />
+      <div className={classes["nav-bar"]}>
+        <ul>
+          <li>Servicios</li>
+          <li>Listado</li>
+          <li>Sistemas</li>
+          <li>Históricos</li>
+          <li>Ayuda</li>
+        </ul>
+        <button>
+          <span>YC</span>
+        </button>
+      </div>
     </header>
   );
 };
