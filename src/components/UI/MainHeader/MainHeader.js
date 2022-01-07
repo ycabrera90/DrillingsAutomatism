@@ -1,10 +1,10 @@
 import React from "react";
-import classes from "./MainBar.module.css";
+import classes from "./MainHeader.module.css";
 
 import SpyLogo from "../SpyLogo/SpyLogo";
 import ToggleButton from "./ToggleButton/ToggleButton";
 
-const MainBar = () => {
+const MainHeader = () => {
   const toggleButtonHandler = () => {};
 
   return (
@@ -27,4 +27,4 @@ const MainBar = () => {
   );
 };
 
-export default MainBar;
+export default MainHeader;

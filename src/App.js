@@ -10,13 +10,13 @@ import logo from "./logo.svg";
 import "./App.css";
 
 import Login from "./components/Login/Login";
-import MainBar from "./components/UI/MainBar/MainBar";
+import MainHeader from "./components/UI/MainHeader/MainHeader";
 
 function App() {
   return (
     <>
-      <MainBar />
-      {/* <Login /> */}
+      <Login />
+      <MainHeader />
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
   );
