@@ -2,11 +2,15 @@ import React from "react";
 import classes from "./MainBar.module.css";
 
 import SpyLogo from "../SpyLogo/SpyLogo";
+import ToggleButton from "./ToggleButton/ToggleButton";
 
 const MainBar = () => {
+  const toggleButtonHandler = () => {};
+
   return (
     <header className={classes["main-bar"]}>
       <SpyLogo className={classes.logo} />
+      <ToggleButton onClick={toggleButtonHandler} />
       <div className={classes["nav-bar"]}>
         <ul>
           <li>Servicios</li>
