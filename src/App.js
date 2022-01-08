@@ -15,7 +15,7 @@ import MainHeader from "./components/UI/MainHeader/MainHeader";
 function App() {
   return (
     <>
-      <Login />
+      {/* <Login /> */}
       <MainHeader />
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
