@@ -11,12 +11,14 @@ import "./App.css";
 
 import Login from "./components/Login/Login";
 import MainHeader from "./components/UI/MainHeader/MainHeader";
+import QuickView from "./components/QuickView/QuickView";
 
 function App() {
   return (
     <>
       {/* <Login /> */}
       <MainHeader />
+      <QuickView></QuickView>
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
   );
