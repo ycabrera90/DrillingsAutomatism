@@ -11,7 +11,7 @@
   padding: 0.5rem;
 }
 
-section:hover {
+section:hover .control{
   background-color: #072756;
 }
 

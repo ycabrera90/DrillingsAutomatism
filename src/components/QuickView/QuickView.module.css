@@ -8,14 +8,12 @@
 
 .quickview-container {
   overflow: auto;
-  padding-top: 4.5rem;
-  width: 100%;
+  padding: 4rem 0.5rem 0.5rem 0.5rem;
   background-color: transparent;
 }
 
 .item-container {
   background: #353c48;
-  /* margin: 1rem; */
   padding-bottom: 1px;
   border-radius: 4px;
 }
@@ -73,6 +71,7 @@
     justify-content: center;
   }
 
+  
   .quickview-container header > h1 {
     cursor: pointer;
   }
