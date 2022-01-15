@@ -1,0 +1,69 @@
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #3c4452;
+  z-index: -1;
+}
+
+.detailed-view--header {
+  margin-top: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #303641;
+  padding: 0.55em 1.3em;
+}
+
+.detailed-view--header > h1 {
+  font-size: 1.1em;
+  color: #e4e4e4;
+  font-weight: 400;
+}
+
+.detailed-view--header > svg {
+  color: #03eb92;
+}
+
+.detailed-view--container {
+  padding: 1rem;
+}
+
+.reference {
+  background-color: #353c48;
+  height: 10rem;
+}
+
+.reference > header {
+  background-color: #303641;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.reference > header > h1 {
+  font-size: 0.9em;
+  color: #e4e4e4;
+  font-weight: 400;
+}
+.reference > header > article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.reference > header svg,
+.reference > header span {
+  font-size: 0.8em;
+  color: rgb(12, 187, 141);
+  font-weight: 400;
+  text-align: end;
+}
+
+.reference > header svg{
+    width: 40px;
+    height: 40px;
+}
+

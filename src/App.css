@@ -5,3 +5,21 @@
   box-sizing: border-box;
   transition: all 0.2s ease-out;
 }
+<<<<<<< HEAD
+=======
+
+button,
+input,
+optgroup,
+select,
+textarea,
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+>>>>>>> 92f1250 (The DetailedView component was added to the project)
