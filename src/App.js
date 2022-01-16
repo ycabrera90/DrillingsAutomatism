@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 
@@ -7,6 +8,8 @@ function App() {
     <h1>This is my project</h1>
 =======
 import logo from "./logo.svg";
+=======
+>>>>>>> c34f7d8 (the react-icon package was added to the project)
 import "./App.css";
 
 import Login from "./components/Login/Login";

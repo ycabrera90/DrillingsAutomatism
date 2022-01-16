@@ -62,8 +62,8 @@
   text-align: end;
 }
 
-.reference > header svg{
-    width: 40px;
-    height: 40px;
+.reference > header i {
+  color: rgb(12, 187, 141);
+  width: 40px;
+  height: 40px;
 }
-

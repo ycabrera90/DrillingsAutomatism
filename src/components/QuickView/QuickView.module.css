@@ -45,10 +45,11 @@
   color: #03eb92;
 }
 
-.item-container header > svg {
-  right: 12px;
+.wifi-icon {
+  /* right: 12px; */
   position: absolute;
-  color: #03eb92;
+  /* color: #03eb92; */
+  
 }
 
 .item {
@@ -71,7 +72,6 @@
     justify-content: center;
   }
 
-  
   .quickview-container header > h1 {
     cursor: pointer;
   }
