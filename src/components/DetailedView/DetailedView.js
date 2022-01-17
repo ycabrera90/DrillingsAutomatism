@@ -23,11 +23,9 @@ const DetailedView = () => {
       <div className={classes["detailed-view--container"]}>
         <section className={classes.reference}>
           <header>
-            <h1>RIVPERF21 - TQ MOIRONES</h1>
-            <article>
-              <span>10/10/2022 21:42</span>
-              <BsWifi2 className={classes['wifi-icon']} />
-            </article>
+            <h1 className={classes['drilling-name']}>RIVPERF21 - TQ MOIRONES</h1>
+              <span className={classes.date}>10/10/2022 21:42</span>
+              <BsWifi2 className={classes["wifi-icon"]} />
           </header>
         </section>
       </div>

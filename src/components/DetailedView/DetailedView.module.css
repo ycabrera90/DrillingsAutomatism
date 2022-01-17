@@ -13,6 +13,7 @@
   align-items: center;
   background: #303641;
   padding: 0.55em 1.3em;
+  border-radius: 4px;
 }
 
 .detailed-view--header > h1 {
@@ -36,34 +37,29 @@
 
 .reference > header {
   background-color: #303641;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0.5rem 1rem;
+  position: relative;
 }
 
-.reference > header > h1 {
+.drilling-name {
   font-size: 0.9em;
   color: #e4e4e4;
   font-weight: 400;
-}
-.reference > header > article {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
+  text-align: center;
 }
 
-.reference > header svg,
-.reference > header span {
+.date {
+  display: block;
   font-size: 0.8em;
   color: rgb(12, 187, 141);
   font-weight: 400;
-  text-align: end;
+  text-align: center;
 }
 
-.reference > header i {
+.wifi-icon {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
   color: rgb(12, 187, 141);
-  width: 40px;
-  height: 40px;
+  font-size: 2rem;
 }

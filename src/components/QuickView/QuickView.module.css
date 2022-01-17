@@ -13,6 +13,7 @@
 }
 
 .item-container {
+  width: 37.3rem;
   background: #353c48;
   padding-bottom: 1px;
   border-radius: 4px;
@@ -45,11 +46,10 @@
   color: #03eb92;
 }
 
-.wifi-icon {
-  /* right: 12px; */
+.item-container header > svg {
+  right: 12px;
   position: absolute;
-  /* color: #03eb92; */
-  
+  color: #03eb92;
 }
 
 .item {
