@@ -16,16 +16,14 @@ import Login from "./components/Login/Login";
 import MainHeader from "./components/UI/MainHeader/MainHeader";
 import QuickView from "./components/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
-// import Tank from "./components/Tank/Tank";
 
 function App() {
   return (
     <>
       {/* <Login /> */}
       <MainHeader />
-      <QuickView></QuickView>
-      {/* <DetailedView /> */}
-      {/* <Tank /> */}
+      {/* <QuickView></QuickView> */}
+      <DetailedView />
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
   );

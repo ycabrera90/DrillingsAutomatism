@@ -3,7 +3,7 @@ import classes from "./QuickView.module.css";
 
 import tankImg from "../../images/tank.png";
 import pump from "../../images/pump.png";
-import DataContainer from "./DataContainer/DataContainer";
+import DataContainer from "../UI/DataContainer/DataContainer";
 import ItemImage from "./ItemImage/ItemImage";
 
 const QuickView = (props) => {

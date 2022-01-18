@@ -2,6 +2,8 @@ import React from "react";
 import classes from "./DetailedView.module.css";
 
 import { BsWifi2 } from "react-icons/bs";
+import Tank from "./Tank/Tank";
+import DataContainer from "../UI/DataContainer/DataContainer";
 
 const DetailedView = () => {
   return (
@@ -23,10 +25,19 @@ const DetailedView = () => {
       <div className={classes["detailed-view--container"]}>
         <section className={classes.reference}>
           <header>
-            <h1 className={classes['drilling-name']}>RIVPERF21 - TQ MOIRONES</h1>
-              <span className={classes.date}>10/10/2022 21:42</span>
-              <BsWifi2 className={classes["wifi-icon"]} />
+            <h1 className={classes["ref-name"]}>RIVPERF21 - TQ MOIRONES</h1>
+            <span className={classes.date}>10/10/2022 21:42</span>
+            <BsWifi2 className={classes["wifi-icon"]} />
           </header>
+          <main>
+            <Tank className={classes["ref-image"]} />
+            <section className={classes["ref-datas"]}>
+              <h1>Medidas</h1>
+              <DataContainer title="" value={1.85} unit="mts" />
+              <DataContainer title="" value={74} unit="%" />
+            </section>
+            <section className={classes["ref-alarms"]}></section>
+          </main>
         </section>
       </div>
     </>
