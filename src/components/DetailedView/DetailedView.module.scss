@@ -25,14 +25,17 @@
 
 .detailed-view--container {
   padding: 1rem;
+  min-width: 20rem;
 
   // reference device (tank)
   .reference {
     background-color: #353c48;
+    border-radius: 4px;
     > header {
       background-color: #303641;
       padding: 0.5rem 1rem;
       position: relative;
+      border-radius: inherit;
       .ref-name {
         font-size: 0.9em;
         color: #e4e4e4;
@@ -70,11 +73,13 @@
       .ref-datas {
         position: relative;
         background-color: #303641;
-        height: 10rem;
         border-radius: 4px;
         border: 1px solid #495963;
+        padding-top: 2.5em;
+        display: flex;
+        justify-content: center;
         > h1 {
-          position: relative;
+          position: absolute;
           top: 10px;
           left: -5px;
           color: #fff;
@@ -88,19 +93,29 @@
 
           &::before {
             content: "_";
-            top: 31px;
-            left: 0;
+            top: 26px;
+            left: 1px;
             position: absolute;
             background: #154770;
             clip-path: polygon(100% 0, 0 0, 100% 76%);
             font-size: 6px;
           }
         }
-
         
-
-
+        .data {
+          margin: 0.5rem 1rem;
+          p {
+            color: #03eb92;
+            font-size: 1.3rem;
+            span {
+              color: inherit;
+              font-size: 0.7rem;
+            }
+          }
+        }
       }
+
+      
     }
   }
 }

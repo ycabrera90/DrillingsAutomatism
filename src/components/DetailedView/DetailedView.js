@@ -33,8 +33,8 @@ const DetailedView = () => {
             <Tank className={classes["ref-image"]} />
             <section className={classes["ref-datas"]}>
               <h1>Medidas</h1>
-              <DataContainer title="" value={1.85} unit="mts" />
-              <DataContainer title="" value={74} unit="%" />
+              <DataContainer className={classes.data} value={1.85} unit="mts" />
+              <DataContainer className={classes.data} value={74} unit="%" />
             </section>
             <section className={classes["ref-alarms"]}></section>
           </main>
