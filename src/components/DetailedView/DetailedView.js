@@ -3,6 +3,7 @@ import classes from "./DetailedView.module.css";
 
 import { BsWifi2 } from "react-icons/bs";
 import Tank from "./Tank/Tank";
+import CardData from "./CardData/CardData";
 import DataContainer from "../UI/DataContainer/DataContainer";
 
 const DetailedView = () => {
@@ -31,12 +32,14 @@ const DetailedView = () => {
           </header>
           <main>
             <Tank className={classes["ref-image"]} />
-            <section className={classes["ref-datas"]}>
-              <h1>Medidas</h1>
+            <CardData title="Medidas" className={classes["ref-datas"]}>
               <DataContainer className={classes.data} value={1.85} unit="mts" />
               <DataContainer className={classes.data} value={74} unit="%" />
-            </section>
-            <section className={classes["ref-alarms"]}></section>
+            </CardData>
+            <CardData
+              title="Alarmas"
+              className={classes["ref-alarms"]}
+            >prueeeeba</CardData>
           </main>
         </section>
       </div>
