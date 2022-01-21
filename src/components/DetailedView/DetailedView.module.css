@@ -7,6 +7,7 @@
 }
 
 .detailed-view--header {
+  min-width: 22rem;
   margin-top: 3.5rem;
   display: flex;
   justify-content: space-between;
@@ -25,7 +26,7 @@
 
 .detailed-view--container {
   padding: 1rem;
-  min-width: 20rem;
+  min-width: 22rem;
 }
 .detailed-view--container .reference {
   background-color: #353c48;
@@ -36,6 +37,10 @@
   padding: 0.5rem 1rem;
   position: relative;
   border-radius: inherit;
+}
+.detailed-view--container .reference > header .ref-name,
+.detailed-view--container .reference > header .date {
+  margin: 0.2rem;
 }
 .detailed-view--container .reference > header .ref-name {
   font-size: 0.9em;
@@ -58,9 +63,9 @@
   font-size: 2rem;
 }
 .detailed-view--container .reference > main {
-  margin: 1rem;
   display: grid;
   gap: 1rem;
+  padding: 1rem;
   grid-template-areas: "ref-immage" "ref-datas" "ref-alarms";
 }
 .detailed-view--container .reference > main .ref-image {
@@ -70,46 +75,30 @@
 .detailed-view--container .reference > main .ref-datas {
   grid-area: "ref-datas";
 }
+.detailed-view--container .reference > main .ref-alarms .data,
 .detailed-view--container .reference > main .ref-datas .data {
   margin: 0.5rem 1rem;
 }
+.detailed-view--container .reference > main .ref-alarms .data p,
 .detailed-view--container .reference > main .ref-datas .data p {
   color: #03eb92;
   font-size: 1.3rem;
 }
+.detailed-view--container .reference > main .ref-alarms .data p span,
 .detailed-view--container .reference > main .ref-datas .data p span {
   color: inherit;
   font-size: 0.7rem;
 }
 .detailed-view--container .reference > main .ref-alarms {
-  position: relative;
-  background-color: #303641;
-  border-radius: 4px;
-  border: 1px solid #495963;
-  padding-top: 2.5em;
+  justify-content: space-around;
+}
+.detailed-view--container .reference > main .ref-alarms > div {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
-.detailed-view--container .reference > main .ref-alarms > h1 {
-  position: absolute;
-  top: 10px;
-  left: -5px;
+.detailed-view--container .reference > main .ref-alarms > div > span {
   color: #fff;
-  background: #2c8bd8;
-  font-weight: 400;
-  text-align: center;
-  padding: 0.2rem;
-  width: 9rem;
-  box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.16);
-  border-bottom: 2px solid #154770;
 }
-.detailed-view--container .reference > main .ref-alarms > h1::before {
-  content: "_";
-  top: 26px;
-  left: 1px;
-  position: absolute;
-  background: #154770;
-  -webkit-clip-path: polygon(100% 0, 0 0, 100% 76%);
-          clip-path: polygon(100% 0, 0 0, 100% 76%);
-  font-size: 6px;
+.detailed-view--container .reference > main .ref-alarms .data {
+  margin: 0.5rem 0rem;
 }/*# sourceMappingURL=DetailedView.module.css.map */

@@ -7,6 +7,7 @@
 }
 
 .detailed-view--header {
+  min-width: 22rem;
   margin-top: 3.5rem;
   display: flex;
   justify-content: space-between;
@@ -25,7 +26,7 @@
 
 .detailed-view--container {
   padding: 1rem;
-  min-width: 20rem;
+  min-width: 22rem;
 
   // reference device (tank)
   .reference {
@@ -36,6 +37,12 @@
       padding: 0.5rem 1rem;
       position: relative;
       border-radius: inherit;
+
+      .ref-name,
+      .date {
+        margin: 0.2rem;
+      }
+
       .ref-name {
         font-size: 0.9em;
         color: #e4e4e4;
@@ -59,9 +66,9 @@
     }
 
     > main {
-      margin: 1rem;
       display: grid;
       gap: 1rem;
+      padding: 1rem;
       grid-template-areas:
         "ref-immage"
         "ref-datas"
@@ -70,8 +77,13 @@
         grid-area: "ref-image";
         justify-self: center;
       }
+
       .ref-datas {
         grid-area: "ref-datas";
+      }
+
+      .ref-alarms,
+      .ref-datas {
         .data {
           margin: 0.5rem 1rem;
           p {
@@ -86,7 +98,18 @@
       }
 
       .ref-alarms {
-        
+        justify-content: space-around;
+        > div {
+          display: flex;
+          align-items: center;
+          > span {
+            color: #fff;
+          }
+        }
+        .data {
+          margin: 0.5rem 0rem;
+        }
+      }
     }
   }
 }

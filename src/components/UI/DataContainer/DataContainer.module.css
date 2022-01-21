@@ -1,28 +1,24 @@
 .data-cotainer {
-    padding: 0.3rem;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
+  padding: 0.3rem;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
-.data-cotainer h3 {
-    margin: 0;
-    color: #fff;
-    opacity: 0.7;
-    font-size: .8rem;
-    font-weight: 400;
+.data-cotainer > h3 {
+  margin: 0;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  font-weight: 400;
 }
-
-.data-cotainer p {
-    margin: 0;
-    color: #fff;
-    font-size: .8rem;
-
+.data-cotainer > p {
+  margin: 0;
+  color: #fff;
+  font-size: 0.8rem;
 }
-
-.data-cotainer p span {
-    font-size: .5rem;
-    opacity: 0.7;
-    color: #fff;
-}
+.data-cotainer > p > span {
+  font-size: 0.5rem;
+  opacity: 0.7;
+  color: #fff;
+}/*# sourceMappingURL=DataContainer.module.css.map */

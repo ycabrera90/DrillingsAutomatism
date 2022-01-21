@@ -32,14 +32,28 @@ const DetailedView = () => {
           </header>
           <main>
             <Tank className={classes["ref-image"]} />
-            <CardData title="Medidas" className={classes["ref-datas"]}>
+            <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
               <DataContainer className={classes.data} value={1.85} unit="mts" />
               <DataContainer className={classes.data} value={74} unit="%" />
             </CardData>
-            <CardData
-              title="Alarmas"
-              className={classes["ref-alarms"]}
-            >prueeeeba</CardData>
+            <CardData title="Alarmas" className={classes["ref-alarms"]}>
+              <div>
+                <span>Inferior:</span>
+                <DataContainer
+                  className={classes.data}
+                  value={5.2}
+                  unit="mts"
+                />
+              </div>
+              <div>
+                <span>Superior:</span>
+                <DataContainer
+                  className={classes.data}
+                  value={5.4}
+                  unit="mts"
+                />
+              </div>
+            </CardData>
           </main>
         </section>
       </div>
