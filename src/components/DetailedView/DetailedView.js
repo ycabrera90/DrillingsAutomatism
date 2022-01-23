@@ -27,8 +27,10 @@ const DetailedView = () => {
         <section className={classes.reference}>
           <header>
             <h1 className={classes["ref-name"]}>RIVPERF21 - TQ MOIRONES</h1>
-            <span className={classes.date}>10/10/2022 21:42</span>
-            <BsWifi2 className={classes["wifi-icon"]} />
+            <div>
+              <span className={classes["date"]}>10/10/2022 21:42</span>
+              <BsWifi2 className={classes["wifi-icon"]} />
+            </div>
           </header>
           <main>
             <Tank className={classes["ref-image"]} />
