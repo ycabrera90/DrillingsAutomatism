@@ -1,0 +1,62 @@
+.card {
+  width: 100%;
+  max-width: 38rem;
+  background-color: #353c48;
+  border-radius: 4px;
+  > header {
+    background-color: #303641;
+    padding: 0.5rem 1rem;
+    position: relative;
+    border-radius: 4px 4px 0 0;
+
+    @media (min-width: 40rem) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    > div {
+      @media (min-width: 40rem) {
+        display: flex;
+        align-items: center;
+        gap: 0.2rem;
+      }
+    }
+  }
+}
+
+.ref-name,
+.date {
+  margin: 0.2rem;
+}
+
+.ref-name {
+  font-size: 0.9em;
+  color: #e4e4e4;
+  font-weight: 400;
+  text-align: center;
+  @media (min-width: 40rem) {
+  }
+}
+.date {
+  display: block;
+  font-size: 0.8em;
+  color: rgb(12, 187, 141);
+  font-weight: 400;
+  text-align: center;
+  @media (min-width: 40rem) {
+  }
+}
+.wifi-icon {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  color: rgb(12, 187, 141);
+  font-size: 2.5rem;
+  @media (min-width: 40rem) {
+    position: relative;
+    top: -3px;
+    left: 0;
+    font-size: 2rem;
+  }
+}

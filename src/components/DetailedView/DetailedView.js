@@ -1,10 +1,10 @@
 import React from "react";
 import classes from "./DetailedView.module.css";
 
-import { BsWifi2 } from "react-icons/bs";
-import Tank from "./Tank/Tank";
+import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
 import DataContainer from "../UI/DataContainer/DataContainer";
+import Tank from "./Tank/Tank";
 
 const DetailedView = () => {
   return (
@@ -24,40 +24,23 @@ const DetailedView = () => {
         </svg>
       </header>
       <div className={classes["detailed-view--container"]}>
-        <section className={classes.reference}>
-          <header>
-            <h1 className={classes["ref-name"]}>RIVPERF21 - TQ MOIRONES</h1>
+        <CardContainer title="RIVPERF21 - TQ MOIRONES" className={classes.main}>
+          <Tank className={classes["ref-image"]} />
+          <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
+            <DataContainer className={classes.data} value={1.85} unit="mts" />
+            <DataContainer className={classes.data} value={74} unit="%" />
+          </CardData>
+          <CardData title="Alarmas" className={classes["ref-alarms"]}>
             <div>
-              <span className={classes["date"]}>10/10/2022 21:42</span>
-              <BsWifi2 className={classes["wifi-icon"]} />
+              <span>Inferior:</span>
+              <DataContainer className={classes.data} value={5.2} unit="mts" />
             </div>
-          </header>
-          <main>
-            <Tank className={classes["ref-image"]} />
-            <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
-              <DataContainer className={classes.data} value={1.85} unit="mts" />
-              <DataContainer className={classes.data} value={74} unit="%" />
-            </CardData>
-            <CardData title="Alarmas" className={classes["ref-alarms"]}>
-              <div>
-                <span>Inferior:</span>
-                <DataContainer
-                  className={classes.data}
-                  value={5.2}
-                  unit="mts"
-                />
-              </div>
-              <div>
-                <span>Superior:</span>
-                <DataContainer
-                  className={classes.data}
-                  value={5.4}
-                  unit="mts"
-                />
-              </div>
-            </CardData>
-          </main>
-        </section>
+            <div>
+              <span>Superior:</span>
+              <DataContainer className={classes.data} value={5.4} unit="mts" />
+            </div>
+          </CardData>
+        </CardContainer>
       </div>
     </>
   );
