@@ -27,8 +27,12 @@
 .detailed-view--container {
   padding: 1rem;
   min-width: 22rem;
+  display: flex;
+  justify-content: center;
 }
 .detailed-view--container .reference {
+  width: 100%;
+  max-width: 38rem;
   background-color: #353c48;
   border-radius: 4px;
 }
@@ -90,28 +94,34 @@
   padding: 1rem;
   grid-template-areas: "ref-immage" "ref-datas" "ref-alarms";
 }
+@media (min-width: 40rem) {
+  .detailed-view--container .reference > main {
+    grid-template-areas: "ref-immage   ref-datas" "ref-alarms   ref-alarms";
+  }
+}
 .detailed-view--container .reference > main .ref-image {
   grid-area: "ref-image";
   justify-self: center;
 }
-.detailed-view--container .reference > main .ref-datas {
-  grid-area: "ref-datas";
-}
-.detailed-view--container .reference > main .ref-alarms .data,
-.detailed-view--container .reference > main .ref-datas .data {
+.detailed-view--container .reference > main .ref-datas .data,
+.detailed-view--container .reference > main .ref-alarms .data {
   margin: 0.5rem 1rem;
 }
-.detailed-view--container .reference > main .ref-alarms .data p,
-.detailed-view--container .reference > main .ref-datas .data p {
+.detailed-view--container .reference > main .ref-datas .data p,
+.detailed-view--container .reference > main .ref-alarms .data p {
   color: #03eb92;
   font-size: 1.3rem;
 }
-.detailed-view--container .reference > main .ref-alarms .data p span,
-.detailed-view--container .reference > main .ref-datas .data p span {
+.detailed-view--container .reference > main .ref-datas .data p span,
+.detailed-view--container .reference > main .ref-alarms .data p span {
   color: inherit;
   font-size: 0.7rem;
 }
+.detailed-view--container .reference > main .ref-datas {
+  grid-area: ref-datas;
+}
 .detailed-view--container .reference > main .ref-alarms {
+  grid-area: ref-alarms;
   justify-content: space-around;
 }
 .detailed-view--container .reference > main .ref-alarms > div {

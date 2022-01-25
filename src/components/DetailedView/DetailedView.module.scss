@@ -27,9 +27,13 @@
 .detailed-view--container {
   padding: 1rem;
   min-width: 22rem;
+  display: flex;
+  justify-content: center;
 
   // reference device (tank)
   .reference {
+    width: 100%;
+    max-width: 38rem;
     background-color: #353c48;
     border-radius: 4px;
     > header {
@@ -97,17 +101,19 @@
         "ref-immage"
         "ref-datas"
         "ref-alarms";
+
+      @media (min-width: 40rem) {
+        // gap: 0;
+        grid-template-areas:
+          "ref-immage   ref-datas"
+          "ref-alarms   ref-alarms";
+      }
       .ref-image {
         grid-area: "ref-image";
         justify-self: center;
       }
-
-      .ref-datas {
-        grid-area: "ref-datas";
-      }
-
-      .ref-alarms,
-      .ref-datas {
+      .ref-datas,
+      .ref-alarms {
         .data {
           margin: 0.5rem 1rem;
           p {
@@ -120,8 +126,11 @@
           }
         }
       }
-
+      .ref-datas {
+        grid-area: ref-datas;
+      }
       .ref-alarms {
+        grid-area: ref-alarms;
         justify-content: space-around;
         > div {
           display: flex;

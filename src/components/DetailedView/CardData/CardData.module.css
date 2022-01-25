@@ -22,7 +22,7 @@
 }
 .ref-datas > h1::before {
   content: "_";
-  top: 26px;
+  top: 32px;
   left: 1px;
   position: absolute;
   background: #154770;
