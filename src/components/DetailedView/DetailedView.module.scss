@@ -29,21 +29,27 @@
   min-width: 22rem;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.main {
-  display: grid;
-  gap: 1rem;
-  padding: 1rem;
-  grid-template-areas:
-    "ref-immage"
-    "ref-datas"
-    "ref-alarms";
-
-  @media (min-width: 40rem) {
+.ref-container {
+  min-width: 20px;
+  max-width: 35rem;
+  > main {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
     grid-template-areas:
-      "ref-immage   ref-datas"
-      "ref-alarms   ref-alarms";
+      "ref-immage"
+      "ref-datas"
+      "ref-alarms";
+
+    @media (min-width: 40rem) {
+      grid-template-areas:
+        "ref-immage   ref-datas"
+        "ref-alarms   ref-alarms";
+    }
   }
 }
 

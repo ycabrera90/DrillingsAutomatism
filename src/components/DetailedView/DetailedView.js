@@ -24,7 +24,39 @@ const DetailedView = () => {
         </svg>
       </header>
       <div className={classes["detailed-view--container"]}>
-        <CardContainer title="RIVPERF21 - TQ MOIRONES" className={classes.main}>
+        
+        <CardContainer
+          className={classes["ref-container"]}
+          data={{
+            title: "RIVPERF21 - TQ MOIRONES",
+            date: "10/10/2022 21:41",
+            isTx: true,
+          }}
+        >
+          <Tank className={classes["ref-image"]} />
+          <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
+            <DataContainer className={classes.data} value={1.85} unit="mts" />
+            <DataContainer className={classes.data} value={74} unit="%" />
+          </CardData>
+          <CardData title="Alarmas" className={classes["ref-alarms"]}>
+            <div>
+              <span>Inferior:</span>
+              <DataContainer className={classes.data} value={5.2} unit="mts" />
+            </div>
+            <div>
+              <span>Superior:</span>
+              <DataContainer className={classes.data} value={5.4} unit="mts" />
+            </div>
+          </CardData>
+        </CardContainer>
+        <CardContainer
+          className={classes["ref-container"]}
+          data={{
+            title: "RIVPERF21 - TQ MOIRONES",
+            date: "10/10/2022 21:41",
+            isTx: true,
+          }}
+        >
           <Tank className={classes["ref-image"]} />
           <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
             <DataContainer className={classes.data} value={1.85} unit="mts" />
