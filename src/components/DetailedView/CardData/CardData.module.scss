@@ -1,4 +1,4 @@
-.ref-datas {
+.datas {
   position: relative;
   background-color: #303641;
   border-radius: 4px;
@@ -14,14 +14,13 @@
     background: #2c8bd8;
     font-weight: 400;
     text-align: center;
-    padding: 0.2rem;
-    width: 9rem;
+    padding: 0.2rem 1rem;
     box-shadow: 2px 2px 4px 1px rgb(0 0 0 / 16%);
     border-bottom: 2px solid #154770;
 
     &::before {
       content: "_";
-      top: 26px;
+      top: 32px;
       left: 1px;
       position: absolute;
       background: #154770;

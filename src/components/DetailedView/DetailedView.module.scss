@@ -33,7 +33,8 @@
   gap: 1rem;
 }
 
-.ref-container {
+.ref-container,
+.ctrl-container {
   min-width: 20px;
   max-width: 35rem;
   > main {
@@ -41,25 +42,59 @@
     gap: 1rem;
     padding: 1rem;
     grid-template-areas:
-      "ref-immage"
-      "ref-datas"
-      "ref-alarms";
+      "image"
+      "datas"
+      "inputs";
 
     @media (min-width: 40rem) {
       grid-template-areas:
-        "ref-immage   ref-datas"
-        "ref-alarms   ref-alarms";
+        "image   datas"
+        "inputs   inputs";
     }
   }
 }
 
-.ref-image {
-  grid-area: "ref-image";
+.ctrl-container {
+  main {
+    padding: 1rem;
+  }
+}
+
+.ctrl-pump {
+  background: #21252c;
+  > h1 {
+    color: black;
+    background: #03eb92;
+    border-bottom: 2px solid #016d44;
+    &::before {
+      background: #016d44;
+    }
+  }
+}
+
+.ref-image,
+.ctrl-image {
+  grid-area: image;
   justify-self: center;
 }
 
-.ref-datas,
-.ref-alarms {
+.ctrl-image {
+  padding: 2rem;
+  > img {
+    display: block;
+    width: 8rem;
+  }
+  > p {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #f84848;
+    margin: 0;
+  }
+}
+
+.ref-alarms,
+.ref-datas {
   .data {
     margin: 0.5rem 1rem;
     p {
@@ -74,11 +109,11 @@
 }
 
 .ref-datas {
-  grid-area: ref-datas;
+  grid-area: datas;
 }
 
 .ref-alarms {
-  grid-area: ref-alarms;
+  grid-area: inputs;
   justify-content: space-around;
   > div {
     display: flex;
@@ -91,3 +126,5 @@
     margin: 0.5rem 0rem;
   }
 }
+
+

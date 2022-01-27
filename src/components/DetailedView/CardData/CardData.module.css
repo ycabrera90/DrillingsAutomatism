@@ -1,4 +1,4 @@
-.ref-datas {
+.datas {
   position: relative;
   background-color: #303641;
   border-radius: 4px;
@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
 }
-.ref-datas > h1 {
+.datas > h1 {
   position: absolute;
   top: 10px;
   left: -5px;
@@ -15,12 +15,11 @@
   background: #2c8bd8;
   font-weight: 400;
   text-align: center;
-  padding: 0.2rem;
-  width: 9rem;
+  padding: 0.2rem 1rem;
   box-shadow: 2px 2px 4px 1px rgba(0, 0, 0, 0.16);
   border-bottom: 2px solid #154770;
 }
-.ref-datas > h1::before {
+.datas > h1::before {
   content: "_";
   top: 32px;
   left: 1px;

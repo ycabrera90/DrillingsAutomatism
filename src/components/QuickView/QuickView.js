@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./QuickView.module.css";
 
-import tankImg from "../../images/tank.png";
+import tankImg from "../../images/icon-tank.png";
 import pump from "../../images/pump.png";
 import DataContainer from "../UI/DataContainer/DataContainer";
 import ItemImage from "./ItemImage/ItemImage";

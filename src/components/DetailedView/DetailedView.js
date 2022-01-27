@@ -5,6 +5,7 @@ import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
 import DataContainer from "../UI/DataContainer/DataContainer";
 import Tank from "./Tank/Tank";
+import Pump from "./Pump/Pump";
 
 const DetailedView = () => {
   return (
@@ -24,7 +25,6 @@ const DetailedView = () => {
         </svg>
       </header>
       <div className={classes["detailed-view--container"]}>
-        
         <CardContainer
           className={classes["ref-container"]}
           data={{
@@ -50,27 +50,18 @@ const DetailedView = () => {
           </CardData>
         </CardContainer>
         <CardContainer
-          className={classes["ref-container"]}
+          className={classes["ctrl-container"]}
           data={{
             title: "RIVPERF21 - TQ MOIRONES",
             date: "10/10/2022 21:41",
             isTx: true,
           }}
         >
-          <Tank className={classes["ref-image"]} />
-          <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
-            <DataContainer className={classes.data} value={1.85} unit="mts" />
-            <DataContainer className={classes.data} value={74} unit="%" />
-          </CardData>
-          <CardData title="Alarmas" className={classes["ref-alarms"]}>
-            <div>
-              <span>Inferior:</span>
-              <DataContainer className={classes.data} value={5.2} unit="mts" />
-            </div>
-            <div>
-              <span>Superior:</span>
-              <DataContainer className={classes.data} value={5.4} unit="mts" />
-            </div>
+          <CardData
+            title="Bomba de perforación"
+            className={classes["ctrl-pump"]}
+          >
+            <Pump data={{ state: false }} className={classes["ctrl-image"]} />
           </CardData>
         </CardContainer>
       </div>

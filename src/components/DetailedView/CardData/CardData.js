@@ -2,9 +2,11 @@ import React from "react";
 import classes from "./CardData.module.css";
 
 const CardData = (props) => {
-  const componentClasses = `${classes["ref-datas"]} ${
-    props.className ? props.className : ""
-  }`;
+  const componentClasses = props.className
+    ? `${classes.datas} ${props.className}`
+    : classes.datas;
+    console.log()
+    
   return (
     <section className={componentClasses}>
       {props.title && <h1>{props.title}</h1>}
