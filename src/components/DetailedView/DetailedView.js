@@ -49,19 +49,24 @@ const DetailedView = () => {
             </div>
           </CardData>
         </CardContainer>
+
         <CardContainer
           className={classes["ctrl-container"]}
           data={{
-            title: "RIVPERF21 - TQ MOIRONES",
+            title: "RIVPERF01 - PERF. MEVIR",
             date: "10/10/2022 21:41",
             isTx: true,
           }}
         >
           <CardData
             title="Bomba de perforación"
-            className={classes["ctrl-pump"]}
+            className={classes["ctrl-card"]}
           >
             <Pump data={{ state: false }} className={classes["ctrl-image"]} />
+            <CardData title="Funcionamiento" className={classes["ref-datas"]}>
+              <DataContainer className={classes.data} value={1.85} unit="mts" />
+              <DataContainer className={classes.data} value={74} unit="%" />
+            </CardData>
           </CardData>
         </CardContainer>
       </div>

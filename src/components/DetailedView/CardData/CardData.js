@@ -3,10 +3,9 @@ import classes from "./CardData.module.css";
 
 const CardData = (props) => {
   const componentClasses = props.className
-    ? `${classes.datas} ${props.className}`
+    ? `${props.className} ${classes.datas}`
     : classes.datas;
-    console.log()
-    
+
   return (
     <section className={componentClasses}>
       {props.title && <h1>{props.title}</h1>}

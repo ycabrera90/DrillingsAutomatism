@@ -31,100 +31,98 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-}
 
-.ref-container,
-.ctrl-container {
-  min-width: 20px;
-  max-width: 35rem;
-  > main {
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    grid-template-areas:
-      "image"
-      "datas"
-      "inputs";
+  .ref-container,
+  .ctrl-container {
+    min-width: 20px;
+    max-width: 35rem;
+  }
 
-    @media (min-width: 40rem) {
+  .ref-image,
+  .ctrl-image {
+    grid-area: image;
+    justify-self: center;
+  }
+
+  .ref-container {
+    > main {
+      display: grid;
+      gap: 1rem;
+      padding: 1rem;
       grid-template-areas:
-        "image   datas"
-        "inputs   inputs";
+        "image"
+        "datas"
+        "inputs";
+
+      @media (min-width: 40rem) {
+        grid-template-areas:
+          "image   datas"
+          "inputs   inputs";
+      }
+      .ref-alarms,
+      .ref-datas {
+        .data {
+          margin: 0.5rem 1rem;
+          p {
+            color: #03eb92;
+            font-size: 1.3rem;
+            span {
+              color: inherit;
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+
+      .ref-alarms {
+        grid-area: inputs;
+        justify-content: space-around;
+        > div {
+          display: flex;
+          align-items: center;
+          > span {
+            color: #fff;
+          }
+        }
+        .data {
+          margin: 0.5rem 0rem;
+        }
+      }
+      .ref-datas {
+        grid-area: datas;
+      }
     }
   }
-}
 
-.ctrl-container {
-  main {
-    padding: 1rem;
-  }
-}
+  .ctrl-container {
+    > main {
+      padding: 1rem;
+      .ctrl-card {
+        background: #21252c;
+        > h1 {
+          color: black;
+          background: #03eb92;
+          border-bottom: 2px solid #016d44;
+          &::before {
+            background: #016d44;
+          }
+        }
 
-.ctrl-pump {
-  background: #21252c;
-  > h1 {
-    color: black;
-    background: #03eb92;
-    border-bottom: 2px solid #016d44;
-    &::before {
-      background: #016d44;
-    }
-  }
-}
-
-.ref-image,
-.ctrl-image {
-  grid-area: image;
-  justify-self: center;
-}
-
-.ctrl-image {
-  padding: 2rem;
-  > img {
-    display: block;
-    width: 8rem;
-  }
-  > p {
-    text-align: center;
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #f84848;
-    margin: 0;
-  }
-}
-
-.ref-alarms,
-.ref-datas {
-  .data {
-    margin: 0.5rem 1rem;
-    p {
-      color: #03eb92;
-      font-size: 1.3rem;
-      span {
-        color: inherit;
-        font-size: 0.7rem;
+        .ctrl-image {
+          padding: 2rem;
+          > img {
+            display: block;
+            width: 8rem;
+          }
+          > p {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #f84848;
+            margin: 0;
+          }
+        }
       }
     }
   }
 }
-
-.ref-datas {
-  grid-area: datas;
-}
-
-.ref-alarms {
-  grid-area: inputs;
-  justify-content: space-around;
-  > div {
-    display: flex;
-    align-items: center;
-    > span {
-      color: #fff;
-    }
-  }
-  .data {
-    margin: 0.5rem 0rem;
-  }
-}
-
-

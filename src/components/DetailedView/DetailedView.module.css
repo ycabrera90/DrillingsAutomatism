@@ -32,93 +32,83 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-
-.ref-container,
-.ctrl-container {
+.detailed-view--container .ref-container,
+.detailed-view--container .ctrl-container {
   min-width: 20px;
   max-width: 35rem;
 }
-.ref-container > main,
-.ctrl-container > main {
+.detailed-view--container .ref-image,
+.detailed-view--container .ctrl-image {
+  grid-area: image;
+  justify-self: center;
+}
+.detailed-view--container .ref-container > main {
   display: grid;
   gap: 1rem;
   padding: 1rem;
   grid-template-areas: "image" "datas" "inputs";
 }
 @media (min-width: 40rem) {
-  .ref-container > main,
-.ctrl-container > main {
+  .detailed-view--container .ref-container > main {
     grid-template-areas: "image   datas" "inputs   inputs";
   }
 }
-
-.ctrl-container main {
+.detailed-view--container .ref-container > main .ref-alarms .data,
+.detailed-view--container .ref-container > main .ref-datas .data {
+  margin: 0.5rem 1rem;
+}
+.detailed-view--container .ref-container > main .ref-alarms .data p,
+.detailed-view--container .ref-container > main .ref-datas .data p {
+  color: #03eb92;
+  font-size: 1.3rem;
+}
+.detailed-view--container .ref-container > main .ref-alarms .data p span,
+.detailed-view--container .ref-container > main .ref-datas .data p span {
+  color: inherit;
+  font-size: 0.7rem;
+}
+.detailed-view--container .ref-container > main .ref-alarms {
+  grid-area: inputs;
+  justify-content: space-around;
+}
+.detailed-view--container .ref-container > main .ref-alarms > div {
+  display: flex;
+  align-items: center;
+}
+.detailed-view--container .ref-container > main .ref-alarms > div > span {
+  color: #fff;
+}
+.detailed-view--container .ref-container > main .ref-alarms .data {
+  margin: 0.5rem 0rem;
+}
+.detailed-view--container .ref-container > main .ref-datas {
+  grid-area: datas;
+}
+.detailed-view--container .ctrl-container > main {
   padding: 1rem;
 }
-
-.ctrl-pump {
+.detailed-view--container .ctrl-container > main .ctrl-card {
   background: #21252c;
 }
-.ctrl-pump > h1 {
+.detailed-view--container .ctrl-container > main .ctrl-card > h1 {
   color: black;
   background: #03eb92;
   border-bottom: 2px solid #016d44;
 }
-.ctrl-pump > h1::before {
+.detailed-view--container .ctrl-container > main .ctrl-card > h1::before {
   background: #016d44;
 }
-
-.ref-image,
-.ctrl-image {
-  grid-area: image;
-  justify-self: center;
-}
-
-.ctrl-image {
+.detailed-view--container .ctrl-container > main .ctrl-card .ctrl-image {
   padding: 2rem;
 }
-.ctrl-image > img {
+.detailed-view--container .ctrl-container > main .ctrl-card .ctrl-image > img {
   display: block;
   width: 8rem;
 }
-.ctrl-image > p {
+.detailed-view--container .ctrl-container > main .ctrl-card .ctrl-image > p {
   text-align: center;
   font-size: 1.8rem;
   font-weight: 500;
   color: #f84848;
   margin: 0;
-}
-
-.ref-alarms .data,
-.ref-datas .data {
-  margin: 0.5rem 1rem;
-}
-.ref-alarms .data p,
-.ref-datas .data p {
-  color: #03eb92;
-  font-size: 1.3rem;
-}
-.ref-alarms .data p span,
-.ref-datas .data p span {
-  color: inherit;
-  font-size: 0.7rem;
-}
-
-.ref-datas {
-  grid-area: datas;
-}
-
-.ref-alarms {
-  grid-area: inputs;
-  justify-content: space-around;
-}
-.ref-alarms > div {
-  display: flex;
-  align-items: center;
-}
-.ref-alarms > div > span {
-  color: #fff;
-}
-.ref-alarms .data {
-  margin: 0.5rem 0rem;
 }/*# sourceMappingURL=DetailedView.module.css.map */
