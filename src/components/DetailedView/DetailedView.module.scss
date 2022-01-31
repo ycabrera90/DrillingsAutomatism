@@ -41,6 +41,7 @@
   .ref-image,
   .ctrl-image {
     grid-area: image;
+    // grid-template-columns: repeat(content-fit, minmax(1fr,));
     justify-self: center;
   }
 

@@ -11,6 +11,8 @@ import logo from "./logo.svg";
 =======
 >>>>>>> c34f7d8 (the react-icon package was added to the project)
 import "./App.css";
+import React from "react";
+import { Route } from "react-router-dom";
 
 import Login from "./components/Login/Login";
 import MainHeader from "./components/UI/MainHeader/MainHeader";
@@ -20,10 +22,14 @@ import DetailedView from "./components/DetailedView/DetailedView";
 function App() {
   return (
     <>
-      {/* <Login /> */}
-      <MainHeader />
-      {/* <QuickView></QuickView> */}
-      <DetailedView />
+      <Route path="/login" exact>
+        <Login />
+      </Route>
+      <Route path="/sistems" exact>
+        <QuickView></QuickView>
+      </Route>
+      {/* <MainHeader /> */}
+      {/* <DetailedView /> */}
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
   );
