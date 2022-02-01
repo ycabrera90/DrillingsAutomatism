@@ -14,7 +14,7 @@ import "./App.css";
 import React from "react";
 import { Route } from "react-router-dom";
 
-import Login from "./components/Login/Login";
+import Login from "./pages/Login/Login";
 import MainHeader from "./components/UI/MainHeader/MainHeader";
 import QuickView from "./components/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";

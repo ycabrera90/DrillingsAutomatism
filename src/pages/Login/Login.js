@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./Login.module.css";
 
-import useInput from "../hooks/use-input";
+import useInput from "../../hooks/use-input"
 
 // import Modal from "../UI/Modal/Modal";
 import LoginModal from "./LoginModal/LoginModal";
 import LoginInput from "./LoginInput/LoginInput";
 import LogInButton from "./LogInButton/LogInButton";
-import SpyLogo from "../UI/SpyLogo/SpyLogo";
+import SpyLogo from "../../components/UI/SpyLogo/SpyLogo";
 
 const Login = () => {
   const onLoginButtonHandler = () => {
