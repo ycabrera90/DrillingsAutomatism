@@ -1,0 +1,19 @@
+.main-nav_item {
+  list-style: none;
+  > a {
+    text-decoration: none;
+    color: inherit;
+
+    &:hover {
+      @media (min-width: 40rem) {
+        border-bottom: #fefffb 2px solid;
+        border-radius: 4px;
+      }
+    }
+
+    &:active {
+      color: #1f228b;
+      border-color: #1f228b;
+    }
+  }
+}

@@ -15,8 +15,8 @@ import React from "react";
 import { Route } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
-import MainHeader from "./components/UI/MainHeader/MainHeader";
-import QuickView from "./components/QuickView/QuickView";
+import MainHeader from "./components/MainHeader/MainHeader";
+// import QuickView from "./components/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
         <Login />
       </Route>
       <Route path="/sistems" exact>
-        <QuickView></QuickView>
+        <MainHeader />
+        {/* <QuickView></QuickView> */}
       </Route>
-      {/* <MainHeader /> */}
       {/* <DetailedView /> */}
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)

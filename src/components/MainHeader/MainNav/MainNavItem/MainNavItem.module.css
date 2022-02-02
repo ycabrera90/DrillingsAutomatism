@@ -1,0 +1,17 @@
+.main-nav_item {
+  list-style: none;
+}
+.main-nav_item > a {
+  text-decoration: none;
+  color: inherit;
+}
+@media (min-width: 40rem) {
+  .main-nav_item > a:hover {
+    border-bottom: #fefffb 2px solid;
+    border-radius: 4px;
+  }
+}
+.main-nav_item > a:active {
+  color: #1f228b;
+  border-color: #1f228b;
+}/*# sourceMappingURL=MainNavItem.module.css.map */

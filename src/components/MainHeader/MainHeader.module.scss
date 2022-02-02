@@ -1,0 +1,15 @@
+.main-header {
+  min-width: 22rem;
+  position: fixed;
+  inset: 0 0 auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  width: 100vw;
+  background: linear-gradient(180deg, #2c8bd8 0, #2378bd);
+  box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 25%);
+  padding: 0 1rem;
+  color: #fefffb;
+  z-index: 100;
+}
