@@ -7,9 +7,13 @@ import MainNavButton from "./MainNavButton/MainNavButton";
 const MainNav = (props) => {
   const { isExpanded } = props;
 
-  let navBarClasses = isExpanded
+  const navBarClasses = isExpanded
     ? `${classes["nav-bar"]} ${classes["expanded"]}`
     : `${classes["nav-bar"]}`;
+
+  const backdropClasses = isExpanded
+    ? `${classes["backdrop"]} ${classes["expanded"]}`
+    : `${classes["backdrop"]}`;
 
   const mainNavItems = [
     "Servicios",
@@ -20,14 +24,17 @@ const MainNav = (props) => {
   ];
 
   return (
-    <nav className={navBarClasses}>
-      <ul>
-        {mainNavItems.map((item) => (
-          <MainNavItem key={`${item}_${Math.random()}`}>{item}</MainNavItem>
-        ))}
-      </ul>
-      <MainNavButton />
-    </nav>
+    <>
+      <div className={backdropClasses} onClick={props.onBackdropClick}></div>
+      <nav className={navBarClasses}>
+        <ul>
+          {mainNavItems.map((item) => (
+            <MainNavItem key={`${item}_${Math.random()}`}>{item}</MainNavItem>
+          ))}
+        </ul>
+        <MainNavButton />
+      </nav>
+    </>
   );
 };
 

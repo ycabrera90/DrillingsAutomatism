@@ -1,3 +1,21 @@
+.backdrop {
+  display: none;
+  background: transparent;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -1;
+}
+.backdrop.expanded {
+  display: block;
+}
+@media (min-width: 40rem) {
+  .backdrop.expanded {
+    display: none;
+  }
+}
+
 .nav-bar {
   position: absolute;
   inset: 3.5rem 0px auto auto;

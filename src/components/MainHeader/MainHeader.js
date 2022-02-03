@@ -9,19 +9,22 @@ import MainNav from "./MainNav/MainNav";
 const MainHeader = () => {
   const [isMainNavExpanded, setIsMainNavExpanded] = useState(false);
 
-  const toggleButtonHandler = () => {
+  const toggleButtonClicHandler = () => {
     setIsMainNavExpanded((prevState) => !prevState);
   };
 
-  // let navBarClasses = `${classes["nav-bar"]}  ${
-  //   expandedClass ? classes["expanded"] : ""
-  // }`;
-
+  const backdropClickHandler = () => {
+    setIsMainNavExpanded((prevState) => !prevState);
+  };
+  
   return (
     <header className={classes["main-header"]}>
       <SpyLogo />
-      <ToggleButton onClick={toggleButtonHandler} />
-      <MainNav isExpanded={isMainNavExpanded}/>
+      <ToggleButton onClick={toggleButtonClicHandler} />
+      <MainNav
+        onBackdropClick={backdropClickHandler}
+        isExpanded={isMainNavExpanded}
+      />
     </header>
   );
 };
