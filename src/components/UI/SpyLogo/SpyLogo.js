@@ -3,8 +3,12 @@ import classes from "./SpyLogo.module.css";
 import logo from "./logo.png";
 
 const SpyLogo = (props) => {
+  const moduleClasses = props.className
+    ? `${classes.logos} ${props.className}`
+    : `${classes.logos}`;
+
   return (
-    <div className={`${props.className} ${classes.logos}`}>
+    <div className={moduleClasses}>
       <a href="http://www.spymovil.com" className={classes.logo}>
         <div className={classes.spy}>
           <span>SPYMOVIL</span>

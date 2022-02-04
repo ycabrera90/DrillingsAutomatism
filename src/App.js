@@ -16,7 +16,7 @@ import { Route } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import MainHeader from "./components/MainHeader/MainHeader";
-// import QuickView from "./components/QuickView/QuickView";
+import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       </Route>
       <Route path="/sistems" exact>
         <MainHeader />
-        {/* <QuickView></QuickView> */}
+        <QuickView></QuickView>
       </Route>
       {/* <DetailedView /> */}
     </>

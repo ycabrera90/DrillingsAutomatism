@@ -42,7 +42,6 @@
   margin: 0;
   color: #fff;
 }
-
 .item-container header > span {
   color: #03eb92;
 }
@@ -54,11 +53,11 @@
 }
 
 .item {
-  margin: 0.5rem;
+  margin: 00.5rem;
   background: linear-gradient(180deg, #415166 0, #374556);
   border-radius: 3px;
   padding: 0.5rem;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.19);
+  box-shadow: 1px 1px 2px 1px rgb(0 0 0 / 19%);
   display: flex;
   gap: 1rem;
   overflow: auto;
@@ -72,10 +71,12 @@
     gap: 1rem;
     justify-content: center;
   }
+
   .quickview-container header > h1 {
     cursor: pointer;
   }
+
   .item-container > main {
     display: flex;
   }
-}/*# sourceMappingURL=QuickView.module.css.map */
+}
