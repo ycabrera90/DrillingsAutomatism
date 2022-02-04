@@ -4,6 +4,8 @@
   text-align: center;
   justify-content: center;
   flex-direction: column;
+  min-width: 4rem;
+  max-width: 4.9rem;
 }
 .data-cotainer > h3 {
   margin: 0;

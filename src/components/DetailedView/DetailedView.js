@@ -3,7 +3,7 @@ import classes from "./DetailedView.module.css";
 
 import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
-import DataContainer from "../UI/DataContainer/DataContainer";
+import DataContainer from "../../pages/QuickView/DataContainer/DataContainer";
 import Tank from "./Tank/Tank";
 import Pump from "./Pump/Pump";
 

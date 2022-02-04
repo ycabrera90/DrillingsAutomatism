@@ -4,17 +4,15 @@
   border-radius: 3px;
   padding: 0.4rem;
 }
-
-.item-image img {
+.item-image > img {
   display: block;
   height: 1.9rem;
   width: 1.9rem;
   margin: auto;
 }
-
-.item-image p {
+.item-image > p {
   margin: 0;
   font-size: 0.9rem;
   color: #fff;
   text-align: center;
-}
+}/*# sourceMappingURL=ItemImage.module.css.map */

@@ -27,7 +27,7 @@ function App() {
       </Route>
       <Route path="/sistems" exact>
         <MainHeader />
-        <QuickView></QuickView>
+        <QuickView />
       </Route>
       {/* <DetailedView /> */}
     </>

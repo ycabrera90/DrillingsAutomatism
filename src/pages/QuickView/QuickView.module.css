@@ -7,63 +7,10 @@
 }
 
 .quickview-container {
-  overflow: auto;
   padding: 4rem 0.5rem 0.5rem 0.5rem;
   background-color: transparent;
+  min-width: 21.1rem;
 }
-
-.item-container {
-  width: 37.3rem;
-  background: #353c48;
-  padding-bottom: 1px;
-  border-radius: 4px;
-}
-
-.item-container > header {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1em;
-  padding: 0.7em;
-  background: #303641;
-  text-align: center;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.192);
-}
-
-.item-container header > h1,
-.item-container header > span {
-  font-size: 0.9rem;
-  font-weight: 400;
-}
-
-.item-container header > h1 {
-  margin: 0;
-  color: #fff;
-}
-
-.item-container header > span {
-  color: #03eb92;
-}
-
-.item-container header > svg {
-  right: 12px;
-  position: absolute;
-  color: #03eb92;
-}
-
-.item {
-  margin: 0.5rem;
-  background: linear-gradient(180deg, #415166 0, #374556);
-  border-radius: 3px;
-  padding: 0.5rem;
-  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.19);
-  display: flex;
-  gap: 1rem;
-  overflow: auto;
-}
-
 @media (min-width: 40rem) {
   .quickview-container {
     display: flex;
@@ -71,11 +18,5 @@
     align-items: flex-start;
     gap: 1rem;
     justify-content: center;
-  }
-  .quickview-container header > h1 {
-    cursor: pointer;
-  }
-  .item-container > main {
-    display: flex;
   }
 }/*# sourceMappingURL=QuickView.module.css.map */

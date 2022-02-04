@@ -1,0 +1,18 @@
+.item-image {
+  width: 75px;
+  background: rgba(0, 0, 0, 0.376);
+  border-radius: 3px;
+  padding: 0.4rem;
+  > img {
+    display: block;
+    height: 1.9rem;
+    width: 1.9rem;
+    margin: auto;
+  }
+  > p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+  }
+}

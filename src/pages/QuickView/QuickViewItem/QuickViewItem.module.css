@@ -1,0 +1,79 @@
+.item-container {
+  max-width: 37rem;
+  background: #353c48;
+  padding-bottom: 1px;
+  border-radius: 4px;
+}
+.item-container > header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1em;
+  padding: 0.7em;
+  background: #303641;
+  text-align: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.192);
+}
+.item-container > header > h1,
+.item-container > header > span {
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.item-container > header > h1 {
+  margin: 0;
+  color: #fff;
+}
+@media (min-width: 40rem) {
+  .item-container > header > h1 {
+    cursor: pointer;
+  }
+}
+.item-container > header > span {
+  color: #03eb92;
+}
+.item-container > header > .icon {
+  right: 12px;
+  position: absolute;
+  color: #03eb92;
+  font-size: 1.2rem;
+}
+.item-container > main {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+@media (min-width: 40rem) {
+  .item-container > main {
+    flex-direction: row;
+  }
+}
+.item-container > main .item {
+  background: linear-gradient(180deg, #415166 0, #374556);
+  border-radius: 3px;
+  padding: 0.5rem;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.19);
+  display: flex;
+  gap: 1rem;
+}
+@media (min-width: 40rem) {
+  .item-container > main .item {
+    display: flex;
+  }
+}
+.item-container > main .item .data-container {
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+  max-width: 29rem;
+}
+@media (min-width: 40rem) {
+  .item-container > main .item .data-container {
+    overflow: auto;
+  }
+}
+.item-container > main .item .data-container::-webkit-scrollbar:horizontal {
+  height: 5px;
+}/*# sourceMappingURL=QuickViewItem.module.css.map */
