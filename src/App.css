@@ -5,34 +5,31 @@
   transition: all 0.2s ease-out;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+=======
+>>>>>>> 58b99d6 (Some adjustments were made to QuickView container)
 *::-webkit-scrollbar {
   -webkit-appearance: none;
 }
-
 *::-webkit-scrollbar:vertical {
   width: 10px;
 }
-
 *::-webkit-scrollbar:horizontal {
   height: 10px;
 }
-
 *::-webkit-scrollbar-button:increment {
   display: none;
 }
-
 *::-webkit-scrollbar-button {
   display: none;
 }
-
 *::-webkit-scrollbar-thumb {
   background: #353c48;
   border-radius: 20px;
   border: 1px solid rgba(255, 255, 255, 0.448);
 }
-
 *::-webkit-scrollbar-track {
   border-radius: 10px;
 }

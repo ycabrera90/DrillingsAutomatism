@@ -1,5 +1,5 @@
 .item-container {
-  max-width: 37rem;
+  max-width: 42rem;
   background: #353c48;
   padding-bottom: 1px;
   border-radius: 4px;
@@ -62,8 +62,8 @@
         display: flex;
         gap: 0.5rem;
         overflow: auto;
-        max-width: 29rem;
         @media (min-width: 40rem) {
+          max-width: 13.4rem;
           overflow: auto;
         }
 

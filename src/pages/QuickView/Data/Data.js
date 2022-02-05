@@ -1,7 +1,7 @@
 import React from "react";
-import classes from "./DataContainer.module.css";
+import classes from "./Data.module.css";
 
-const DataContainer = (props) => {
+const Data = (props) => {
   const componentClasses = `${classes["data-cotainer"]} ${
     props.className ? props.className : ""
   }`;
@@ -16,4 +16,4 @@ const DataContainer = (props) => {
   );
 };
 
-export default DataContainer;
+export default Data;

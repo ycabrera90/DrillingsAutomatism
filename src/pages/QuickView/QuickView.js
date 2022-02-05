@@ -11,6 +11,13 @@ const QuickView = (props) => {
       <section className={classes.background} />
       <section className={classes["quickview-container"]}>
         <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
+        <QuickViewItem data={quickViewItem}></QuickViewItem>
       </section>
     </>
   );

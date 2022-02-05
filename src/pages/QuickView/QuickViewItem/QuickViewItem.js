@@ -4,7 +4,7 @@ import classes from "./QuickViewItem.module.css";
 import { BsCheckCircle } from "react-icons/bs";
 import ItemImage from "../ItemImage/ItemImage";
 import iconTank from "../../../images/icon-tank.png";
-import DataContainer from "../DataContainer/DataContainer";
+import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
 
 const QuickViewItem = () => {
@@ -21,24 +21,28 @@ const QuickViewItem = () => {
             <ItemImage src={iconTank} description="Tanque" />
           </i>
           <div className={classes["data-container"]}>
-            <DataContainer title="Altura" value={1.61} unit="mts" />
-            <DataContainer title="Porciento" value={28.3} unit="%" />
-            <DataContainer title="Nivel Pozo" value={1.61} unit="mts" />
-            <DataContainer title="Altura" value={1.61} unit="mts" />
-            <DataContainer title="Altura" value={1.61} unit="mts" />
-            <DataContainer title="Altura" value={1.61} unit="mts" />
+            <Data title="Altura" value={1.61} unit="mts" />
+            <Data title="Porciento" value={28.3} unit="%" />
+            <Data title="Volumen" value={21} unit="m3" />
+            <Data title="Volumen" value={21} unit="m3" />
+            <Data title="Volumen" value={21} unit="m3" />
+            <Data title="Volumen" value={21} unit="m3" />
+            <Data title="Volumen" value={21} unit="m3" />
           </div>
         </article>
         <article className={classes.item}>
-          <ItemImage src={pump} description="Bomba" />
-          <DataContainer title="Presión" value={1.25} unit="bar" />
-          <DataContainer title="Caudal" value={15.2} unit="m3/h" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
-          <DataContainer title="Nivel Pozo" value={-12} unit="m" />
+          <i>
+            <ItemImage src={pump} description="Bomba" />
+          </i>
+          <div className={classes["data-container"]}>
+            <Data title="Presión" value={1.25} unit="bar" />
+            <Data title="Caudal" value={15.2} unit="m3/h" />
+            <Data title="Nivel Pozo" value={-12} unit="m" />
+            <Data title="Nivel Pozo" value={-12} unit="m" />
+            <Data title="Nivel Pozo" value={-12} unit="m" />
+            <Data title="Nivel Pozo" value={-12} unit="m" />
+            <Data title="Nivel Pozo" value={-12} unit="m" />
+          </div>
         </article>
       </main>
     </article>

@@ -11,6 +11,7 @@
   margin: auto;
 }
 .item-image > p {
+  font-style: normal;
   margin: 0;
   font-size: 0.9rem;
   color: #fff;
