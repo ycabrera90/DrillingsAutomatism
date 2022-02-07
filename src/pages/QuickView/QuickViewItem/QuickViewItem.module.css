@@ -33,11 +33,24 @@
 .item-container > header > span {
   color: #03eb92;
 }
-.item-container > header > .icon {
+.item-container > header > .flag-icon,
+.item-container > header > .checked-icon {
   right: 12px;
   position: absolute;
   color: #03eb92;
   font-size: 1.2rem;
+}
+.item-container > header > .checked-icon {
+  color: #03eb92;
+}
+.item-container > header > .flag-icon {
+  color: #bb6c34;
+}
+.item-container > header .claim-badge {
+  inset: 4px 5px auto auto;
+  position: absolute;
+  font-size: 0.5rem;
+  color: #cd834f;
 }
 .item-container > main {
   padding: 0.5rem;
