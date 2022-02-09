@@ -1,8 +1,8 @@
 .item-container {
-  max-width: 42rem;
   background: #353c48;
   padding-bottom: 1px;
   border-radius: 4px;
+  overflow: hidden;
 }
 .item-container > header {
   position: relative;
@@ -55,8 +55,9 @@
 .item-container > main {
   padding: 0.5rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 @media (min-width: 40rem) {
   .item-container > main {
@@ -70,10 +71,12 @@
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.19);
   display: flex;
   gap: 1rem;
+  width: 100%;
+  max-width: 37.1rem;
 }
 @media (min-width: 40rem) {
   .item-container > main .item {
-    display: flex;
+    max-width: 49.3%;
   }
 }
 .item-container > main .item .data-container {
@@ -83,7 +86,6 @@
 }
 @media (min-width: 40rem) {
   .item-container > main .item .data-container {
-    max-width: 13.4rem;
     overflow: auto;
   }
 }
