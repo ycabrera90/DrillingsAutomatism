@@ -9,6 +9,7 @@ const QuickView = (props) => {
       id: "p1",
       title: "RIVPERF22-PERF 01",
       workinkMode: "AUTO",
+      pumpSt: true,
       claims: [
         { id: "c1", active: true },
         { id: "c2", active: true },
@@ -35,6 +36,7 @@ const QuickView = (props) => {
       id: "p2",
       title: "RIVPERF23-PERF 02",
       workinkMode: "LOCAL",
+      pumpSt: false,
       claims: [],
       measures: {
         tank: [
@@ -58,6 +60,7 @@ const QuickView = (props) => {
       id: "p3",
       title: "RIVPERF24-PERF 03",
       workinkMode: "RAMOTO",
+      pumpSt: true,
       claims: [],
       measures: {
         tank: [
