@@ -12,7 +12,7 @@ import logo from "./logo.svg";
 >>>>>>> c34f7d8 (the react-icon package was added to the project)
 import "./App.css";
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Login from "./pages/Login/Login";
 import MainHeader from "./components/MainHeader/MainHeader";
@@ -21,8 +21,8 @@ import DetailedView from "./components/DetailedView/DetailedView";
 
 function App() {
   return (
-    <>
-      <Route path="/login" exact>
+    <Switch>
+      <Route path="/login">
         <Login />
       </Route>
       <Route path="/sistems" exact>
@@ -30,8 +30,15 @@ function App() {
         <QuickView />
       </Route>
       {/* <DetailedView /> */}
+<<<<<<< HEAD
     </>
 >>>>>>> 7c4dc0f (the MainBar component was added to the project)
+=======
+      <Route path="*" exact>
+        <h1>Page Not found</h1>
+      </Route>
+    </Switch>
+>>>>>>> df0bd84 (the path 'Not found' was added)
   );
 }
 

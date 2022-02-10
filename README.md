@@ -11,6 +11,11 @@
 # Drillings Automatism 
 
 _With this web application the operators can see the datas and take control of drilling systems._
+
+
+Taks
+
+
 <!-- 
 ## Starting 🚀
 
