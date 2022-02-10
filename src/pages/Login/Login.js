@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Login.module.css";
 
-import useInput from "../../hooks/use-input"
+import useInput from "../../hooks/use-input";
 
 // import Modal from "../UI/Modal/Modal";
 import LoginModal from "./LoginModal/LoginModal";
@@ -10,10 +10,6 @@ import LogInButton from "./LogInButton/LogInButton";
 import SpyLogo from "../../components/UI/SpyLogo/SpyLogo";
 
 const Login = () => {
-  const onLoginButtonHandler = () => {
-    console.log("everithing Ok");
-  };
-
   const {
     value: user,
     isValid: userIsValid,
@@ -45,9 +41,25 @@ const Login = () => {
     if (!formIsValid) {
       return;
     }
-    
+
     resetUserInput();
     resetPasswordInput();
+  };
+
+  const onLoginButtonHandler = () => {
+    try {
+      // fetch data to backend and the answer is
+      // {
+      //   userId: existingUser.id,
+      //   email: existingUser.email,
+      //   token: token,
+      // }
+      console.log("LoggedIn");
+      console.log({ user, password });
+      // auth.login(responseData.userId, responseData.token);
+    } catch (err) {
+      alert('the login fail')
+    }
   };
 
   return (
