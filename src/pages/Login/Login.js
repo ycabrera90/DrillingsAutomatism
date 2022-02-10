@@ -1,15 +1,19 @@
-import React from "react";
-import classes from "./Login.module.css";
+import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 
 import useInput from "../../hooks/use-input";
+import AuthContext from "../../context/auth-context";
 
-// import Modal from "../UI/Modal/Modal";
 import LoginModal from "./LoginModal/LoginModal";
 import LoginInput from "./LoginInput/LoginInput";
 import LogInButton from "./LogInButton/LogInButton";
 import SpyLogo from "../../components/UI/SpyLogo/SpyLogo";
 
+import classes from "./Login.module.css";
+
 const Login = () => {
+  const history = useHistory();
+  const auth = useContext(AuthContext);
   const {
     value: user,
     isValid: userIsValid,
@@ -44,21 +48,25 @@ const Login = () => {
 
     resetUserInput();
     resetPasswordInput();
-  };
 
-  const onLoginButtonHandler = () => {
     try {
+      console.log("LoggedIn");
+      console.log({ user, password });
       // fetch data to backend and the answer is
       // {
       //   userId: existingUser.id,
       //   email: existingUser.email,
       //   token: token,
       // }
-      console.log("LoggedIn");
-      console.log({ user, password });
-      // auth.login(responseData.userId, responseData.token);
+      const responseData = {
+        userId: "123",
+        email: "yosniel.ch@gmail.com",
+        token: "thisIsMyTokenID",
+      };
+      auth.login(responseData.userId, responseData.token);
+      history.push("/sistems");
     } catch (err) {
-      alert('the login fail')
+      alert("the login fail");
     }
   };
 
@@ -99,7 +107,6 @@ const Login = () => {
             text="Ingresar"
             attrib={{
               type: "submit",
-              onClick: onLoginButtonHandler,
               disabled: !formIsValid,
             }}
           />
