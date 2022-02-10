@@ -17,41 +17,54 @@
 }
 
 .nav-bar {
-  position: absolute;
   inset: 3.5rem 0px auto auto;
-  background: inherit;
   border-bottom-left-radius: 10px;
-  height: 0;
-  overflow: hidden;
-  padding: 0 0.5rem;
+  background: transparent;
+  padding: 0;
   box-shadow: none;
+  height: 0;
+  position: absolute;
+  display: block;
+  overflow: hidden;
   min-width: 10rem;
-}
-.nav-bar.expanded {
-  height: 16rem;
-  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
-  padding: 0.5rem;
+  width: 15rem;
 }
 @media (min-width: 40rem) {
   .nav-bar {
+    height: auto;
     position: static;
+    width: auto;
     display: flex;
     gap: 1.5rem;
-    background: transparent;
-    box-shadow: none;
+  }
+}
+.nav-bar.expanded {
+  height: 20rem;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  background: #303641;
+  opacity: 0.9;
+}
+@media (min-width: 40rem) {
+  .nav-bar.expanded {
     height: auto;
+    box-shadow: none;
+    padding: 0;
+    background: transparent;
+    opacity: 1;
   }
 }
 .nav-bar > ul {
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
 @media (min-width: 40rem) {
   .nav-bar > ul {
+    gap: 1rem;
     display: flex;
     align-items: center;
     flex-direction: row;
