@@ -29,6 +29,7 @@ import "./App.css";
 
 function App() {
   const { token, login, userId } = useAuth();
+  console.log("token->", token);
 
   return (
 <<<<<<< HEAD
@@ -60,14 +61,21 @@ function App() {
       }}
     >
       <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
-        <Route path="/sistems">
-          <MainHeader />
-          <QuickView />
-        </Route>
-        {/* <DetailedView /> */}
+        {/* available paths when not login  */}
+        {!token && (
+          <Route path="/login">
+            <Login />
+          </Route>
+        )}
+
+        {/* available paths when login  */}
+        {token && (
+          <Route path="/sistems">
+            <MainHeader />
+            <QuickView />
+            {/* <DetailedView /> */}
+          </Route>
+        )}
         <Route path="*" exact>
           <h1>Page Not found</h1>
         </Route>
