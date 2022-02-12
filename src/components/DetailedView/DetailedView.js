@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./DetailedView.module.css";
+import { useParams } from "react-router-dom";
 
 import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
@@ -7,7 +7,11 @@ import DataContainer from "../../pages/QuickView/Data/Data";
 import Tank from "./Tank/Tank";
 import Pump from "./Pump/Pump";
 
+import classes from "./DetailedView.module.css";
+
 const DetailedView = () => {
+  const params = useParams();
+  console.log(params.sysId);
   return (
     <>
       <section className={classes.background} />

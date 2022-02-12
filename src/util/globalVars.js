@@ -1,1 +1,1 @@
-export const PROJECT_ID = 'DrillingSistems';
+export const VAR_PROJECT_ID = 'DrillingSistems';

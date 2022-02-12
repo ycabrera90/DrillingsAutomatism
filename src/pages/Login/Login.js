@@ -1,8 +1,9 @@
 import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import useInput from "../../hooks/use-input";
-import AuthContext from "../../context/auth-context";
+import { authActions } from "../../store/auth-slice";
 
 import LoginModal from "./LoginModal/LoginModal";
 import LoginInput from "./LoginInput/LoginInput";
@@ -12,8 +13,10 @@ import SpyLogo from "../../components/UI/SpyLogo/SpyLogo";
 import classes from "./Login.module.css";
 
 const Login = () => {
+  const dispatch = useDispatch();
+  // const auth = useSelector((state) => state.auth);
   const history = useHistory();
-  const auth = useContext(AuthContext);
+  // const auth = useContext(AuthContext);
   const {
     value: user,
     isValid: userIsValid,
@@ -63,7 +66,7 @@ const Login = () => {
         email: "yosniel.ch@gmail.com",
         token: "thisIsMyTokenID",
       };
-      auth.login(responseData.userId, responseData.token);
+      dispatch(authActions.login(responseData));
       history.push("/sistems");
     } catch (err) {
       alert("the login fail");
