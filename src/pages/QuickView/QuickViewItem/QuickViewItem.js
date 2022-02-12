@@ -9,7 +9,7 @@ import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
 
 const QuickViewItem = (props) => {
-  const { claims, title, workinkMode, measures } = props.data;
+  const { id, claims, title, workinkMode, measures } = props.data;
 
   const { status: areActiveClaims, amount: amountOfActiveClaims } =
     claims.reduce(
@@ -43,7 +43,7 @@ const QuickViewItem = (props) => {
   return (
     <article className={classes["item-container"]}>
       <header>
-        <h1>{title}</h1>
+        <h1 onClick={props.onClick.bind(null, id)}>{title}</h1>
         <span>{workinkMode}</span>
         {areActiveClaims && (
           <span className={classes["claim-badge"]}>{amountOfActiveClaims}</span>
