@@ -27,12 +27,12 @@ export const useAuth = () => {
     );
   }, []);
 
-  // const logout = useCallback(() => {
-  //   setToken(null);
-  //   setTokenExpirationDate(null);
-  //   setUserId(null);
-  //   localStorage.removeItem('userData');
-  // }, []);
+  const logout = useCallback(() => {
+    setToken(null);
+    // setTokenExpirationDate(null);
+    setUserId(null);
+    localStorage.removeItem(`${PROJECT_ID}__userData`);
+  }, []);
 
   // useEffect(() => {
   //   if (token && tokenExpirationDate) {
@@ -55,10 +55,8 @@ export const useAuth = () => {
     ) {
       // login(storedData.userId, storedData.token, new Date(storedData.expiration));
       login(storedData.userId, storedData.token);
-    } else {
-      setToken(false);
     }
   }, [login]);
 
-  return { token, login, userId };
+  return { token, login, logout, userId };
 };

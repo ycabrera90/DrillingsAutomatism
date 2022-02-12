@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./MainNav.module.css";
 
 import MainNavItem from "./MainNavItem/MainNavItem";
 import MainNavButton from "./MainNavButton/MainNavButton";
+import AuthContext from "../../../context/auth-context";
 
 const MainNav = (props) => {
   const { isExpanded } = props;
+  const auth = useContext(AuthContext);
 
   const navBarClasses = isExpanded
     ? `${classes["nav-bar"]} ${classes["expanded"]}`
@@ -23,6 +25,10 @@ const MainNav = (props) => {
     "Ayuda",
   ];
 
+  const onLogoutButtonHandler = () => {
+    auth.logout();
+  };
+
   return (
     <>
       <div className={backdropClasses} onClick={props.onBackdropClick}></div>
@@ -32,7 +38,7 @@ const MainNav = (props) => {
             <MainNavItem key={`${item}_${Math.random()}`}>{item}</MainNavItem>
           ))}
         </ul>
-        <MainNavButton />
+        <MainNavButton onClick={onLogoutButtonHandler} />
       </nav>
     </>
   );

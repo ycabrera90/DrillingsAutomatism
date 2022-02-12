@@ -35,7 +35,7 @@ import "./App.css";
 
 function App() {
   const [firstMount, setFirstMount] = React.useState(true);
-  const { token, login, userId } = useAuth();
+  const { token, login, logout, userId } = useAuth();
 
   const isLoggedIn = !!token;
 
@@ -69,7 +69,8 @@ function App() {
         isLoggedIn: !!token,
         token: token,
         userId: userId,
-        login: login,
+        login,
+        logout,
       }}
     >
       {!firstMount && (

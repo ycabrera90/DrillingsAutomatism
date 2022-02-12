@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./MainNavButton.module.css";
 
-const MainNavButton = () => {
+const MainNavButton = (props) => {
   return (
-    <button className={classes["main-nav__button"]}>
+    <button className={classes["main-nav__button"]} onClick={props.onClick}>
       <span>YC</span>
     </button>
   );
