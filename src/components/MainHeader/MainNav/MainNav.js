@@ -1,13 +1,16 @@
 import React, { useContext } from "react";
 import classes from "./MainNav.module.css";
+import { useDispatch } from "react-redux";
 
 import MainNavItem from "./MainNavItem/MainNavItem";
 import MainNavButton from "./MainNavButton/MainNavButton";
-import AuthContext from "../../../context/auth-context";
+// import AuthContext from "../../../context/auth-context";
+import { authActions } from "../../../store/auth-slice";
 
 const MainNav = (props) => {
   const { isExpanded } = props;
-  const auth = useContext(AuthContext);
+  const dispatch = useDispatch();
+  // const auth = useContext(AuthContext);
 
   const navBarClasses = isExpanded
     ? `${classes["nav-bar"]} ${classes["expanded"]}`
@@ -26,7 +29,7 @@ const MainNav = (props) => {
   ];
 
   const onLogoutButtonHandler = () => {
-    auth.logout();
+    dispatch(authActions.logout());
   };
 
   return (
