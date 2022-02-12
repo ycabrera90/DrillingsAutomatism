@@ -9,7 +9,8 @@ export const useAuth = () => {
   // const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
 
-  const login = useCallback((uid, token, expirationDate) => {
+  // const login = useCallback((uid, token, expirationDate) => {
+  const login = useCallback((uid, token) => {
     setToken(token);
     setUserId(uid);
     // const tokenExpirationDate =
@@ -42,16 +43,20 @@ export const useAuth = () => {
   //   }
   // }, [token, logout, tokenExpirationDate]);
 
-  // useEffect(() => {
-  //   const storedData = JSON.parse(localStorage.getItem('userData'));
-  //   if (
-  //     storedData &&
-  //     storedData.token &&
-  //     new Date(storedData.expiration) > new Date()
-  //   ) {
-  //     login(storedData.userId, storedData.token, new Date(storedData.expiration));
-  //   }
-  // }, [login]);
+  // login after reload page
+  useEffect(() => {
+    const storedData = JSON.parse(
+      localStorage.getItem(`${PROJECT_ID}__userData`)
+    );
+    if (
+      storedData &&
+      storedData.token
+      // new Date(storedData.expiration) > new Date()
+    ) {
+      // login(storedData.userId, storedData.token, new Date(storedData.expiration));
+      login(storedData.userId, storedData.token);
+    }
+  }, [login]);
 
   return { token, login, userId };
 };

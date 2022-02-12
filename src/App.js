@@ -15,7 +15,7 @@ import "./App.css";
 =======
 >>>>>>> 56ac826 (the context for auth was added)
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 import { useAuth } from "./hooks/use-auth";
 
@@ -76,8 +76,11 @@ function App() {
             {/* <DetailedView /> */}
           </Route>
         )}
-        <Route path="*" exact>
-          <h1>Page Not found</h1>
+
+        {/* not found path  */}
+        <Route path="*">
+          {!token && <Redirect to="/login" />}
+          {token && <Redirect to="/sistems" />}
         </Route>
       </Switch>
     </AuthContext.Provider>
