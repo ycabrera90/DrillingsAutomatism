@@ -1,6 +1,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 
@@ -16,6 +17,10 @@ import "./App.css";
 >>>>>>> 56ac826 (the context for auth was added)
 import React from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
+=======
+import React, { useState, useEffect } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+>>>>>>> 429efe3 (the DetaiedView was added)
 
 import { useAuth } from "./hooks/use-auth";
 
@@ -24,12 +29,19 @@ import MainHeader from "./components/MainHeader/MainHeader";
 import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
 import AuthContext from "./context/auth-context";
+import LayOut from "./components/UI/LayOut/LayOut";
 
 import "./App.css";
 
 function App() {
+  const [firstMount, setFirstMount] = React.useState(true);
   const { token, login, userId } = useAuth();
-  console.log("token->", token);
+
+  const isLoggedIn = !!token;
+
+  useEffect(() => {
+    setFirstMount(false);
+  }, []);
 
   return (
 <<<<<<< HEAD
@@ -60,29 +72,38 @@ function App() {
         login: login,
       }}
     >
-      <Switch>
-        {/* available paths when not login  */}
-        {!token && (
-          <Route path="/login">
-            <Login />
-          </Route>
-        )}
+      {!firstMount && (
+        <BrowserRouter>
+          {/* avalaible paths when not login */}
+          {!isLoggedIn && (
+            <Switch>
+              <Route path="/login" exact>
+                <Login />
+              </Route>
+              <Route path="*" exact>
+                <Redirect to="/login" />
+              </Route>
+            </Switch>
+          )}
 
-        {/* available paths when login  */}
-        {token && (
-          <Route path="/sistems">
-            <MainHeader />
-            <QuickView />
-            {/* <DetailedView /> */}
-          </Route>
-        )}
-
-        {/* not found path  */}
-        <Route path="*">
-          {!token && <Redirect to="/login" />}
-          {token && <Redirect to="/sistems" />}
-        </Route>
-      </Switch>
+          {/* avalaible paths when login */}
+          {isLoggedIn && (
+            <LayOut>
+              <Switch>
+                <Route path="/sistems" exact>
+                  <QuickView />
+                </Route>
+                <Route path="/sistems/:sysId" exact>
+                  <DetailedView />
+                </Route>
+                <Route path="*" exact>
+                  <Redirect to="/sistems" />
+                </Route>
+              </Switch>
+            </LayOut>
+          )}
+        </BrowserRouter>
+      )}
     </AuthContext.Provider>
 >>>>>>> 56ac826 (the context for auth was added)
   );

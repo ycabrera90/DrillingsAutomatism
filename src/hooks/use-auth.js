@@ -5,7 +5,7 @@ import { PROJECT_ID } from "../util/globalVars";
 // let logoutTimer;
 
 export const useAuth = () => {
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState(null);
   // const [tokenExpirationDate, setTokenExpirationDate] = useState();
   const [userId, setUserId] = useState(false);
 
@@ -55,6 +55,8 @@ export const useAuth = () => {
     ) {
       // login(storedData.userId, storedData.token, new Date(storedData.expiration));
       login(storedData.userId, storedData.token);
+    } else {
+      setToken(false);
     }
   }, [login]);
 
