@@ -6,7 +6,7 @@ const localStorageDrive = {
   },
 
   delValue(key) {
-    localStorage.setItem(`${VAR_PROJECT_ID}__${key}`);
+    localStorage.removeItem(`${VAR_PROJECT_ID}__${key}`);
   },
 };
 

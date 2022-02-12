@@ -20,30 +20,33 @@ import { Route, Switch, Redirect } from "react-router-dom";
 =======
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+<<<<<<< HEAD
 >>>>>>> 429efe3 (the DetaiedView was added)
+=======
+import { useSelector } from "react-redux";
+>>>>>>> ec4f3f4 (A bug in localStorageDriver was fixed)
 
-import { useAuth } from "./hooks/use-auth";
+// import { useAuth } from "./hooks/use-auth";
 
 import Login from "./pages/Login/Login";
 import MainHeader from "./components/MainHeader/MainHeader";
 import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
-import AuthContext from "./context/auth-context";
+// import AuthContext from "./context/auth-context";
 import LayOut from "./components/UI/LayOut/LayOut";
 
 import "./App.css";
 
 function App() {
-  const [firstMount, setFirstMount] = React.useState(true);
-  const { token, login, logout, userId } = useAuth();
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  // console.log(auth);
+  // const { token, login, logout, userId } = useAuth();
 
-  const isLoggedIn = !!token;
-
-  useEffect(() => {
-    setFirstMount(false);
-  }, []);
+  // const isLoggedIn = !!token;
+  // const isLoggedIn = false;
 
   return (
+<<<<<<< HEAD
 <<<<<<< HEAD
     <Switch>
       <Route path="/login">
@@ -107,6 +110,38 @@ function App() {
       )}
     </AuthContext.Provider>
 >>>>>>> 56ac826 (the context for auth was added)
+=======
+    <BrowserRouter>
+      {/* avalaible paths when not login */}
+      {!isLoggedIn && (
+        <Switch>
+          <Route path="/login" exact>
+            <Login />
+          </Route>
+          <Route path="*" exact>
+            <Redirect to="/login" />
+          </Route>
+        </Switch>
+      )}
+
+      {/* avalaible paths when login */}
+      {isLoggedIn && (
+        <LayOut>
+          <Switch>
+            <Route path="/sistems" exact>
+              <QuickView />
+            </Route>
+            <Route path="/sistems/:sysId" exact>
+              <DetailedView />
+            </Route>
+            <Route path="*" exact>
+              <Redirect to="/sistems" />
+            </Route>
+          </Switch>
+        </LayOut>
+      )}
+    </BrowserRouter>
+>>>>>>> ec4f3f4 (A bug in localStorageDriver was fixed)
   );
 }
 
