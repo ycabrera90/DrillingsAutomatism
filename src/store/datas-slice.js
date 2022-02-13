@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const DUMMY_DATAS = [
   {
     id: "p1",
-    title: "RIVPERF22-PERF 01",
+    title: "RIVPERF22222-PERF 01",
     workinkMode: "AUTO",
     pumpSt: true,
     claims: [
@@ -78,7 +78,7 @@ const DUMMY_DATAS = [
   },
 ];
 
-const initialState = [];
+const initialState = { systemDatas: null };
 
 const data = createSlice({
   name: "data",
@@ -86,7 +86,7 @@ const data = createSlice({
   reducers: {
     fecthData(state) {
       // fetch datas from the server
-      state = DUMMY_DATAS;
+      state.systemDatas = DUMMY_DATAS;
     },
   },
 });
