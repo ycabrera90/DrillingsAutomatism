@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
 
@@ -25,7 +26,13 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 =======
 import { useSelector } from "react-redux";
 >>>>>>> ec4f3f4 (A bug in localStorageDriver was fixed)
+=======
+import React, { useEffect } from "react";
+import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+>>>>>>> 9b66f53 (the data of store was passed into the quickView Page)
 
+import { dataActions } from "./store/datas-slice";
 import Login from "./pages/Login/Login";
 import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
@@ -35,6 +42,13 @@ import "./App.css";
 
 function App() {
   const { isLoggedIn } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+
+  // Load datas when the app start
+  useEffect(() => {
+    dispatch(dataActions.fecthData());
+  }, []);
+
   return (
 <<<<<<< HEAD
 <<<<<<< HEAD
