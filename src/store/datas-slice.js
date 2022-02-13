@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const DUMMY_DATAS = [
   {
     id: "p1",
-    title: "RIVPERF22222-PERF 01",
+    title: "RIVPERF22-PERF 01",
     workinkMode: "AUTO",
     pumpSt: true,
     claims: [

@@ -2,13 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import localStorageDrive from "../util/localStorageDriver";
 
-const initialState = {
+let initialState = {
   isLoggedIn: false,
   userId: null,
   token: null,
   login: () => {},
   logout: () => {},
 };
+
+const localStorageData = localStorageDrive.getValue("userData");
+if (localStorageData) {
+  const { isLoggedIn, userId, token } = localStorageData;
+  initialState.isLoggedIn = isLoggedIn;
+  initialState.userId = userId;
+  initialState.token = token;
+}
 
 const authSlice = createSlice({
   name: "auth",
@@ -23,6 +31,7 @@ const authSlice = createSlice({
       localStorageDrive.setValue("userData", {
         userId,
         token,
+        isLoggedIn: true,
       });
     },
     logout(state) {
