@@ -26,7 +26,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 >>>>>>> ec4f3f4 (A bug in localStorageDriver was fixed)
 
-
 import Login from "./pages/Login/Login";
 import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";

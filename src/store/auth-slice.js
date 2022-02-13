@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import localStorageDrive from "../util/localStorageDriver";
 
-const initialAuthState = {
+const initialState = {
   isLoggedIn: false,
   userId: null,
   token: null,
@@ -12,7 +12,7 @@ const initialAuthState = {
 
 const authSlice = createSlice({
   name: "auth",
-  initialState: initialAuthState,
+  initialState,
   reducers: {
     login(state, { payload }) {
       const { userId, token } = payload;
