@@ -26,25 +26,16 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 >>>>>>> ec4f3f4 (A bug in localStorageDriver was fixed)
 
-// import { useAuth } from "./hooks/use-auth";
 
 import Login from "./pages/Login/Login";
-import MainHeader from "./components/MainHeader/MainHeader";
 import QuickView from "./pages/QuickView/QuickView";
 import DetailedView from "./components/DetailedView/DetailedView";
-// import AuthContext from "./context/auth-context";
 import LayOut from "./components/UI/LayOut/LayOut";
 
 import "./App.css";
 
 function App() {
   const { isLoggedIn } = useSelector((state) => state.auth);
-  // console.log(auth);
-  // const { token, login, logout, userId } = useAuth();
-
-  // const isLoggedIn = !!token;
-  // const isLoggedIn = false;
-
   return (
 <<<<<<< HEAD
 <<<<<<< HEAD
