@@ -1,16 +1,16 @@
-import { VAR_PROJECT_ID } from "../util/globalVars";
+const PROJECT_ID = process.env.REACT_APP_PROJECT_ID;
 
 const localStorageDrive = {
   getValue(key) {
-    return JSON.parse(localStorage.getItem(`${VAR_PROJECT_ID}__${key}`));
+    return JSON.parse(localStorage.getItem(`${PROJECT_ID}__${key}`));
   },
 
   setValue(key, value = null) {
-    localStorage.setItem(`${VAR_PROJECT_ID}__${key}`, JSON.stringify(value));
+    localStorage.setItem(`${PROJECT_ID}__${key}`, JSON.stringify(value));
   },
 
   delValue(key) {
-    localStorage.removeItem(`${VAR_PROJECT_ID}__${key}`);
+    localStorage.removeItem(`${PROJECT_ID}__${key}`);
   },
 };
 

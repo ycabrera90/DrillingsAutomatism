@@ -1,1 +1,0 @@
-export const VAR_PROJECT_ID = 'DrillingSistems';
