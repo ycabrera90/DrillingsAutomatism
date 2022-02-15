@@ -6,8 +6,6 @@ let initialState = {
   isLoggedIn: false,
   userId: null,
   token: null,
-  login: () => {},
-  logout: () => {},
 };
 
 const localStorageData = localStorageDrive.getValue("userData");

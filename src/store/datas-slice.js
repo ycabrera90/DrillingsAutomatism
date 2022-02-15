@@ -78,7 +78,7 @@ const DUMMY_DATAS = [
   },
 ];
 
-const initialState = { systemDatas: null };
+const initialState = { systemDatas: [] };
 
 const data = createSlice({
   name: "data",

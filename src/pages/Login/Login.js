@@ -53,8 +53,6 @@ const Login = () => {
     resetPasswordInput();
 
     try {
-      console.log("LoggedIn");
-      console.log({ user, password });
       // fetch data to backend and the answer is
       // {
       //   userId: existingUser.id,
