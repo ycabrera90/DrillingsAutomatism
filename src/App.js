@@ -41,8 +41,11 @@ import LayOut from "./components/UI/LayOut/LayOut";
 import "./App.css";
 
 function App() {
-  const { isLoggedIn } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
+  const { isLoggedIn } = useSelector((state) => state.auth);
+  const { systemDatas } = useSelector((state) => state.data);
+
+  const isSystemDatasEmpty = systemDatas.length === 0;
 
   // Load datas when the app start
   useEffect(() => {
@@ -129,7 +132,7 @@ function App() {
       )}
 
       {/* avalaible paths when login */}
-      {isLoggedIn && (
+      {isLoggedIn && !isSystemDatasEmpty && (
         <LayOut>
           <Switch>
             <Route path="/sistems" exact>

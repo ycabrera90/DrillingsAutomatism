@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Redirect } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
@@ -10,8 +11,17 @@ import Pump from "./Pump/Pump";
 import classes from "./DetailedView.module.css";
 
 const DetailedView = () => {
-  const params = useParams();
-  console.log(params.sysId);
+  const { sysId } = useParams();
+  const systemDatas = useSelector((state) => state.data.systemDatas);
+
+  const filteredData = systemDatas.filter((item) => item.id === sysId)[0];
+  if (systemDatas.length !== 0 && !filteredData) {
+    return <Redirect to="/systems" />;
+  }
+
+  const { id, title, workinkMode, pumpSt, claims } = filteredData;
+  console.log(filteredData);
+
   return (
     <>
       <section className={classes.background} />
@@ -57,7 +67,7 @@ const DetailedView = () => {
         <CardContainer
           className={classes["ctrl-container"]}
           data={{
-            title: "RIVPERF01 - PERF. MEVIR",
+            title: title,
             date: "10/10/2022 21:41",
             isTx: true,
           }}

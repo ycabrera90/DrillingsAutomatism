@@ -14,9 +14,7 @@ import classes from "./Login.module.css";
 
 const Login = () => {
   const dispatch = useDispatch();
-  // const auth = useSelector((state) => state.auth);
   const history = useHistory();
-  // const auth = useContext(AuthContext);
   const {
     value: user,
     isValid: userIsValid,
