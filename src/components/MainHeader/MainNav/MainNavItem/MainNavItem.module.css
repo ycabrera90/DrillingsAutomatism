@@ -6,7 +6,7 @@
   color: inherit;
 }
 @media (min-width: 40rem) {
-  .main-nav_item > a:hover {
+  .main-nav_item > a:hover, .main-nav_item > a.active {
     border-bottom: #fefffb 2px solid;
     border-radius: 4px;
   }

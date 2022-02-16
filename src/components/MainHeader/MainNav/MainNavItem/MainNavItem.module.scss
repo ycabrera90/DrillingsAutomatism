@@ -4,7 +4,8 @@
     text-decoration: none;
     color: inherit;
 
-    &:hover {
+    &:hover,
+    &.active {
       @media (min-width: 40rem) {
         border-bottom: #fefffb 2px solid;
         border-radius: 4px;

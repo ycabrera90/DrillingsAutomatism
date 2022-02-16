@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 
 import MainNavItem from "./MainNavItem/MainNavItem";
 import MainNavButton from "./MainNavButton/MainNavButton";
-// import AuthContext from "../../../context/auth-context";
 import { authActions } from "../../../store/auth-slice";
+import { keyGen } from "../../../util/keyGen";
 
 const MainNav = (props) => {
   const { isExpanded } = props;
@@ -21,11 +21,10 @@ const MainNav = (props) => {
     : `${classes["backdrop"]}`;
 
   const mainNavItems = [
-    "Servicios",
-    "Listado",
-    "Sistemas",
-    "Históricos",
-    "Ayuda",
+    { title: "Servicios", path: "/services" },
+    { title: "Sistemas", path: "/sistems" },
+    { title: "Históricos", path: "/history" },
+    { title: "Ayuda", path: "/help" },
   ];
 
   const onLogoutButtonHandler = () => {
@@ -38,7 +37,9 @@ const MainNav = (props) => {
       <nav className={navBarClasses}>
         <ul>
           {mainNavItems.map((item) => (
-            <MainNavItem key={`${item}_${Math.random()}`}>{item}</MainNavItem>
+            <MainNavItem key={keyGen()} to={item.path}>
+              {item.title}
+            </MainNavItem>
           ))}
         </ul>
         <MainNavButton onClick={onLogoutButtonHandler} />
