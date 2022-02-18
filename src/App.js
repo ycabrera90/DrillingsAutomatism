@@ -45,7 +45,7 @@ function App() {
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { systemDatas } = useSelector((state) => state.data);
 
-  const isSystemDatasEmpty = systemDatas.length === 0;
+  const isSystemDatasEmpty = Object.keys(systemDatas).length === 0;
 
   // Load datas when the app start
   useEffect(() => {
@@ -136,10 +136,10 @@ function App() {
         <LayOut>
           <Switch>
             <Route path="/sistems" exact>
-              <QuickView />
+              {/* <QuickView /> */}
             </Route>
             <Route path="/sistems/:sysId" exact>
-              <DetailedView />
+              {/* <DetailedView /> */}
             </Route>
             <Route path="*" exact>
               <Redirect to="/sistems" />
