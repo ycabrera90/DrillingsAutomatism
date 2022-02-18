@@ -47,6 +47,7 @@ function App() {
 
   const isSystemDatasEmpty = Object.keys(systemDatas).length === 0;
 
+
   // Load datas when the app start
   useEffect(() => {
     dispatch(dataActions.fecthData());
@@ -136,7 +137,7 @@ function App() {
         <LayOut>
           <Switch>
             <Route path="/sistems" exact>
-              {/* <QuickView /> */}
+              <QuickView />
             </Route>
             <Route path="/sistems/:sysId" exact>
               {/* <DetailedView /> */}

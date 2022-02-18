@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "./QuickViewItem.module.css";
 
+import { keyGen } from "../../../util/keyGen";
+
 import { BsCheckCircle } from "react-icons/bs";
 import { FaFlagCheckered } from "react-icons/fa";
 import ItemImage from "../ItemImage/ItemImage";
@@ -9,7 +11,7 @@ import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
 
 const QuickViewItem = (props) => {
-  const { id, claims, title, workinkMode, measures } = props.data;
+   const {systemName, service, claims,  drill, tank } = props.data;
 
   const { status: areActiveClaims, amount: amountOfActiveClaims } =
     claims.reduce(
@@ -20,20 +22,18 @@ const QuickViewItem = (props) => {
       { status: false, amount: 0 }
     );
 
-  let renderId = 0;
-
-  const tankMeasuresItems = measures.tank.map((item) => (
+  const tankMeasuresItems = tank.measures.map((item) => (
     <Data
-      key={renderId++}
+      key={keyGen()}
       title={item.title}
       value={item.value}
       unit={item.unit}
     />
   ));
 
-  const drillMeasuresItems = measures.drill.map((item) => (
+  const drillMeasuresItems = drill.measures.map((item) => (
     <Data
-      key={renderId++}
+      key={keyGen()}
       title={item.title}
       value={item.value}
       unit={item.unit}
@@ -43,8 +43,8 @@ const QuickViewItem = (props) => {
   return (
     <article className={classes["item-container"]}>
       <header>
-        <h1 onClick={props.onClick.bind(null, id)}>{title}</h1>
-        <span>{workinkMode}</span>
+        <h1 onClick={props.onClick.bind(null, props.sysId)}>{systemName}</h1>
+        <span>{drill.workingMode}</span>
         {areActiveClaims && (
           <span className={classes["claim-badge"]}>{amountOfActiveClaims}</span>
         )}

@@ -6,18 +6,23 @@ import QuickViewItem from "./QuickViewItem/QuickViewItem";
 import classes from "./QuickView.module.css";
 
 const QuickView = (props) => {
-  const systemDatas = useSelector((state) => state);
+  const systemDatas = useSelector((state) => state.data.systemDatas);
   const history = useHistory();
-
-  console.log("QuickView.js: systemDatas", systemDatas);
 
   const onItemClickHandler = (itemId) => {
     history.push(`/sistems/${itemId}`);
   };
 
-  const quickviewItems = systemDatas.map((item) => (
-    <QuickViewItem key={item.id} data={item} onClick={onItemClickHandler} />
-  ));
+  const quickviewItems = Object.entries(systemDatas).map(
+    ([sysId, datas]) => (
+      <QuickViewItem
+        key={sysId}
+        id={sysId}
+        data={datas}
+        onClick={onItemClickHandler}
+      />
+    )
+  );
 
   return (
     <>

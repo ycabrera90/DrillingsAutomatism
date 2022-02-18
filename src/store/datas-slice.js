@@ -38,7 +38,7 @@ const DUMMY_SYSTEMS = {
     service: "Moirones",
     claims: [
       { id: "c1", active: true },
-      { id: "c2", active: true },
+      { id: "c2", active: false },
     ],
 
     drill: {
