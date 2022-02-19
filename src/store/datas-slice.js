@@ -15,26 +15,21 @@ const DUMMY_SYSTEMS = {
       dateData: "10/10/2022 21:41",
       workinkMode: "AUTO",
       pumpSt: true,
-      measures: [
-        { title: "Presión", value: 1.25, unit: "bar" },
-        { title: "Caudal", value: 15.2, unit: "m3/h" },
-        { title: "Nivel del pozo", value: -12, unit: "m" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        ps: { title: "Presión", value: 1.25, unit: "bar" },
+        cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
+        dl: { title: "Nivel del pozo", value: -12, unit: "m" },
+      },
     },
 
     tank: {
       name: "Tanque de Moirones 1",
       dateData: "10/10/2022 21:41",
-      measures: [
-        { title: "Altura", value: 1.61, unit: "mts" },
-        { title: "Porciento", value: 28.3, unit: "%" },
-        { title: "Volumen", value: 22, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        htq: { title: "Altura", value: 1.61, unit: "mts" },
+        prc: { title: "Porciento", value: 28.3, unit: "%" },
+        vol: { title: "Volumen", value: 22, unit: "m3" },
+      },
     },
   },
   p2: {
@@ -50,26 +45,21 @@ const DUMMY_SYSTEMS = {
       dateData: "10/10/2022 21:41",
       workinkMode: "LOCAL",
       pumpSt: false,
-      measures: [
-        { title: "Presión", value: 1.25, unit: "bar" },
-        { title: "Caudal", value: 15.2, unit: "m3/h" },
-        { title: "Nivel del pozo", value: -12, unit: "m" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        ps: { title: "Presión", value: 1.25, unit: "bar" },
+        cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
+        dl: { title: "Nivel del pozo", value: -12, unit: "m" },
+      },
     },
 
     tank: {
       name: "Tanque de Moirones 2",
       dateData: "10/10/2022 21:41",
-      measures: [
-        { title: "Altura", value: 1.61, unit: "mts" },
-        { title: "Porciento", value: 28.3, unit: "%" },
-        { title: "Volumen", value: 22, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        htq: { title: "Altura", value: 1.61, unit: "mts" },
+        prc: { title: "Porciento", value: 28.3, unit: "%" },
+        vol: { title: "Volumen", value: 22, unit: "m3" },
+      },
     },
   },
   p3: {
@@ -81,26 +71,21 @@ const DUMMY_SYSTEMS = {
       dateData: "10/10/2022 21:41",
       workinkMode: "REMOTO",
       pumpSt: true,
-      measures: [
-        { title: "Presión", value: 1.25, unit: "bar" },
-        { title: "Caudal", value: 15.2, unit: "m3/h" },
-        { title: "Nivel del pozo", value: -12, unit: "m" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        ps: { title: "Presión", value: 1.25, unit: "bar" },
+        cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
+        dl: { title: "Nivel del pozo", value: -12, unit: "m" },
+      },
     },
 
     tank: {
       name: "Tanque de Moirones 3",
       dateData: "10/10/2022 21:41",
-      measures: [
-        { title: "Altura", value: 1.61, unit: "mts" },
-        { title: "Porciento", value: 28.3, unit: "%" },
-        { title: "Volumen", value: 22, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-        { title: "Dummy", value: 11, unit: "m3" },
-      ],
+      measures: {
+        htq: { title: "Altura", value: 1.61, unit: "mts" },
+        prc: { title: "Porciento", value: 28.3, unit: "%" },
+        vol: { title: "Volumen", value: 22, unit: "m3" },
+      },
     },
   },
 };

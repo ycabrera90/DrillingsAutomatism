@@ -11,7 +11,7 @@ import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
 
 const QuickViewItem = (props) => {
-   const {systemName, service, claims,  drill, tank } = props.data;
+  const { systemName, service, claims, drill, tank } = props.data;
 
   const { status: areActiveClaims, amount: amountOfActiveClaims } =
     claims.reduce(
@@ -22,23 +22,30 @@ const QuickViewItem = (props) => {
       { status: false, amount: 0 }
     );
 
-  const tankMeasuresItems = tank.measures.map((item) => (
-    <Data
-      key={keyGen()}
-      title={item.title}
-      value={item.value}
-      unit={item.unit}
-    />
-  ));
+  const tankMeasuresItems = Object.entries(tank.measures).map(
+    ([key, item]) => (
+      console.log(item),
+      (
+        <Data
+          key={keyGen()}
+          title={item.title}
+          value={item.value}
+          unit={item.unit}
+        />
+      )
+    )
+  );
 
-  const drillMeasuresItems = drill.measures.map((item) => (
-    <Data
-      key={keyGen()}
-      title={item.title}
-      value={item.value}
-      unit={item.unit}
-    />
-  ));
+  const drillMeasuresItems = Object.entries(drill.measures).map(
+    ([key, item]) => (
+      <Data
+        key={keyGen()}
+        title={item.title}
+        value={item.value}
+        unit={item.unit}
+      />
+    )
+  );
 
   return (
     <article className={classes["item-container"]}>
