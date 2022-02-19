@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const DUMMY_SYSTEMS = {
   p1: {
     systemName: "RIVPERF22-PERF 01",
+    dateData: "10/10/2022 21:41",
     service: "Moirones",
     claims: [
       { id: "c1", active: true },
@@ -10,7 +11,8 @@ const DUMMY_SYSTEMS = {
     ],
 
     drill: {
-      drillName: "PERF 01",
+      name: "PERF 01",
+      dateData: "10/10/2022 21:41",
       workinkMode: "AUTO",
       pumpSt: true,
       measures: [
@@ -23,6 +25,8 @@ const DUMMY_SYSTEMS = {
     },
 
     tank: {
+      name: "Tanque de Moirones 1",
+      dateData: "10/10/2022 21:41",
       measures: [
         { title: "Altura", value: 1.61, unit: "mts" },
         { title: "Porciento", value: 28.3, unit: "%" },
@@ -42,7 +46,8 @@ const DUMMY_SYSTEMS = {
     ],
 
     drill: {
-      drillName: "PERF 02",
+      name: "PERF 02",
+      dateData: "10/10/2022 21:41",
       workinkMode: "LOCAL",
       pumpSt: false,
       measures: [
@@ -55,6 +60,8 @@ const DUMMY_SYSTEMS = {
     },
 
     tank: {
+      name: "Tanque de Moirones 2",
+      dateData: "10/10/2022 21:41",
       measures: [
         { title: "Altura", value: 1.61, unit: "mts" },
         { title: "Porciento", value: 28.3, unit: "%" },
@@ -70,7 +77,8 @@ const DUMMY_SYSTEMS = {
     service: "Moirones",
     claims: [],
     drill: {
-      drillName: "RIVPERF22",
+      name: "RIVPERF22",
+      dateData: "10/10/2022 21:41",
       workinkMode: "REMOTO",
       pumpSt: true,
       measures: [
@@ -83,6 +91,8 @@ const DUMMY_SYSTEMS = {
     },
 
     tank: {
+      name: "Tanque de Moirones 3",
+      dateData: "10/10/2022 21:41",
       measures: [
         { title: "Altura", value: 1.61, unit: "mts" },
         { title: "Porciento", value: 28.3, unit: "%" },

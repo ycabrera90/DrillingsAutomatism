@@ -43,7 +43,7 @@ const QuickViewItem = (props) => {
   return (
     <article className={classes["item-container"]}>
       <header>
-        <h1 onClick={props.onClick.bind(null, props.sysId)}>{systemName}</h1>
+        <h1 onClick={props.onClick.bind(null, props.id)}>{systemName}</h1>
         <span>{drill.workingMode}</span>
         {areActiveClaims && (
           <span className={classes["claim-badge"]}>{amountOfActiveClaims}</span>

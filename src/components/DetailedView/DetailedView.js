@@ -12,21 +12,29 @@ import classes from "./DetailedView.module.css";
 
 const DetailedView = () => {
   const { sysId } = useParams();
-  const systemDatas = useSelector((state) => state.data.systemDatas);
+  const systemData = useSelector((state) => state.data.systemDatas[sysId]);
 
-  const filteredData = systemDatas.filter((item) => item.id === sysId)[0];
-  if (systemDatas.length !== 0 && !filteredData) {
-    return <Redirect to="/systems" />;
+  console.log(systemData);
+
+  if (!systemData) {
+    return <Redirect to="/sistems" />;
   }
 
-  const { id, title, workinkMode, pumpSt, claims } = filteredData;
-  console.log(filteredData);
+  const { systemName, service, claims, drill, tank } = systemData;
+
+  // const filteredData = systemDatas.filter((item) => item.id === sysId)[0];
+  // if (systemDatas.length !== 0 && !filteredData) {
+  //   return <Redirect to="/systems" />;
+  // }
+
+  // const { id, title, workinkMode, pumpSt, claims } = filteredData;
+  // console.log(filteredData);
 
   return (
     <>
       <section className={classes.background} />
       <header className={classes["detailed-view--header"]}>
-        <h1>MOIRONES</h1>
+        <h1>{service}</h1>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="20"
@@ -42,8 +50,8 @@ const DetailedView = () => {
         <CardContainer
           className={classes["ref-container"]}
           data={{
-            title: "RIVPERF21 - TQ MOIRONES",
-            date: "10/10/2022 21:41",
+            title: tank.name,
+            date: tank.dateData,
             isTx: true,
           }}
         >
@@ -67,8 +75,8 @@ const DetailedView = () => {
         <CardContainer
           className={classes["ctrl-container"]}
           data={{
-            title: title,
-            date: "10/10/2022 21:41",
+            title: drill.name,
+            date: drill.dateData,
             isTx: true,
           }}
         >

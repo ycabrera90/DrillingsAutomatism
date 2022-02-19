@@ -140,7 +140,7 @@ function App() {
               <QuickView />
             </Route>
             <Route path="/sistems/:sysId" exact>
-              {/* <DetailedView /> */}
+              <DetailedView />
             </Route>
             <Route path="*" exact>
               <Redirect to="/sistems" />
