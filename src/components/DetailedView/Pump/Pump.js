@@ -1,12 +1,11 @@
 import React from "react";
 import pump from "../../../images/pump.png";
 
-const Pump = (props) => {
-  const { state } = props.data;
+const Pump = ({ state, className }) => {
   const stateText = state ? "Prendida" : "Apagada";
 
   return (
-    <div className={props.className}>
+    <div className={className}>
       <img src={pump} />
       <p>{stateText}</p>
     </div>

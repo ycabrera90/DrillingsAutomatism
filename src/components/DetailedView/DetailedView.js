@@ -28,7 +28,7 @@ const DetailedView = () => {
   // }
 
   // const { id, title, workinkMode, pumpSt, claims } = filteredData;
-  // console.log(filteredData);
+  console.log(drill);
 
   return (
     <>
@@ -84,7 +84,7 @@ const DetailedView = () => {
             title="Bomba de perforación"
             className={classes["ctrl-card"]}
           >
-            <Pump data={{ state: false }} className={classes["ctrl-image"]} />
+            <Pump state={drill.pumpSt} className={classes["ctrl-image"]} />
             <CardData title="Funcionamiento" className={classes["ref-datas"]}>
               <DataContainer className={classes.data} value={1.85} unit="mts" />
               <DataContainer className={classes.data} value={74} unit="%" />

@@ -16,4 +16,7 @@
   font-size: 0.9rem;
   color: #fff;
   text-align: center;
+}
+.item-image > p.highlighted {
+  color: #e76969;
 }/*# sourceMappingURL=ItemImage.module.css.map */

@@ -65,13 +65,17 @@ const QuickViewItem = (props) => {
       <main>
         <article className={classes.item}>
           <i>
-            <ItemImage src={iconTank} description="Tanque" />
+            <ItemImage
+              src={iconTank}
+              description="Tanque"
+              highlighted={false}
+            />
           </i>
           <div className={classes["data-container"]}>{tankMeasuresItems}</div>
         </article>
         <article className={classes.item}>
           <i>
-            <ItemImage src={pump} description="Bomba" />
+            <ItemImage src={pump} description="Bomba" highlighted={drill.pumpSt} />
           </i>
           <div className={classes["data-container"]}>{drillMeasuresItems}</div>
         </article>
