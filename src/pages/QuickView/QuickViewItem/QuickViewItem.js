@@ -22,19 +22,14 @@ const QuickViewItem = (props) => {
       { status: false, amount: 0 }
     );
 
-  const tankMeasuresItems = Object.entries(tank.measures).map(
-    ([key, item]) => (
-      console.log(item),
-      (
-        <Data
-          key={keyGen()}
-          title={item.title}
-          value={item.value}
-          unit={item.unit}
-        />
-      )
-    )
-  );
+  const tankMeasuresItems = Object.entries(tank.measures).map(([key, item]) => (
+    <Data
+      key={keyGen()}
+      title={item.title}
+      value={item.value}
+      unit={item.unit}
+    />
+  ));
 
   const drillMeasuresItems = Object.entries(drill.measures).map(
     ([key, item]) => (
@@ -75,7 +70,11 @@ const QuickViewItem = (props) => {
         </article>
         <article className={classes.item}>
           <i>
-            <ItemImage src={pump} description="Bomba" highlighted={drill.pumpSt} />
+            <ItemImage
+              src={pump}
+              description="Bomba"
+              highlighted={drill.pumpSt}
+            />
           </i>
           <div className={classes["data-container"]}>{drillMeasuresItems}</div>
         </article>

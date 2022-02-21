@@ -26,7 +26,6 @@ const QuickView = (props) => {
 
   return (
     <>
-      <section className={classes.background} />
       <section className={classes["quickview-container"]}>
         {quickviewItems}
       </section>

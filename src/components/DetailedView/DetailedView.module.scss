@@ -1,36 +1,6 @@
-.background {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
-  background: #3c4452;
-  z-index: -1;
-}
 
-.detailed-view--header {
-  min-width: 22rem;
-  margin-top: 3.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #303641;
-  padding: 0.55em 1.3em;
-  > h1 {
-    font-size: 1.1em;
-    color: #e4e4e4;
-    font-weight: 400;
-  }
-  > svg {
-    color: #03eb92;
-  }
-}
 
-.detailed-view--container {
-  padding: 1rem;
-  min-width: 22rem;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+
 
   .ref-container,
   .ctrl-container {
@@ -126,4 +96,4 @@
       }
     }
   }
-}
+
