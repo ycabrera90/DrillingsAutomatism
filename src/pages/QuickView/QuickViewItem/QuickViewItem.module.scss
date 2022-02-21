@@ -4,7 +4,7 @@
   border-radius: 4px;
   overflow: hidden;
 
-  > header {
+  .item-header {
     position: relative;
     display: flex;
     justify-content: center;
@@ -16,43 +16,21 @@
     text-align: center;
     border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 
-    > h1,
-    > span {
+    > .item-header_title,
+    > .item-header_mode {
       font-size: 0.9rem;
       font-weight: 400;
     }
 
-    > h1 {
+    > .item-header_title {
       margin: 0;
       color: #fff;
       @media (min-width: 40rem) {
         cursor: pointer;
       }
     }
-    > span {
+    > .item-header_mode {
       color: #03eb92;
-    }
-    > .flag-icon,
-    > .checked-icon {
-      right: 12px;
-      position: absolute;
-      color: #03eb92;
-      font-size: 1.2rem;
-    }
-
-    > .checked-icon {
-      color: #03eb92;
-    }
-
-    > .flag-icon {
-      color: #bb6c34;
-    }
-
-    .claim-badge {
-      inset: 4px 5px auto auto;
-      position: absolute;
-      font-size: 0.5rem;
-      color: #cd834f;
     }
   }
   > main {

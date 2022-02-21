@@ -4,7 +4,7 @@
   border-radius: 4px;
   overflow: hidden;
 }
-.item-container > header {
+.item-container .item-header {
   position: relative;
   display: flex;
   justify-content: center;
@@ -16,41 +16,22 @@
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 }
-.item-container > header > h1,
-.item-container > header > span {
+.item-container .item-header > .item-header_title,
+.item-container .item-header > .item-header_mode {
   font-size: 0.9rem;
   font-weight: 400;
 }
-.item-container > header > h1 {
+.item-container .item-header > .item-header_title {
   margin: 0;
   color: #fff;
 }
 @media (min-width: 40rem) {
-  .item-container > header > h1 {
+  .item-container .item-header > .item-header_title {
     cursor: pointer;
   }
 }
-.item-container > header > span {
+.item-container .item-header > .item-header_mode {
   color: #03eb92;
-}
-.item-container > header > .flag-icon,
-.item-container > header > .checked-icon {
-  right: 12px;
-  position: absolute;
-  color: #03eb92;
-  font-size: 1.2rem;
-}
-.item-container > header > .checked-icon {
-  color: #03eb92;
-}
-.item-container > header > .flag-icon {
-  color: #bb6c34;
-}
-.item-container > header .claim-badge {
-  inset: 4px 5px auto auto;
-  position: absolute;
-  font-size: 0.5rem;
-  color: #cd834f;
 }
 .item-container > main {
   padding: 0.5rem;
