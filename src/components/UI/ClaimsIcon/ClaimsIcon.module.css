@@ -1,21 +1,22 @@
-.flag-icon,
-.checked-icon {
+.icon-container {
+  font-style: normal;
+  position: absolute;
+}
+.icon-container .flag-icon,
+.icon-container .checked-icon {
   right: 12px;
   position: absolute;
   color: #03eb92;
   font-size: 1.2rem;
 }
-
-.checked-icon {
+.icon-container .checked-icon {
   color: #03eb92;
 }
-
-.flag-icon {
+.icon-container .flag-icon {
   color: #bb6c34;
 }
-
-.claim-badge {
-  inset: 4px 5px auto auto;
+.icon-container .claim-badge {
+  inset: -9px 8px auto auto;
   position: absolute;
   font-size: 0.5rem;
   color: #cd834f;

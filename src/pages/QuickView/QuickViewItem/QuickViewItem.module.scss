@@ -16,22 +16,28 @@
     text-align: center;
     border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 
-    > .item-header_title,
-    > .item-header_mode {
+    .item-header_title,
+    .item-header_mode {
       font-size: 0.9rem;
       font-weight: 400;
     }
 
-    > .item-header_title {
+    .item-header_title {
       margin: 0;
       color: #fff;
       @media (min-width: 40rem) {
         cursor: pointer;
       }
     }
-    > .item-header_mode {
+    .item-header_mode {
       color: #03eb92;
     }
+
+    .item-header_icon{
+      right: 0px;
+      top:13px
+    }
+
   }
   > main {
     padding: 0.5rem;

@@ -51,7 +51,7 @@ const QuickViewItem = ({ id, data, onClick }) => {
           {systemName}
         </h1>
         <span className={classes["item-header_mode"]}>{drill.workingMode}</span>
-        <ClaimsIcon active={areActiveClaims}>{amountOfActiveClaims}</ClaimsIcon>
+        <ClaimsIcon className={classes["item-header_icon"]} active={areActiveClaims}>{amountOfActiveClaims}</ClaimsIcon>
       </header>
       <main>
         <article className={classes.item}>
