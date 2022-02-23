@@ -42,23 +42,4 @@
   color: rgb(12, 187, 141);
   font-weight: 400;
   text-align: center;
-}
-.wifi-icon {
-  position: absolute;
-  top: 8px;
-  right: 20px;
-  color: rgb(12, 187, 141);
-  font-size: 2.5rem;
-}
-@media (min-width: 40rem) {
-  .wifi-icon {
-    position: relative;
-    top: -3px;
-    left: 0;
-    font-size: 2rem;
-  }
-}
-
-.wifi-icon.alert {
-  color: #696767;
 }/*# sourceMappingURL=CardContainer.module.css.map */

@@ -28,7 +28,7 @@ const DetailedView = () => {
         data={{
           title: tank.name,
           date: tank.dateData,
-          isTx: true,
+          isTx: tank.isTx,
         }}
       >
         <Tank className={classes["ref-image"]} />
@@ -53,7 +53,7 @@ const DetailedView = () => {
         data={{
           title: drill.name,
           date: drill.dateData,
-          isTx: true,
+          isTx: drill.isTx,
         }}
       >
         <CardData title="Bomba de perforación" className={classes["ctrl-card"]}>

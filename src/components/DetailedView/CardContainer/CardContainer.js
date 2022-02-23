@@ -1,19 +1,14 @@
 import React from "react";
-import classes from "./CardContainer.module.css";
 
-import { BsWifi, BsWifiOff } from "react-icons/bs";
+import TxIcon from "../../UI/TxIcon/TxIcon";
+import classes from "./CardContainer.module.css";
 
 const CardContainer = (props) => {
   const { title, date, isTx } = props.data;
+  
   const componentClasses = `${classes.card} ${
     props.className ? props.className : ""
   }`;
-
-  const wifiIcon = isTx ? (
-    <BsWifi className={classes["wifi-icon"]} />
-  ) : (
-    <BsWifiOff className={`${classes["wifi-icon"]} ${classes["alert"]} `} />
-  );
 
   return (
     <section className={componentClasses}>
@@ -21,7 +16,7 @@ const CardContainer = (props) => {
         <h1 className={classes["ref-name"]}>{title}</h1>
         <div>
           <span className={classes["date"]}>{date}</span>
-          {wifiIcon}
+          <TxIcon isTx={isTx} />
         </div>
       </header>
       <main>{props.children}</main>

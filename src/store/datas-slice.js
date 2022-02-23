@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const DUMMY_SYSTEMS = {
   p1: {
     systemName: "RIVPERF22-PERF 01",
-    dateData: "10/10/2022 21:41",
     service: "Moirones",
     claims: [
       { id: "c1", active: true },
@@ -13,8 +12,9 @@ const DUMMY_SYSTEMS = {
     drill: {
       name: "PERF 01",
       dateData: "10/10/2022 21:41",
+      isTx: false,
       workinkMode: "AUTO",
-      pumpSt: true,
+      pumpSt: false,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
@@ -25,6 +25,7 @@ const DUMMY_SYSTEMS = {
     tank: {
       name: "Tanque de Moirones 1",
       dateData: "10/10/2022 21:41",
+      isTx: true,
       measures: {
         htq: { title: "Altura", value: 1.61, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
@@ -43,8 +44,9 @@ const DUMMY_SYSTEMS = {
     drill: {
       name: "PERF 02",
       dateData: "10/10/2022 21:41",
+      isTx: true,
       workinkMode: "LOCAL",
-      pumpSt: false,
+      pumpSt: true,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
@@ -55,6 +57,7 @@ const DUMMY_SYSTEMS = {
     tank: {
       name: "Tanque de Moirones 2",
       dateData: "10/10/2022 21:41",
+      isTx: true,
       measures: {
         htq: { title: "Altura", value: 1.61, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
@@ -69,8 +72,9 @@ const DUMMY_SYSTEMS = {
     drill: {
       name: "RIVPERF22",
       dateData: "10/10/2022 21:41",
+      isTx: true,
       workinkMode: "REMOTO",
-      pumpSt: true,
+      pumpSt: false,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
@@ -81,6 +85,7 @@ const DUMMY_SYSTEMS = {
     tank: {
       name: "Tanque de Moirones 3",
       dateData: "10/10/2022 21:41",
+      isTx: true,
       measures: {
         htq: { title: "Altura", value: 1.61, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
