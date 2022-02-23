@@ -2,24 +2,28 @@
   font-style: normal;
   position: absolute;
 
+  // padding: 0 2px 0 1px;
+
   .flag-icon,
   .checked-icon {
-    right: 12px;
-    position: absolute;
-    color: #03eb92;
+    position: relative;
     font-size: 1.2rem;
+    margin: 0 2px 0 1px;
   }
 
   .checked-icon {
+    top: 3px;
     color: #03eb92;
+    margin: 0 3px;
   }
 
   .flag-icon {
+    top: 5px;
     color: #bb6c34;
   }
 
   .claim-badge {
-    inset: -9px 8px auto auto;
+    inset: -3px 0px auto auto;
     position: absolute;
     font-size: 0.5rem;
     color: #cd834f;

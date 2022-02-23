@@ -8,6 +8,7 @@ import ItemImage from "../ItemImage/ItemImage";
 import iconTank from "../../../images/icon-tank.png";
 import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
+import TxIcon from "../../../components/UI/TxIcon/TxIcon";
 
 const QuickViewItem = ({ id, data, onClick }) => {
   const { systemName, service, claims, drill, tank } = data;
@@ -51,6 +52,7 @@ const QuickViewItem = ({ id, data, onClick }) => {
           {systemName}
         </h1>
         <span className={classes["item-header_mode"]}>{drill.workingMode}</span>
+        {/* <TxIcon/> */}
         <ClaimsIcon className={classes["item-header_icon"]} active={areActiveClaims}>{amountOfActiveClaims}</ClaimsIcon>
       </header>
       <main>
