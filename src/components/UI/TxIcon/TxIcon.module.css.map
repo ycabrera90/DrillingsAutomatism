@@ -1,1 +1,1 @@
-{"version":3,"sources":["TxIcon.module.scss","TxIcon.module.css"],"names":[],"mappings":"AAAA;EACE,kBAAA;EACA,QAAA;EACA,WAAA;EACA,wBAAA;EACA,iBAAA;ACCF;ADAE;EANF;IAOI,kBAAA;IACA,QAAA;IACA,SAAA;IACA,iBAAA;ECGF;AACF;;ADAA;EACE,cAAA;ACGF","file":"TxIcon.module.css"}
+{"version":3,"sources":["TxIcon.module.scss","TxIcon.module.css"],"names":[],"mappings":"AAAA;EACE,kBAAA;EACA,wBAAA;ACCF;;ADEA;EACE,cAAA;ACCF","file":"TxIcon.module.css"}
