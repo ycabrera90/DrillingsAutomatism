@@ -1,8 +1,11 @@
-.wifi-icon {
-  position: absolute;
+.tx-icon {
+  display: flex;
+}
+
+.wifi-ok {
   color: rgb(12, 187, 141);
 }
 
-.wifi-icon.alert {
+.wifi-fail {
   color: #696767;
 }/*# sourceMappingURL=TxIcon.module.css.map */

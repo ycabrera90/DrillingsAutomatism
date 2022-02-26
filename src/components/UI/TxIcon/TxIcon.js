@@ -3,13 +3,15 @@ import React from "react";
 import { BsWifi, BsWifiOff } from "react-icons/bs";
 import classes from "./TxIcon.module.css";
 
-const TxIcon = ({ isTx }) => {
+const TxIcon = ({ isTx, className }) => {
+  const componentClasses = `${classes["tx-icon"]} ${
+    className ? className : ""
+  }`;
+
   return (
-    <i>
-      {isTx && <BsWifi className={classes["wifi-icon"]} />}
-      {!isTx && (
-        <BsWifiOff className={`${classes["wifi-icon"]} ${classes["alert"]} `} />
-      )}
+    <i className={componentClasses}>
+      {isTx && <BsWifi className={classes["wifi-ok"]} />}
+      {!isTx && <BsWifiOff className={classes["wifi-fail"]} />}
     </i>
   );
 };
