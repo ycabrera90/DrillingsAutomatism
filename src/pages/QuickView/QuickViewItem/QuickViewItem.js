@@ -46,7 +46,6 @@ const QuickViewItem = ({ id, data, onClick }) => {
   return (
     <article className={classes["item-container"]}>
       <header className={classes["item-header"]}>
-        <TxIcon isTx={true} className={classes['tx-icon']}/>
         <h1
           className={classes["item-header_title"]}
           onClick={onClick.bind(null, id)}
@@ -54,7 +53,12 @@ const QuickViewItem = ({ id, data, onClick }) => {
           {systemName}
         </h1>
         <span className={classes["item-header_mode"]}>{drill.workingMode}</span>
-        <ClaimsIcon className={classes["item-header_icon"]} active={areActiveClaims}>{amountOfActiveClaims}</ClaimsIcon>
+        <ClaimsIcon
+          className={classes["item-header_icon"]}
+          active={areActiveClaims}
+        >
+          {amountOfActiveClaims}
+        </ClaimsIcon>
       </header>
       <main>
         <article className={classes.item}>
@@ -63,6 +67,7 @@ const QuickViewItem = ({ id, data, onClick }) => {
               src={iconTank}
               description="Tanque"
               highlighted={false}
+              txState={tank.isTx}
             />
           </i>
           <div className={classes["data-container"]}>{tankMeasuresItems}</div>
@@ -73,6 +78,7 @@ const QuickViewItem = ({ id, data, onClick }) => {
               src={pump}
               description="Bomba"
               highlighted={drill.pumpSt}
+              txState={drill.isTx}
             />
           </i>
           <div className={classes["data-container"]}>{drillMeasuresItems}</div>
