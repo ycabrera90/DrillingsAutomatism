@@ -16,7 +16,7 @@
     }
 
     > h1 {
-      font-size: 0.9em;
+      font-size: 1.2em;
       color: #e4e4e4;
       font-weight: 400;
       text-align: center;
@@ -28,7 +28,7 @@
       align-items: center;
       gap: 0.5rem;
       > span {
-        font-size: 0.8em;
+        font-size: 1em;
         color: rgb(12, 187, 141);
         font-weight: 400;
         text-align: center;
@@ -43,7 +43,7 @@
         @media (min-width: 40rem) {
           position: relative;
           inset: -0.1rem 0rem auto auto;
-          font-size: 1rem;
+          font-size: 1.3rem;
         }
       }
     }

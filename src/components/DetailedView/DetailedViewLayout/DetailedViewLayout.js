@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
-// import { AiOutlineCheckCircle } from "react-icons/ai";
 import ClaimsIcon from "../../UI/ClaimsIcon/ClaimsIcon";
 
 import classes from "./DetailedViewLayout.module.css";
