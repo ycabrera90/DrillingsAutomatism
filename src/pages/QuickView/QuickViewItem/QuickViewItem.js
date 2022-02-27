@@ -1,5 +1,4 @@
 import React from "react";
-import classes from "./QuickViewItem.module.css";
 
 import { keyGen } from "../../../util/keyGen";
 
@@ -9,6 +8,8 @@ import iconTank from "../../../images/icon-tank.png";
 import Data from "../Data/Data";
 import pump from "../../../images/pump.png";
 import TxIcon from "../../../components/UI/TxIcon/TxIcon";
+
+import classes from "./QuickViewItem.module.css";
 
 const QuickViewItem = ({ id, data, onClick }) => {
   const { systemName, service, claims, drill, tank } = data;
@@ -45,6 +46,7 @@ const QuickViewItem = ({ id, data, onClick }) => {
   return (
     <article className={classes["item-container"]}>
       <header className={classes["item-header"]}>
+        <TxIcon isTx={true} className={classes['tx-icon']}/>
         <h1
           className={classes["item-header_title"]}
           onClick={onClick.bind(null, id)}
@@ -52,7 +54,6 @@ const QuickViewItem = ({ id, data, onClick }) => {
           {systemName}
         </h1>
         <span className={classes["item-header_mode"]}>{drill.workingMode}</span>
-        {/* <TxIcon/> */}
         <ClaimsIcon className={classes["item-header_icon"]} active={areActiveClaims}>{amountOfActiveClaims}</ClaimsIcon>
       </header>
       <main>

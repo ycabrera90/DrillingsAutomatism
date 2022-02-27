@@ -1,29 +1,21 @@
 .icon-container {
-  position: absolute;
+  display: flex;
+  position: relative;
   font-style: normal;
 
-  .flag-icon,
   .checked-icon {
-    position: relative;
-    font-size: 1.2rem;
-    margin: 0 2px 0 1px;
-  }
-
-  .checked-icon {
-    top: 3px;
     color: #03eb92;
-    margin: 0 3px;
   }
 
   .flag-icon {
-    top: 5px;
     color: #bb6c34;
   }
 
   .claim-badge {
-    inset: -3px 0px auto auto;
+    $claim-size: 0.5rem;
+    inset: -$claim-size -0.2rem auto auto;
     position: absolute;
-    font-size: 0.5rem;
+    font-size: $claim-size;
     color: #cd834f;
   }
 }

@@ -13,9 +13,6 @@
   color: #e4e4e4;
   font-weight: 400;
 }
-.detailed-view--header .header_icon {
-  inset: 10px 8px auto auto;
-}
 
 .detailed-view--main {
   padding: 1rem;

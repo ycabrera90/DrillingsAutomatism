@@ -16,6 +16,11 @@
   text-align: center;
   border-bottom: 2px solid rgba(0, 0, 0, 0.192);
 }
+.item-container .item-header .tx-icon {
+  position: absolute;
+  left: 0.7rem;
+  font-size: 1.2rem;
+}
 .item-container .item-header .item-header_title,
 .item-container .item-header .item-header_mode {
   font-size: 0.9rem;
@@ -34,7 +39,8 @@
   color: #03eb92;
 }
 .item-container .item-header .item-header_icon {
-  right: 14px;
+  position: absolute;
+  right: 0.8rem;
 }
 .item-container > main {
   padding: 0.5rem;
