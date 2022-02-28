@@ -4,12 +4,6 @@
   box-sizing: border-box;
   transition: all 0.2s ease-out;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
-=======
->>>>>>> 58b99d6 (Some adjustments were made to QuickView container)
 *::-webkit-scrollbar {
   -webkit-appearance: none;
 }
@@ -47,9 +41,4 @@ h3 {
   font-size: inherit;
   line-height: inherit;
   color: inherit;
-<<<<<<< HEAD
-}
->>>>>>> 92f1250 (The DetailedView component was added to the project)
-=======
 }/*# sourceMappingURL=App.css.map */
->>>>>>> 6d2029f (the srollbar of the project was styled)

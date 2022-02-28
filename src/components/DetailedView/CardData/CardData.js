@@ -1,15 +1,19 @@
 import React from "react";
+
+import ConfigButton from "./ConfigButton/ConfigButton";
 import classes from "./CardData.module.css";
 
-const CardData = (props) => {
-  const componentClasses = props.className
-    ? `${props.className} ${classes.datas}`
-    : classes.datas;
+const CardData = ({ className, title, children, config }) => {
+
+  const configButtonHandler = (state) => {
+    console.log(state);
+  } 
 
   return (
-    <section className={componentClasses}>
-      {props.title && <h1>{props.title}</h1>}
-      {props.children}
+    <section className={`${classes.datas} ${className ? className : ""}`}>
+      {!config && title && <h1>{title}</h1>}
+      {config && <ConfigButton onClick={configButtonHandler} />}
+      {children}
     </section>
   );
 };

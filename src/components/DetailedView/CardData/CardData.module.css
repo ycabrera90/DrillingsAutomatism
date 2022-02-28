@@ -25,7 +25,6 @@
   left: 1px;
   position: absolute;
   background: #154770;
-  -webkit-clip-path: polygon(100% 0, 0 0, 100% 76%);
-          clip-path: polygon(100% 0, 0 0, 100% 76%);
+  clip-path: polygon(100% 0, 0 0, 100% 76%);
   font-size: 6px;
-}/*# sourceMappingURL=CardData.module.css.map */
+}

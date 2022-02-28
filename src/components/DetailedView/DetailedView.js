@@ -36,7 +36,7 @@ const DetailedView = () => {
           <DataContainer className={classes.data} value={1.85} unit="mts" />
           <DataContainer className={classes.data} value={74} unit="%" />
         </CardData>
-        <CardData title="Alarmas" className={classes["ref-alarms"]}>
+        <CardData title="Alarmas" className={classes["ref-alarms"]} config>
           <div>
             <span>Inferior:</span>
             <DataContainer className={classes.data} value={5.2} unit="mts" />
