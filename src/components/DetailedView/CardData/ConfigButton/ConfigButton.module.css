@@ -13,15 +13,17 @@
   border: none;
   border-radius: 1px;
   transition: none;
+  transition: font-size 100ms ease-in-out;
   box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .config-button:hover {
   background-color: #0075e2;
 }
-.config-button:active {
+.config-button.clicked, .config-button:active {
   background-color: #0b6ecb;
   top: 3.5px;
   right: 2.5px;
   box-shadow: 0.5px 0.5px 2px 1px rgba(0, 0, 0, 0.2);
   color: rgb(244, 244, 244);
+  font-size: 0.8rem;
 }

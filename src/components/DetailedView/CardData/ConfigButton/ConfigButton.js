@@ -1,21 +1,16 @@
-import React, { useState, useCallback, memo } from "react";
+import { memo } from "react";
 
 import { FaCog, FaTimes } from "react-icons/fa";
-
 import classes from "./ConfigButton.module.css";
 
-const ConfigButton = ({ onClick }) => {
-const [clicked, setClicked] = useState(false);
-
-const clickHandler = useCallback(() => {
-  setClicked((state) => {
-    onClick(!state);
-    return !state;
-  });
-}, [onClick]);
-
+const ConfigButton = ({ onClick, clicked }) => {
   return (
-    <button className={classes["config-button"]} onClick={clickHandler}>
+    <button
+      className={[
+        `${classes["config-button"]} ${clicked ? classes.clicked : ""}`,
+      ]}
+      onClick={onClick}
+    >
       {!clicked && <FaCog />}
       {clicked && <FaTimes />}
     </button>

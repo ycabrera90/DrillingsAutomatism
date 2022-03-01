@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -21,6 +21,8 @@ const DetailedView = () => {
 
   const { systemName, service, claims, drill, tank } = systemData;
 
+  
+
   return (
     <DetailedViewLayout service={service}>
       <CardContainer
@@ -36,16 +38,32 @@ const DetailedView = () => {
           <DataContainer className={classes.data} value={1.85} unit="mts" />
           <DataContainer className={classes.data} value={74} unit="%" />
         </CardData>
-        <CardData title="Alarmas" className={classes["ref-alarms"]} config>
-          <div>
-            <span>Inferior:</span>
-            <DataContainer className={classes.data} value={5.2} unit="mts" />
-          </div>
-          <div>
-            <span>Superior:</span>
-            <DataContainer className={classes.data} value={5.4} unit="mts" />
-          </div>
-        </CardData>
+
+        <CardData
+          className={classes["ref-alarms"]}
+          config
+          quickView={
+            <>
+              <div>
+                <span>Inferior:</span>
+                <DataContainer
+                  className={classes.data}
+                  value={5.2}
+                  unit="mts"
+                />
+              </div>
+              <div>
+                <span>Superior:</span>
+                <DataContainer
+                  className={classes.data}
+                  value={5.4}
+                  unit="mts"
+                />
+              </div>
+            </>
+          }
+          largeView={<></>}
+        />
       </CardContainer>
 
       <CardContainer
