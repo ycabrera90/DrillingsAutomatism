@@ -1,5 +1,3 @@
-import { memo } from "react";
-
 import { FaCog, FaTimes } from "react-icons/fa";
 import classes from "./ConfigButton.module.css";
 
@@ -17,4 +15,4 @@ const ConfigButton = ({ onClick, clicked }) => {
   );
 };
 
-export default memo(ConfigButton);
+export default ConfigButton;

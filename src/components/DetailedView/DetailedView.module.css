@@ -21,36 +21,15 @@
     grid-template-areas: "image   datas" "inputs   inputs";
   }
 }
-.ref-container > main .ref-alarms .data,
-.ref-container > main .ref-datas .data {
-  margin: 0.5rem 1rem;
-}
-.ref-container > main .ref-alarms .data p,
-.ref-container > main .ref-datas .data p {
-  color: #03eb92;
-  font-size: 1.3rem;
-}
-.ref-container > main .ref-alarms .data p span,
-.ref-container > main .ref-datas .data p span {
-  color: inherit;
-  font-size: 0.7rem;
-}
-.ref-container > main .ref-alarms {
+.ref-container > main .alarm-config {
   grid-area: inputs;
   justify-content: space-around;
 }
-.ref-container > main .ref-alarms > div {
-  display: flex;
-  align-items: center;
-}
-.ref-container > main .ref-alarms > div > span {
-  color: #fff;
-}
-.ref-container > main .ref-alarms .data {
-  margin: 0.5rem 0rem;
-}
 .ref-container > main .ref-datas {
   grid-area: datas;
+}
+.ref-container > main .ref-datas .data {
+  margin: 0.5rem 1rem;
 }
 
 .ctrl-container > main {
@@ -80,4 +59,4 @@
   font-weight: 500;
   color: #f84848;
   margin: 0;
-}/*# sourceMappingURL=DetailedView.module.css.map */
+}

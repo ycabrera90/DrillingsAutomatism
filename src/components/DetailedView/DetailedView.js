@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import DetailedViewLayout from "./DetailedViewLayout/DetailedViewLayout";
 import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
-import DataContainer from "../../pages/QuickView/Data/Data";
+import Data from "../../pages/QuickView/Data/Data";
 import Tank from "./Tank/Tank";
 import Pump from "./Pump/Pump";
 
@@ -32,34 +32,46 @@ const DetailedView = () => {
           date: tank.dateData,
           isTx: tank.isTx,
         }}
-      >
+      > 
         <Tank className={classes["ref-image"]} />
-        <CardData title="Nivel de Agua" className={classes["ref-datas"]}>
-          <DataContainer className={classes.data} value={1.85} unit="mts" />
-          <DataContainer className={classes.data} value={74} unit="%" />
+        <CardData 
+          className={classes["ref-datas"]} 
+          title="Nivel de Agua"
+          >
+          <Data
+            className={classes.data}
+            titlePosition="left"
+            value={1.85}
+            unit="mts"
+          />
+          <Data
+            className={classes.data}
+            titlePosition="left"
+            value={74}
+            unit="%"
+          />
         </CardData>
 
         <CardData
-          className={classes["ref-alarms"]}
+          className={classes["alarm-config"]}
+          title="Alarmas"
           config
           quickView={
             <>
-              <div>
-                <span>Inferior:</span>
-                <DataContainer
-                  className={classes.data}
-                  value={5.2}
-                  unit="mts"
-                />
-              </div>
-              <div>
-                <span>Superior:</span>
-                <DataContainer
-                  className={classes.data}
-                  value={5.4}
-                  unit="mts"
-                />
-              </div>
+              <Data
+                className={classes.data}
+                title="Inferior:"
+                titlePosition="left"
+                value={5.2}
+                unit="mts"
+              />
+              <Data
+                className={classes.data}
+                title="Superior:"
+                titlePosition="left"
+                value={5.4}
+                unit="mts"
+              />
             </>
           }
           largeView={<></>}
@@ -77,8 +89,8 @@ const DetailedView = () => {
         <CardData title="Bomba de perforación" className={classes["ctrl-card"]}>
           <Pump state={drill.pumpSt} className={classes["ctrl-image"]} />
           <CardData title="Funcionamiento" className={classes["ref-datas"]}>
-            <DataContainer className={classes.data} value={1.85} unit="mts" />
-            <DataContainer className={classes.data} value={74} unit="%" />
+            <Data className={classes.data} value={1.85} unit="mts" />
+            <Data className={classes.data} value={74} unit="%" />
           </CardData>
         </CardData>
       </CardContainer>

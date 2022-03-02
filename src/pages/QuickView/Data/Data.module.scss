@@ -1,27 +1,72 @@
 .data-cotainer {
   padding: 0.3rem;
-  display: flex;
-  text-align: center;
+  display: grid;
+  gap: 0.1rem;
   justify-content: center;
-  flex-direction: column;
-  min-width: 4rem;
-  max-width: 4.9rem;
-  > h3 {
-    margin: 0;
-    color: #fff;
-    opacity: 0.7;
-    font-size: 0.8rem;
-    font-weight: 400;
+
+  &.top-tittle-layout {
+    grid-template-areas:  "titleUp     titleUp"
+                          "data        unit";
+    min-width: 4rem;
+    max-width: 4.9rem;
+    max-height: 4rem;
+    padding: 0.3rem;
+
+    .title-up {
+      grid-area: titleUp;
+      align-self: center;
+      text-align: center;
+      line-height: 0.8rem;
+      color: white;
+      opacity: 0.7;
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+
+    .value {
+      grid-area: data;
+      align-self: center;
+      justify-self: right;
+
+      color: white;
+      font-size: 1rem;
+    }
+
+    .unit {
+      margin-top: 0.3rem;
+      grid-area: unit;
+      align-self: center;
+      font-size: 0.6rem;
+      opacity: 0.7;
+      color: #fff;
+    }
   }
-  > p {
-    margin: 0;
-    color: #fff;
-    font-size: 0.8rem;
-    > span {
-      font-size: 0.5rem;
+
+  &.left-tittle-layout {
+    grid-template-areas: "titleLeft   data    unit";
+    padding: 0.3rem 0.5rem;
+
+    .title-left {
+      grid-area: titleLeft;
+      align-self: center;
+      font-weight: 400;
+      color: #fff;
+      margin: 0 0.5rem;
+    }
+
+    .value {
+      grid-area: data;
+      color: #03eb92;
+      font-size: 1.3rem;
+    }
+
+    .unit {
+      margin-top: 0.5rem;
+      grid-area: unit;
+      font-size: 0.8rem;
+      align-self: center;
       opacity: 0.7;
       color: #fff;
     }
   }
 }
-

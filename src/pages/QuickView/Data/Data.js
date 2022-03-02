@@ -1,17 +1,23 @@
 import React from "react";
-import classes from "./Data.module.css";
+import cls from "./Data.module.css";
 
-const Data = (props) => {
-  const componentClasses = `${classes["data-cotainer"]} ${
-    props.className ? props.className : ""
-  }`;
+const Data = ({ className, title, titlePosition = "top", value, unit }) => {
   return (
-    <div className={componentClasses}>
-      {props.title && <h3>{props.title}</h3>}
-      <p>
-        {props.value}
-        <span>{" " + props.unit}</span>
-      </p>
+    <div
+      className={
+       `${cls["data-cotainer"]} 
+        ${className ? className : ""} 
+        ${titlePosition === "top" ? cls["top-tittle-layout"] : cls["left-tittle-layout"]}`
+      }
+    >
+      {title && titlePosition === "top" && (
+        <h1 className={cls["title-up"]}>{title}</h1>
+      )}
+      {title && titlePosition === "left" && (
+        <h1 className={cls["title-left"]}>{title}</h1>
+      )}
+      <span className={cls["value"]}>{value}</span>
+      <span className={cls["unit"]}>{" " + unit}</span>
     </div>
   );
 };

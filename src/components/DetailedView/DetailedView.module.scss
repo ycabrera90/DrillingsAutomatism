@@ -26,50 +26,34 @@
         "image   datas"
         "inputs   inputs";
     }
-    .ref-alarms,
-    .ref-datas {
-      .data {
-        margin: 0.5rem 1rem;
-        p {
-          color: #03eb92;
-          font-size: 1.3rem;
-          span {
-            color: inherit;
-            font-size: 0.7rem;
-          }
-        }
-      }
-    }
 
-    .ref-alarms {
+    .alarm-config {
       grid-area: inputs;
       justify-content: space-around;
-      > div {
-        display: flex;
-        align-items: center;
-        > span {
-          color: #fff;
-        }
-      }
-      .data {
-        margin: 0.5rem 0rem;
-      }
     }
+
     .ref-datas {
       grid-area: datas;
+
+      .data {
+        margin: 0.5rem 1rem;
+      }
     }
   }
 }
 
 .ctrl-container {
-  > main {
+  >main {
     padding: 1rem;
+
     .ctrl-card {
       background: #21252c;
-      > h1 {
+
+      >h1 {
         color: black;
         background: #03eb92;
         border-bottom: 2px solid #016d44;
+
         &::before {
           background: #016d44;
         }
@@ -77,11 +61,13 @@
 
       .ctrl-image {
         padding: 2rem;
-        > img {
+
+        >img {
           display: block;
           width: 8rem;
         }
-        > p {
+
+        >p {
           text-align: center;
           font-size: 1.8rem;
           font-weight: 500;

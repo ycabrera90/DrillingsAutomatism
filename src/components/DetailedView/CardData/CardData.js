@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 
 import ConfigButton from "./ConfigButton/ConfigButton";
-import classes from "./CardData.module.css";
+import cls from "./CardData.module.css";
 
 const CardData = ({
   className,
@@ -18,12 +18,14 @@ const CardData = ({
   }, []);
 
   return (
-    <section className={`${classes.datas} ${className ? className : ""}`}>
-      {title && <h1>{title}</h1>}
-      {config && <ConfigButton onClick={onClickHandler} />}
-      {children && children}
-      {!isDeployed && quickView}
-      {isDeployed && largeView}
+    <section className={`${cls.datas} ${className ? className : ""}`}>
+      {title && <header className={cls["title"]}>{title}</header>}
+      {config && <ConfigButton onClick={onClickHandler} clicked={isDeployed} />}
+      <main className={cls["data-container"]}>
+        {children && children}
+        {!isDeployed && quickView}
+        {isDeployed && largeView}
+      </main>
     </section>
   );
 };
