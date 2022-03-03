@@ -8,6 +8,7 @@ import CardData from "./CardData/CardData";
 import Data from "../../pages/QuickView/Data/Data";
 import Tank from "./Tank/Tank";
 import Pump from "./Pump/Pump";
+import UpDownInput from "./UpDownInput/UpDownInput";
 
 import classes from "./DetailedView.module.css";
 
@@ -32,12 +33,9 @@ const DetailedView = () => {
           date: tank.dateData,
           isTx: tank.isTx,
         }}
-      > 
+      >
         <Tank className={classes["ref-image"]} />
-        <CardData 
-          className={classes["ref-datas"]} 
-          title="Nivel de Agua"
-          >
+        <CardData className={classes["ref-datas"]} title="Nivel de Agua">
           <Data
             className={classes.data}
             titlePosition="left"
@@ -74,7 +72,12 @@ const DetailedView = () => {
               />
             </>
           }
-          largeView={<></>}
+          largeView={
+            <div className={classes["config-alarm-container"]}>
+              <UpDownInput label="Alarma Superior" />
+              <UpDownInput label="Alarma Inferior" />
+            </div>
+          }
         />
       </CardContainer>
 

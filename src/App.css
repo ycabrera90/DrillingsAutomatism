@@ -41,4 +41,25 @@ h3 {
   font-size: inherit;
   line-height: inherit;
   color: inherit;
-}/*# sourceMappingURL=App.css.map */
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  display: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner-spin-button {
+  display: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

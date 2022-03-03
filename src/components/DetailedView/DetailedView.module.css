@@ -25,6 +25,12 @@
   grid-area: inputs;
   justify-content: space-around;
 }
+.ref-container > main .alarm-config .config-alarm-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
 .ref-container > main .ref-datas {
   grid-area: datas;
 }

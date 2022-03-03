@@ -1,0 +1,56 @@
+.up-down-input {
+    label {
+        color: white;
+    }
+
+    section {
+        display: flex;
+        margin: 0.5rem 0;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        background: #343a40;
+
+        button {
+            border: none;
+            font-size: 1rem;
+            padding: .375rem .75rem;
+            color: white;
+            background: transparent;
+            cursor: pointer;
+
+            &:hover {
+                background: #495057;
+            }
+
+            &:active{
+                background: #49505795;
+            }
+        }
+
+        button.dec {
+            border-right: 1px solid #ced4da;
+        }
+
+        input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            color: #fff;
+            padding: .375rem .75rem;
+        }
+
+        button.inc {
+            border-left: 1px solid #ced4da;
+
+        }
+
+        span {
+            display: flex;
+            align-items: center;
+            background: transparent;
+            color: white;
+            padding: .375rem .75rem;
+        }
+    }
+}

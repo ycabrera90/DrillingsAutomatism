@@ -49,3 +49,28 @@ h3 {
   line-height: inherit;
   color: inherit;
 }
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    display: none; 
+    margin: 0;
+}
+
+
+input[type=number] {
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}

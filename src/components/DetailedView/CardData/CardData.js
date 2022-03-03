@@ -17,6 +17,7 @@ const CardData = ({
     setIsDeployed((prevState) => !prevState);
   }, []);
 
+
   return (
     <section className={`${cls.datas} ${className ? className : ""}`}>
       {title && <header className={cls["title"]}>{title}</header>}
