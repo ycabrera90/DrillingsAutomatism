@@ -1,28 +1,36 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux/es/exports";
+
+import { dataActions } from "../../../store/datas-slice";
 
 import classes from "./UpDownInput.module.css";
 
-const UpDownInput = ({ label }) => {
-  const [value, setValue] = useState(0.00);
+const UpDownInput = ({ label, sysId, type }) => {
+  const dispatch = useDispatch();
+  const alarm = useSelector((state) => state.data.systemDatas[sysId].tank.alarms[type]);
+  console.log(alarm.value);
 
   const incrementHandler = () => {
-    setValue((state) => (+state + 0.01).toFixed(2));
+    dispatch(dataActions.incAlarm({ sysId, type, step: 0.01 }));
   };
 
   const decrementHandler = () => {
-    setValue((state) => (state > 0 ? (+state - 0.01).toFixed(2) : state));
+    dispatch(dataActions.decAlarm({ sysId, type, step: 0.01 }));
   };
 
   const changeHandler = (e) => {
-    setValue(
-      e.target.value === ""
-        ? ""
-        : e.target.value.length >= 4
-        ? (+e.target.value).toFixed(2)
-        : +e.target.value
+    dispatch(
+      dataActions.setAlarm({
+        sysId,
+        type,
+        data:
+          e.target.value === ""
+            ? ""
+            : e.target.value.length >= 4
+            ? (+e.target.value).toFixed(2)
+            : +e.target.value,
+      })
     );
   };
-
 
   return (
     <div className={classes["up-down-input"]}>
@@ -33,11 +41,11 @@ const UpDownInput = ({ label }) => {
           type="number"
           step="0.1"
           id={label}
-          value={value}
+          value={alarm.value}
           onChange={changeHandler}
           maxLength={4}
         ></input>
-        <span>mts</span>
+        <span>{alarm.unit}</span>
         <button className={classes["inc"]} onClick={incrementHandler}> + </button>
       </section>
     </div>

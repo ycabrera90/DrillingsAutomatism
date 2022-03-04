@@ -31,6 +31,10 @@ const DUMMY_SYSTEMS = {
         prc: { title: "Porciento", value: 28.3, unit: "%" },
         vol: { title: "Volumen", value: 22, unit: "m3" },
       },
+      alarms: {
+        low: { value: 0.5, unit: "mts" },
+        high: { value: 2.7, unit: "mts" },
+      },
     },
   },
   p2: {
@@ -63,6 +67,10 @@ const DUMMY_SYSTEMS = {
         prc: { title: "Porciento", value: 28.3, unit: "%" },
         vol: { title: "Volumen", value: 22, unit: "m3" },
       },
+      alarms: {
+        low: { value: 0.3, unit: "mts" },
+        high: { value: 1.8, unit: "mts" },
+      },
     },
   },
   p3: {
@@ -91,6 +99,10 @@ const DUMMY_SYSTEMS = {
         prc: { title: "Porciento", value: 28.3, unit: "%" },
         vol: { title: "Volumen", value: 22, unit: "m3" },
       },
+      alarms: {
+        low: { value: 1.2, unit: "mts" },
+        high: { value: 7.4, unit: "mts" },
+      },
     },
   },
 };
@@ -104,6 +116,34 @@ const data = createSlice({
     fecthData(state) {
       // fetch datas from the server
       state.systemDatas = DUMMY_SYSTEMS;
+    },
+
+    setAlarm(state, action) {
+      const { sysId, type, data } = action.payload;
+
+      if (type === "low") {
+        state.systemDatas[sysId].tank.alarms.low.value = data;
+      }
+
+      if (type === "high") {
+        state.systemDatas[sysId].tank.alarms.high.value = data;
+      }
+    },
+
+    incAlarm(state, { payload: { sysId, type, step } }) {
+      const lastValue = +state.systemDatas[sysId].tank.alarms[type].value;
+      state.systemDatas[sysId].tank.alarms[type].value = (
+        +lastValue + step
+      ).toFixed(2);
+    },
+
+    decAlarm(state, { payload: { sysId, type, step } }) {
+      const lastValue = +state.systemDatas[sysId].tank.alarms[type].value;
+      if (lastValue - step >= 0) {
+        state.systemDatas[sysId].tank.alarms[type].value = (
+          +lastValue - step
+        ).toFixed(2);
+      }
     },
   },
 });

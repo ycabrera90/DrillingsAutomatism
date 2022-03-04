@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useParams, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -16,11 +15,14 @@ const DetailedView = () => {
   const { sysId } = useParams();
   const systemData = useSelector((state) => state.data.systemDatas[sysId]);
 
+
   if (!systemData) {
     return <Redirect to="/sistems" />;
   }
 
   const { systemName, service, claims, drill, tank } = systemData;
+
+  console.log(tank.alarms);
 
   
 
@@ -39,14 +41,14 @@ const DetailedView = () => {
           <Data
             className={classes.data}
             titlePosition="left"
-            value={1.85}
-            unit="mts"
+            value={tank.measures.htq.value}
+            unit={tank.measures.htq.unit}
           />
           <Data
             className={classes.data}
             titlePosition="left"
-            value={74}
-            unit="%"
+            value={tank.measures.prc.value}
+            unit={tank.measures.prc.unit}
           />
         </CardData>
 
@@ -60,22 +62,22 @@ const DetailedView = () => {
                 className={classes.data}
                 title="Inferior:"
                 titlePosition="left"
-                value={5.2}
+                value={tank.alarms.low.value}
                 unit="mts"
               />
               <Data
                 className={classes.data}
                 title="Superior:"
                 titlePosition="left"
-                value={5.4}
+                value={tank.alarms.high.value}
                 unit="mts"
               />
             </>
           }
           largeView={
             <div className={classes["config-alarm-container"]}>
-              <UpDownInput label="Alarma Superior" />
-              <UpDownInput label="Alarma Inferior" />
+              <UpDownInput label="Alarma Superior" sysId={sysId} type="high" />
+              <UpDownInput label="Alarma Inferior" sysId={sysId} type="low" />
             </div>
           }
         />
