@@ -7,7 +7,6 @@ import classes from "./UpDownInput.module.css";
 const UpDownInput = ({ label, sysId, type }) => {
   const dispatch = useDispatch();
   const alarm = useSelector((state) => state.data.systemDatas[sysId].tank.alarms[type]);
-  console.log(alarm.value);
 
   const incrementHandler = () => {
     dispatch(dataActions.incAlarm({ sysId, type, step: 0.01 }));

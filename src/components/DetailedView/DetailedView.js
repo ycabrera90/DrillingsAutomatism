@@ -13,18 +13,16 @@ import classes from "./DetailedView.module.css";
 
 const DetailedView = () => {
   const { sysId } = useParams();
-  const systemData = useSelector((state) => state.data.systemDatas[sysId]);
+  const { service, drill, tank } = useSelector((state) => {
+    if (!Object.keys(state.data.systemDatas).includes(sysId)) {
+      return { service: null, drill: null, tank: null };
+    }
+    return state.data.systemDatas[sysId];
+  });
 
-
-  if (!systemData) {
+  if (!service) {
     return <Redirect to="/sistems" />;
   }
-
-  const { systemName, service, claims, drill, tank } = systemData;
-
-  console.log(tank.alarms);
-
-  
 
   return (
     <DetailedViewLayout service={service}>
