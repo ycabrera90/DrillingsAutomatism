@@ -1,68 +1,67 @@
-.ref-container,
-.ctrl-container {
+.pump-card {
   min-width: 20px;
   max-width: 35rem;
 }
 
-.ref-image,
 .ctrl-image {
   grid-area: image;
   justify-self: center;
 }
 
-.ref-container > main {
+.tank-card {
+  min-width: 20px;
+  max-width: 35rem;
+}
+.tank-card .tank-card__body {
   display: grid;
   gap: 1rem;
   padding: 1rem;
   grid-template-areas: "image" "datas" "inputs";
 }
 @media (min-width: 40rem) {
-  .ref-container > main {
+  .tank-card .tank-card__body {
     grid-template-areas: "image   datas" "inputs   inputs";
   }
 }
-.ref-container > main .alarm-config {
+.tank-card .tank-card__body .tank-image {
+  grid-area: image;
+  justify-self: center;
+}
+.tank-card .tank-card__body .tank-datas {
+  grid-area: datas;
+}
+.tank-card .tank-card__body .tank-datas .data {
+  margin: 0.5rem 1rem;
+}
+.tank-card .tank-card__body .tank-alarm {
   grid-area: inputs;
   justify-content: space-around;
 }
-.ref-container > main .alarm-config .config-alarm-container {
+.tank-card .tank-card__body .tank-alarm .quickView-alarm-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tank-card .tank-card__body .tank-alarm .largeView-alarm-container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
 }
-.ref-container > main .ref-datas {
-  grid-area: datas;
-}
-.ref-container > main .ref-datas .data {
-  margin: 0.5rem 1rem;
-}
 
-.ctrl-container > main {
-  padding: 1rem;
-}
-.ctrl-container > main .ctrl-card {
+.pump-card .pump-card--nested {
+  margin: 1rem;
   background: #21252c;
 }
-.ctrl-container > main .ctrl-card > h1 {
-  color: black;
-  background: #03eb92;
-  border-bottom: 2px solid #016d44;
+.pump-card .pump-card--nested .nested-card__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
-.ctrl-container > main .ctrl-card > h1::before {
-  background: #016d44;
+.pump-card .pump-card--nested .nested-card__body .pump-performance {
+  width: 100%;
 }
-.ctrl-container > main .ctrl-card .ctrl-image {
-  padding: 2rem;
-}
-.ctrl-container > main .ctrl-card .ctrl-image > img {
-  display: block;
-  width: 8rem;
-}
-.ctrl-container > main .ctrl-card .ctrl-image > p {
-  text-align: center;
-  font-size: 1.8rem;
-  font-weight: 500;
-  color: #f84848;
-  margin: 0;
+.pump-card .pump-card--nested .nested-card__body .pump-performance .pump-performance__body {
+  width: 100%;
 }

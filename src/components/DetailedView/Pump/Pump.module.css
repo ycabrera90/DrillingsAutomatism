@@ -1,0 +1,14 @@
+.pump {
+  padding: 2rem;
+}
+.pump > img {
+  display: block;
+  width: 8rem;
+}
+.pump > p {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #f84848;
+  margin: 0;
+}

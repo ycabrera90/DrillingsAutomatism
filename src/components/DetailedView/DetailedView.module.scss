@@ -1,17 +1,20 @@
-.ref-container,
-.ctrl-container {
+.pump-card {
   min-width: 20px;
   max-width: 35rem;
 }
 
-.ref-image,
 .ctrl-image {
   grid-area: image;
   justify-self: center;
 }
 
-.ref-container {
-  > main {
+//---------------------
+
+.tank-card {
+  min-width: 20px;
+  max-width: 35rem;
+
+  .tank-card__body {
     display: grid;
     gap: 1rem;
     padding: 1rem;
@@ -26,61 +29,59 @@
         "inputs   inputs";
     }
 
-    .alarm-config {
-      grid-area: inputs;
-      justify-content: space-around;
-
-      .config-alarm-container{
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        width: 100%;
-      }
+    .tank-image {
+      grid-area: image;
+      justify-self: center;
     }
 
-    .ref-datas {
+    .tank-datas {
       grid-area: datas;
 
       .data {
         margin: 0.5rem 1rem;
       }
     }
+
+    .tank-alarm {
+      grid-area: inputs;
+      justify-content: space-around;
+
+      .quickView-alarm-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .largeView-alarm-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+      }
+    }
   }
 }
 
-.ctrl-container {
-  >main {
-    padding: 1rem;
+.pump-card {
+  .pump-card--nested {
+    margin: 1rem;
+    background: #21252c;
 
-    .ctrl-card {
-      background: #21252c;
+    .nested-card__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
 
-      >h1 {
-        color: black;
-        background: #03eb92;
-        border-bottom: 2px solid #016d44;
+      .pump-performance{
+        width: 100%;
 
-        &::before {
-          background: #016d44;
-        }
+        .pump-performance__body {
+            width: 100%;
+        
+          }
       }
 
-      .ctrl-image {
-        padding: 2rem;
-
-        >img {
-          display: block;
-          width: 8rem;
-        }
-
-        >p {
-          text-align: center;
-          font-size: 1.8rem;
-          font-weight: 500;
-          color: #f84848;
-          margin: 0;
-        }
-      }
     }
   }
 }

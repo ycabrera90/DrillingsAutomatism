@@ -1,13 +1,12 @@
-import React from "react";
 import pump from "../../../images/pump.png";
 
-const Pump = ({ state, className }) => {
-  const stateText = state ? "Prendida" : "Apagada";
+import classes from "./Pump.module.css";
 
+const Pump = ({ state }) => {
   return (
-    <div className={className}>
+    <div className={classes.pump}>
       <img src={pump} />
-      <p>{stateText}</p>
+      <p>{state ? "Prendida" : "Apagada"}</p>
     </div>
   );
 };

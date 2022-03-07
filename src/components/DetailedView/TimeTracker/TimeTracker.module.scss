@@ -1,0 +1,25 @@
+.time-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.3rem 0;
+
+    .value,
+    label {
+        color: #03eb92;
+        font-size: 1rem;
+
+        @media(min-width: 40rem) {
+            font-size: 1.5rem;
+        }
+    }
+
+    .value {
+        margin-left: 0.2rem;
+    }
+
+    .unit {
+        color: #029f63;
+        margin: 0.1rem;
+    }
+}

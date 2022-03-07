@@ -43,7 +43,7 @@ const UpDownInput = ({ label, sysId, type }) => {
           value={alarm.value}
           onChange={changeHandler}
           maxLength={4}
-        ></input>
+        />
         <span>{alarm.unit}</span>
         <button className={classes["inc"]} onClick={incrementHandler}> + </button>
       </section>

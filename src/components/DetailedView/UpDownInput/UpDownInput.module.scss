@@ -23,7 +23,7 @@
                 background: #495057;
             }
 
-            &:active{
+            &:active {
                 background: #49505795;
             }
         }
@@ -33,11 +33,11 @@
         }
 
         input {
-            flex-grow: 1;
             border: none;
             background: transparent;
             color: #fff;
             padding: .375rem .75rem;
+            width: 100%;
         }
 
         button.inc {

@@ -27,11 +27,11 @@
   border-right: 1px solid #ced4da;
 }
 .up-down-input section input {
-  flex-grow: 1;
   border: none;
   background: transparent;
   color: #fff;
   padding: 0.375rem 0.75rem;
+  width: 100%;
 }
 .up-down-input section button.inc {
   border-left: 1px solid #ced4da;
