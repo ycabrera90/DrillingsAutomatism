@@ -54,12 +54,6 @@
   background: #21252c;
 }
 .pump-card .pump-card--nested .nested-card__body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-.pump-card .pump-card--nested .nested-card__body .pump-performance {
   width: 100%;
 }
 .pump-card .pump-card--nested .nested-card__body .pump-performance .pump-performance__body {

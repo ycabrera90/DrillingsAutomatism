@@ -68,18 +68,13 @@
     background: #21252c;
 
     .nested-card__body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       width: 100%;
 
-      .pump-performance{
-        width: 100%;
+      .pump-performance {
 
         .pump-performance__body {
-            width: 100%;
-        
-          }
+          width: 100%;
+        }
       }
 
     }

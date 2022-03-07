@@ -103,14 +103,13 @@ const DetailedView = () => {
           <section className={classes["nested-card__body"]}>
             <Pump state={drill.pumpSt} />
             <CardData
-              title="Funcionamiento"
               className={classes["pump-performance"]}
+              title="Funcionamiento"
             >
               <section className={classes["pump-performance__body"]}>
-                <TimeTracker title="Diario:"  hours={3} minutes={6}/>
-                <TimeTracker title="Total:"  hours={3017}/>
+                <TimeTracker title="Diario:" hours={3} minutes={6} />
+                <TimeTracker title="Total:" hours={3017} />
               </section>
-
             </CardData>
           </section>
         </CardData>

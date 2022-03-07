@@ -1,16 +1,42 @@
-.pump {
-    padding: 2rem;
+.pump-container {
+    // border: red 1px solid;
+    padding: 1.8rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
 
-    >img {
-        display: block;
-        width: 8rem;
+    .pump-image {
+        // border: red 1px solid;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+
+        >img {
+            width: 8rem;
+        }
+
+        >p {
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #f84848;
+        }
     }
 
-    >p {
-        text-align: center;
-        font-size: 1.8rem;
-        font-weight: 500;
-        color: #f84848;
-        margin: 0;
+    .pump-datas {
+        width: 50%;
+        overflow: auto;
+        // border: red 1px solid;
+        max-height: 10rem;
+
+        .data-scroll {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            // border: blue 1px solid;
+            height: 100%;
+
+        }
     }
 }

@@ -1,0 +1,17 @@
+.data-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content;
+  color: white;
+  margin: 0.2rem 0;
+}
+.data-container .value {
+  color: #03eb92;
+  font-size: 1.2rem;
+}
+.data-container .unit {
+  color: #029f63;
+  font-size: 0.9rem;
+  margin: 0.2rem;
+}
