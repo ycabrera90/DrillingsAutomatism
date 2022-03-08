@@ -20,6 +20,10 @@ const DUMMY_SYSTEMS = {
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
         dl: { title: "Nivel del pozo", value: -12, unit: "m" },
       },
+      performance: {
+        daily: { hours: 3, minutes: 6 },
+        total: { hours: 5040 },
+      }
     },
 
     tank: {
@@ -56,6 +60,10 @@ const DUMMY_SYSTEMS = {
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
         dl: { title: "Nivel del pozo", value: -12, unit: "m" },
       },
+      performance: {
+        daily: { hours: 5, minutes: 2 },
+        total: { hours: 3017 },
+      }
     },
 
     tank: {
@@ -88,6 +96,10 @@ const DUMMY_SYSTEMS = {
         cau: { title: "Caudal", value: 15.2, unit: "m3/h" },
         dl: { title: "Nivel del pozo", value: -12, unit: "m" },
       },
+      performance: {
+        daily: { hours: 4, minutes: 9 },
+        total: { hours: 1202 },
+      }
     },
 
     tank: {

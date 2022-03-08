@@ -1,13 +1,13 @@
 import React from "react";
 import classes from "./Measures.module.css";
 
-const Measures = () => {
+const Measures = ({ title, value, unit }) => {
   return (
     <div className={classes["data-container"]}>
-      <label>Presion:</label>
+      <label>{title}:</label>
       <p>
-        {<span className={classes.value}>5</span>}
-        {<span className={classes.unit}>bar</span>}
+        {<span className={classes.value}>{value}</span>}
+        {<span className={classes.unit}>{unit}</span>}
       </p>
     </div>
   );

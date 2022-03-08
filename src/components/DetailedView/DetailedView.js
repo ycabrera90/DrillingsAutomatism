@@ -21,6 +21,8 @@ const DetailedView = () => {
     return state.data.systemDatas[sysId];
   });
 
+  console.log(drill)
+  // is there is no data for the system, redirect to the quick view
   if (!service) {
     return <Redirect to="/sistems" />;
   }
@@ -51,7 +53,6 @@ const DetailedView = () => {
               unit={tank.measures.prc.unit}
             />
           </CardData>
-
           <CardData
             className={classes["tank-alarm"]}
             title="Límites"
@@ -60,16 +61,16 @@ const DetailedView = () => {
               <section className={classes["quickView-alarm-container"]}>
                 <Data
                   className={classes.data}
-                  title="Inferior:"
+                  title="Superior:"
                   titlePosition="left"
-                  value={tank.alarms.low.value}
+                  value={tank.alarms.high.value}
                   unit="mts"
                 />
                 <Data
                   className={classes.data}
-                  title="Superior:"
+                  title="Inferior:"
                   titlePosition="left"
-                  value={tank.alarms.high.value}
+                  value={tank.alarms.low.value}
                   unit="mts"
                 />
               </section>
@@ -101,16 +102,53 @@ const DetailedView = () => {
           className={classes["pump-card--nested"]}
         >
           <section className={classes["nested-card__body"]}>
-            <Pump state={drill.pumpSt} />
-            <CardData
-              className={classes["pump-performance"]}
-              title="Funcionamiento"
-            >
+            <Pump datas={drill} />
+            <CardData title="Funcionamiento">
               <section className={classes["pump-performance__body"]}>
-                <TimeTracker title="Diario:" hours={3} minutes={6} />
-                <TimeTracker title="Total:" hours={3017} />
+                <TimeTracker
+                  title="Diario:"
+                  hours={drill.performance.daily.hours}
+                  minutes={drill.performance.daily.minutes}
+                />
+                <TimeTracker
+                  title="Total:"
+                  hours={drill.performance.total.hours}
+                />
               </section>
             </CardData>
+            <CardData
+              title="Control"
+              config
+              quickView={
+                <section className={classes["quickView-control-container"]}>
+                  <Data
+                    className={classes.data}
+                    title="Modo:"
+                    titlePosition="left"
+                    value="Automático"
+                  />
+                  <Data
+                    className={classes.data}
+                    title="Superior:"
+                    titlePosition="left"
+                    value={tank.alarms.high.value}
+                    unit="mts"
+                  />
+                  <Data
+                    className={classes.data}
+                    title="Inferior:"
+                    titlePosition="left"
+                    value={tank.alarms.low.value}
+                    unit="mts"
+                  />
+                </section>
+              }
+              largeView={
+                <div className={classes["largeView-control-container"]}>
+                  <></>
+                </div>
+              }
+            />
           </section>
         </CardData>
       </CardContainer>
