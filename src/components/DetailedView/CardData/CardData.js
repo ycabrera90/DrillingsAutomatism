@@ -11,7 +11,7 @@ const CardData = ({
   quickView,
   largeView,
 }) => {
-  const [isDeployed, setIsDeployed] = useState(false);
+  const [isDeployed, setIsDeployed] = useState(true);
 
   const onClickHandler = useCallback(() => {
     setIsDeployed((prevState) => !prevState);

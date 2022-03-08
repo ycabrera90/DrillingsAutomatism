@@ -79,7 +79,23 @@
       }
 
       .largeView-control-container {
+        display: grid;
+        gap: 1rem;
+        grid-template-areas: "mode" 
+                             "highLevel"
+                             "lowLevel";
         
+        @media(min-width: 40rem){
+          grid-template-areas: "mode highLevel" 
+                               "mode lowLevel";
+
+        }
+
+        .mode{
+          grid-area: mode;
+          align-self: center;
+          min-width: 13rem;
+        }
       }
     }
   }

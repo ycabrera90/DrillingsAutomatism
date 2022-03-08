@@ -1,0 +1,43 @@
+:global label.mode-selection__label {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: inherit;
+  opacity: 0.7;
+}
+:global label.mode-selection__label.Mui-focused {
+  color: #fff;
+  opacity: 0.9;
+}
+:global .mode-selection__auto {
+  opacity: 0.7;
+  height: 2rem;
+}
+:global .mode-selection__auto.active, :global .mode-selection__auto:hover {
+  opacity: 0.9;
+}
+:global .mode-selection__auto span {
+  font-family: inherit;
+  color: #03eb92;
+}
+:global .mode-selection__remote {
+  opacity: 0.7;
+  height: 2rem;
+}
+:global .mode-selection__remote.active, :global .mode-selection__remote:hover {
+  opacity: 0.9;
+}
+:global .mode-selection__remote span {
+  color: #ffa600;
+  font-family: inherit;
+}
+:global .mode-selection__timer {
+  opacity: 0.7;
+  height: 2rem;
+}
+:global .mode-selection__timer.active, :global .mode-selection__timer:hover {
+  opacity: 0.9;
+}
+:global .mode-selection__timer span {
+  color: #0cf;
+  font-family: inherit;
+}

@@ -9,6 +9,7 @@ import Tank from "./Tank/Tank";
 import Pump from "./Pump/Pump";
 import UpDownInput from "./UpDownInput/UpDownInput";
 import TimeTracker from "./TimeTracker/TimeTracker";
+import ModeSelection from "./ModeSelection/ModeSelection";
 
 import classes from "./DetailedView.module.css";
 
@@ -21,7 +22,6 @@ const DetailedView = () => {
     return state.data.systemDatas[sysId];
   });
 
-  console.log(drill)
   // is there is no data for the system, redirect to the quick view
   if (!service) {
     return <Redirect to="/sistems" />;
@@ -145,7 +145,17 @@ const DetailedView = () => {
               }
               largeView={
                 <div className={classes["largeView-control-container"]}>
-                  <></>
+                  <ModeSelection className={classes.mode} />
+                  <UpDownInput
+                    label="Nivel superior"
+                    sysId={sysId}
+                    type="high"
+                  />
+                  <UpDownInput
+                    label="Nivel inferior"
+                    sysId={sysId}
+                    type="low"
+                  />
                 </div>
               }
             />
@@ -157,3 +167,5 @@ const DetailedView = () => {
 };
 
 export default DetailedView;
+
+

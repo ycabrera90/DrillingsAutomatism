@@ -64,3 +64,18 @@
   justify-content: space-around;
   width: 100%;
 }
+.pump-card .pump-card--nested .nested-card__body .largeView-control-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas: "mode" "highLevel" "lowLevel";
+}
+@media (min-width: 40rem) {
+  .pump-card .pump-card--nested .nested-card__body .largeView-control-container {
+    grid-template-areas: "mode highLevel" "mode lowLevel";
+  }
+}
+.pump-card .pump-card--nested .nested-card__body .largeView-control-container .mode {
+  grid-area: mode;
+  align-self: center;
+  min-width: 13rem;
+}

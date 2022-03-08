@@ -23,6 +23,11 @@ const DUMMY_SYSTEMS = {
       performance: {
         daily: { hours: 3, minutes: 6 },
         total: { hours: 5040 },
+      },
+      control: {
+        mode: "Automatico",
+        startLevel: { value: 0.5, unit: "mts" },
+        stopLevel: { value: 1.5, unit: "mts" },
       }
     },
 
@@ -63,6 +68,11 @@ const DUMMY_SYSTEMS = {
       performance: {
         daily: { hours: 5, minutes: 2 },
         total: { hours: 3017 },
+      },
+      control: {
+        mode: "Remoto",
+        startLevel: { value: 0.7, unit: "mts" },
+        stopLevel: { value: 1.2, unit: "mts" },
       }
     },
 
@@ -99,6 +109,11 @@ const DUMMY_SYSTEMS = {
       performance: {
         daily: { hours: 4, minutes: 9 },
         total: { hours: 1202 },
+      },
+      control: {
+        mode: "Timer",
+        startLevel: { value: 2.6, unit: "mts" },
+        stopLevel: { value: 3.2, unit: "mts" },
       }
     },
 
