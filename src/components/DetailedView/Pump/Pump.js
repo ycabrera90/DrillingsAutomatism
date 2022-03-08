@@ -1,5 +1,7 @@
 import pump from "../../../images/pump.png";
+import CardData from "../CardData/CardData";
 import Measures from "./Measures/Measures";
+
 
 import classes from "./Pump.module.css";
 
@@ -10,11 +12,17 @@ const Pump = ({ state }) => {
         <img src={pump} />
         <p>{state ? "Prendida" : "Apagada"}</p>
       </article>
-      <article className={classes["pump-datas"]}>
-        <div className={classes["data-scroll"]}>
-          <Measures />
-        </div>
-      </article>
+      <CardData className={classes["pump-datas"]} title="Medidas">
+        <article className={classes["scroll-container"]}>
+          <div className={classes["datas-container"]}>
+            <Measures />
+            <Measures />
+            <Measures />
+            <Measures />
+            <Measures />
+          </div>
+        </article>
+      </CardData>
     </section>
   );
 };

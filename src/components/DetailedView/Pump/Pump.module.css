@@ -1,14 +1,22 @@
 .pump-container {
-  padding: 1.8rem;
+  margin: 1.8rem 0rem;
   display: flex;
-  justify-content: space-between;
   gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 40rem) {
+  .pump-container {
+    flex-direction: row;
+    height: 10rem;
+  }
 }
 .pump-container .pump-image {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: fit-content;
+  margin: 0 0.5rem;
 }
 .pump-container .pump-image > img {
   width: 8rem;
@@ -20,13 +28,16 @@
   color: #f84848;
 }
 .pump-container .pump-datas {
-  width: 50%;
-  overflow: auto;
-  max-height: 10rem;
+  width: 100%;
+  height: 100%;
 }
-.pump-container .pump-datas .data-scroll {
+.pump-container .pump-datas .scroll-container {
+  width: 100%;
+  overflow: auto;
+  max-height: 6.5rem;
+}
+.pump-container .pump-datas .scroll-container .datas-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  height: 100%;
+  padding: 0rem 0.2rem;
 }
