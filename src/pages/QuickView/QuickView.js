@@ -13,21 +13,18 @@ const QuickView = (props) => {
     history.push(`/sistems/${itemId}`);
   };
 
-  const quickviewItems = Object.entries(systemDatas).map(
-    ([sysId, datas]) => (
-      <QuickViewItem
-        key={sysId}
-        id={sysId}
-        data={datas}
-        onClick={onItemClickHandler}
-      />
-    )
-  );
 
   return (
     <>
       <section className={classes["quickview-container"]}>
-        {quickviewItems}
+        {Object.entries(systemDatas).map(([sysId, datas]) => (
+          <QuickViewItem
+            key={sysId}
+            id={sysId}
+            data={datas}
+            onClick={onItemClickHandler}
+          />
+        ))}
       </section>
     </>
   );

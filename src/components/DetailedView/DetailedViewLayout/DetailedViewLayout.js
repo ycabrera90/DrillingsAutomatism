@@ -22,9 +22,9 @@ const DetailedViewLayout = ({ children, service }) => {
     <>
       <header className={classes["detailed-view--header"]}>
         <h1 className={classes["header_title"]}>{service}</h1>
-        <ClaimsIcon className={classes["header_icon"]} active={areActiveClaims}>
+        {/* <ClaimsIcon className={classes["header_icon"]} active={areActiveClaims}>
           {amountOfActiveClaims}
-        </ClaimsIcon>
+        </ClaimsIcon> */}
       </header>
       <main className={classes["detailed-view--main"]}>{children}</main>
     </>
