@@ -12,5 +12,5 @@
   top: 3.5rem;
   width: 100%;
   height: calc(100vh - 3.5rem);
-  overflow: auto;
+  overflow: overlay;
 }

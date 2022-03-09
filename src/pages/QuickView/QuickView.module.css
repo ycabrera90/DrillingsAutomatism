@@ -1,5 +1,6 @@
 .quickview-container {
   padding: 0.5rem;
+  margin: 0 0.5rem;
   background-color: transparent;
   display: grid;
   gap: 0.5rem;
