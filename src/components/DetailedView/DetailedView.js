@@ -1,6 +1,9 @@
 import { useParams, Redirect } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
+
+
+import { dataActions } from "../../store/datas-slice";
 import DetailedViewLayout from "./DetailedViewLayout/DetailedViewLayout";
 import CardContainer from "./CardContainer/CardContainer";
 import CardData from "./CardData/CardData";
@@ -14,6 +17,7 @@ import ModeSelection from "./ModeSelection/ModeSelection";
 import classes from "./DetailedView.module.css";
 
 const DetailedView = () => {
+  const dispatch = useDispatch();
   const { sysId } = useParams();
   const { service, drill, tank } = useSelector((state) => {
     if (!Object.keys(state.data.systemDatas).includes(sysId)) {
@@ -29,6 +33,77 @@ const DetailedView = () => {
   if (!service) {
     return <Redirect to="/sistems" />;
   }
+
+  const upDownInputEventHandler = (event, label, value) => {
+    if(event === "inc") {
+      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
+        dispatch(
+          dataActions.incAlarm({
+            sysId,
+            type: `${label === "Alarma Superior" ? "high" : "low"}`,
+            step: 0.01,
+          })
+        );
+      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
+        dispatch(
+          dataActions.incDrillLevel({
+            sysId,
+            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
+            step: 0.01,
+          })
+        );
+      }
+    } else if(event === "dec") {
+      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
+        dispatch(
+          dataActions.decAlarm({
+            sysId,
+            type: `${label === "Alarma Superior" ? "high" : "low"}`,
+            step: 0.01,
+          })
+        );
+      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
+        dispatch(
+          dataActions.decDrillLevel({
+            sysId,
+            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
+            step: 0.01,
+          })
+        );
+      }
+    } else if(event === "change") {
+      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
+        const hasValueMoreThanTwoDecimal = value.includes(".")
+          ? value.split(".")[1].length > 2
+            ? true
+            : false
+          : false;
+        
+        dispatch(
+          dataActions.setAlarm({
+            sysId,
+            type: `${label === "Alarma Superior" ? "high" : "low"}`,
+            data: value === "" ? "" : hasValueMoreThanTwoDecimal ? (+value).toFixed(2) : +value,
+          })
+        );
+      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
+        const hasValueMoreThanTwoDecimal = value.includes(".")
+          ? value.split(".")[1].length > 2
+            ? true
+            : false
+          : false;
+        
+        dispatch(
+          dataActions.setDrillLevel({
+            sysId,
+            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
+            data: value === "" ? "" : hasValueMoreThanTwoDecimal ? (+value).toFixed(2) : +value,
+          })
+        );
+      }
+    }
+  }
+
 
   return (
     <DetailedViewLayout service={service}>
@@ -82,10 +157,16 @@ const DetailedView = () => {
               <div className={classes["largeView-alarm-container"]}>
                 <UpDownInput
                   label="Alarma Superior"
-                  sysId={sysId}
-                  type="high"
+                  value={tank.alarms.high.value}
+                  unit={tank.alarms.high.unit}
+                  onEvent={upDownInputEventHandler}
                 />
-                <UpDownInput label="Alarma Inferior" sysId={sysId} type="low" />
+                <UpDownInput
+                  label="Alarma Inferior"
+                  value={tank.alarms.low.value}
+                  unit={tank.alarms.low.unit}
+                  onEvent={upDownInputEventHandler}
+                />
               </div>
             }
           />
@@ -151,9 +232,10 @@ const DetailedView = () => {
                 <section className={classes["largeView-control-container"]}>
                   <ModeSelection
                     className={classes.mode}
+                    sysId={sysId}
                     modes={drill.control.workModes}
                   />
-                  <UpDownInput
+                  {/* <UpDownInput
                     label="Nivel superior"
                     sysId={sysId}
                     type="high"
@@ -162,6 +244,18 @@ const DetailedView = () => {
                     label="Nivel inferior"
                     sysId={sysId}
                     type="low"
+                  /> */}
+                  <UpDownInput
+                    label="Nivel superior"
+                    value={drill.control.stopLevel.value}
+                    unit={drill.control.stopLevel.unit}
+                    onEvent={upDownInputEventHandler}
+                  />
+                  <UpDownInput
+                    label="Nivel inferior"
+                    value={drill.control.startLevel.value}
+                    unit={drill.control.startLevel.unit}
+                    onEvent={upDownInputEventHandler}
                   />
                 </section>
               }

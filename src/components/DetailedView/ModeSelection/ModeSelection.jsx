@@ -1,24 +1,19 @@
-import React, { useState } from "react";
+import { useDispatch } from "react-redux/es/exports";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 
+import { dataActions } from "../../../store/datas-slice";
 import classes from "./ModeSelection.module.css";
 
-const ModeSelection = ({className, modes}) => {
-    const [value, setValue] = React.useState("auto");
-
-    console.log(modes);
-    console.log(Object.entries(modes).find(([key, param]) => param.active)[0]);
-    
+const ModeSelection = ({ className, sysId, modes }) => {
+  const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    console.log(event.target.value);
-    // setValue(event.target.value);
+    dispatch(dataActions.setDrillMode({ sysId, mode: event.target.value }));
   };
-
 
   return (
     <FormControl className={className}>

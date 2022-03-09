@@ -3,21 +3,11 @@ import { useCallback, useState } from "react";
 import ConfigButton from "./ConfigButton/ConfigButton";
 import cls from "./CardData.module.css";
 
-const CardData = ({
-  className,
-  title,
-  children,
-  config,
-  quickView,
-  largeView,
-}) => {
+const CardData = ({className,title,children,config,quickView,largeView,}) => {
   const [isDeployed, setIsDeployed] = useState(false);
-
   const onClickHandler = useCallback(() => {
     setIsDeployed((prevState) => !prevState);
   }, []);
-
-
   return (
     <section className={`${cls.datas} ${className ? className : ""}`}>
       {title && <header className={cls["title"]}>{title}</header>}

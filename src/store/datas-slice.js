@@ -157,16 +157,8 @@ const data = createSlice({
       state.systemDatas = DUMMY_SYSTEMS;
     },
 
-    setAlarm(state, action) {
-      const { sysId, type, data } = action.payload;
-
-      if (type === "low") {
-        state.systemDatas[sysId].tank.alarms.low.value = data;
-      }
-
-      if (type === "high") {
-        state.systemDatas[sysId].tank.alarms.high.value = data;
-      }
+    setAlarm(state, { payload: { sysId, type, data } }) {
+      state.systemDatas[sysId].tank.alarms[type].value = data;
     },
 
     incAlarm(state, { payload: { sysId, type, step } }) {
@@ -178,13 +170,46 @@ const data = createSlice({
 
     decAlarm(state, { payload: { sysId, type, step } }) {
       const lastValue = +state.systemDatas[sysId].tank.alarms[type].value;
-      if (lastValue - step >= 0) {
         state.systemDatas[sysId].tank.alarms[type].value = (
+          +lastValue - step
+        ).toFixed(2);
+    },
+
+    setDrillMode(state, { payload: { sysId, mode } }) {
+      state.systemDatas[sysId].drill.control.workModes[mode].active = true;
+
+      Object.keys(state.systemDatas[sysId].drill.control.workModes).forEach(
+        (key) => {
+          if (key !== mode) {
+            state.systemDatas[sysId].drill.control.workModes[key].active = false;
+          }
+        }
+      );
+
+      state.systemDatas[sysId].drill.workinkMode = mode;
+    },
+
+    setDrillLevel(state, { payload: { sysId, type, data } }) {
+      state.systemDatas[sysId].drill.control[type].value = data;
+    },
+
+    incDrillLevel(state, { payload: { sysId, type, step } }) {
+      const lastValue = +state.systemDatas[sysId].drill.control[type].value;
+      state.systemDatas[sysId].drill.control[type].value = (
+        +lastValue + step
+      ).toFixed(2);
+    },
+
+    decDrillLevel(state, { payload: { sysId, type, step } }) {
+      const lastValue = +state.systemDatas[sysId].drill.control[type].value;
+      if (lastValue - step >= 0) {
+        state.systemDatas[sysId].drill.control[type].value = (
           +lastValue - step
         ).toFixed(2);
       }
     },
-  },
+  }
+    
 });
 
 export const dataActions = data.actions;
