@@ -5,17 +5,9 @@ import { useDispatch } from "react-redux";
 import MainNavItem from "./MainNavItem/MainNavItem";
 import MainNavButton from "./MainNavButton/MainNavButton";
 import { authActions } from "../../../store/auth-slice";
-import { keyGen } from "../../../util/keyGen";
 
 const MainNav = ({ isExpanded, onBackdropClick }) => {
   const dispatch = useDispatch();
-
-  const mainNavItems = [
-    // { title: "Servicios", path: "/services" },
-    { title: "Sistemas", path: "/sistems" },
-    // { title: "Históricos", path: "/history" },
-    // { title: "Ayuda", path: "/help" },
-  ];
 
   const onLogoutButtonHandler = () => {
     dispatch(authActions.logout());
@@ -23,13 +15,14 @@ const MainNav = ({ isExpanded, onBackdropClick }) => {
 
   return (
     <>
-      <div 
+      <div
         className={`
           ${classes["backdrop"]} 
-          ${isExpanded ? classes["expanded"]: ""}
-        `} 
+          ${isExpanded ? classes["expanded"] : ""}
+        `}
         onClick={onBackdropClick}
       />
+
       <nav
         className={`
           ${classes["nav-bar"]} 
@@ -37,11 +30,12 @@ const MainNav = ({ isExpanded, onBackdropClick }) => {
         `}
       >
         <ul>
-          {mainNavItems.map((item) => (
-            <MainNavItem key={keyGen()} to={item.path}>
-              {item.title}
-            </MainNavItem>
-          ))}
+          <MainNavItem 
+            to="/sistems" 
+            onClick={onBackdropClick}
+          >
+            Sistemas
+          </MainNavItem>
         </ul>
         <MainNavButton onClick={onLogoutButtonHandler} />
       </nav>

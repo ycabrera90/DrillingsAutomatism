@@ -3,13 +3,12 @@ import { NavLink } from "react-router-dom";
 
 import classes from "./MainNavItem.module.css";
 
-const MainNavItem = (props) => {
+const MainNavItem = ({ to, children, onClick }) => {
   return (
-    <li className={classes["main-nav_item"]}>
-      <NavLink to={props.to} activeClassName={classes.active} exact>
-        {props.children}
+    <li className={classes["main-nav_item"]} onClick={onClick}>
+      <NavLink to={to} activeClassName={classes.active} exact>
+        {children}
       </NavLink>
-      {/* <a href="">{props.children}</a> */}
     </li>
   );
 };
