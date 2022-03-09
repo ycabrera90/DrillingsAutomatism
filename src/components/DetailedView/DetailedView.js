@@ -34,72 +34,26 @@ const DetailedView = () => {
     return <Redirect to="/sistems" />;
   }
 
-  const upDownInputEventHandler = (event, label, value) => {
-    if(event === "inc") {
-      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
-        dispatch(
-          dataActions.incAlarm({
-            sysId,
-            type: `${label === "Alarma Superior" ? "high" : "low"}`,
-            step: 0.01,
-          })
-        );
-      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
-        dispatch(
-          dataActions.incDrillLevel({
-            sysId,
-            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
-            step: 0.01,
-          })
-        );
+  const upDownInputEventHandler = (event, type, data) => {
+    // for alarms
+    if(["low", "high"].includes(type)) {
+      if (event === "inc") {
+        dispatch(dataActions.incAlarm({ sysId, type, step: 0.01 }));
+      } else if (event === "dec") {
+        dispatch(dataActions.decAlarm({ sysId, type, step: 0.01 }));
+      } else if (event === "change") {
+        dispatch(dataActions.setAlarm({ sysId, type, data }));
       }
-    } else if(event === "dec") {
-      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
-        dispatch(
-          dataActions.decAlarm({
-            sysId,
-            type: `${label === "Alarma Superior" ? "high" : "low"}`,
-            step: 0.01,
-          })
-        );
-      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
-        dispatch(
-          dataActions.decDrillLevel({
-            sysId,
-            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
-            step: 0.01,
-          })
-        );
-      }
-    } else if(event === "change") {
-      if(["Alarma Superior", "Alarma Inferior"].includes(label)) {
-        const hasValueMoreThanTwoDecimal = value.includes(".")
-          ? value.split(".")[1].length > 2
-            ? true
-            : false
-          : false;
-        
-        dispatch(
-          dataActions.setAlarm({
-            sysId,
-            type: `${label === "Alarma Superior" ? "high" : "low"}`,
-            data: value === "" ? "" : hasValueMoreThanTwoDecimal ? (+value).toFixed(2) : +value,
-          })
-        );
-      } else if (["Nivel superior", "Nivel inferior"].includes(label)){
-        const hasValueMoreThanTwoDecimal = value.includes(".")
-          ? value.split(".")[1].length > 2
-            ? true
-            : false
-          : false;
-        
-        dispatch(
-          dataActions.setDrillLevel({
-            sysId,
-            type: `${label === "Nivel superior" ? "stopLevel" : "startLevel"}`,
-            data: value === "" ? "" : hasValueMoreThanTwoDecimal ? (+value).toFixed(2) : +value,
-          })
-        );
+    }
+
+    // for control's levels
+    if (["stopLevel", "startLevel"].includes(type)) {
+      if (event === "inc") {
+        dispatch(dataActions.incDrillLevel({ sysId, type, step: 0.01 }));
+      } else if (event === "dec") {
+        dispatch(dataActions.decDrillLevel({ sysId, type, step: 0.01 }));
+      } else if (event === "change") {
+        dispatch(dataActions.setDrillLevel({ sysId, type, data }));
       }
     }
   }
@@ -157,12 +111,14 @@ const DetailedView = () => {
               <div className={classes["largeView-alarm-container"]}>
                 <UpDownInput
                   label="Alarma Superior"
+                  type="high"
                   value={tank.alarms.high.value}
                   unit={tank.alarms.high.unit}
                   onEvent={upDownInputEventHandler}
                 />
                 <UpDownInput
                   label="Alarma Inferior"
+                  type="low"
                   value={tank.alarms.low.value}
                   unit={tank.alarms.low.unit}
                   onEvent={upDownInputEventHandler}
@@ -247,12 +203,14 @@ const DetailedView = () => {
                   /> */}
                   <UpDownInput
                     label="Nivel superior"
+                    type="stopLevel"
                     value={drill.control.stopLevel.value}
                     unit={drill.control.stopLevel.unit}
                     onEvent={upDownInputEventHandler}
                   />
                   <UpDownInput
                     label="Nivel inferior"
+                    type="startLevel"
                     value={drill.control.startLevel.value}
                     unit={drill.control.startLevel.unit}
                     onEvent={upDownInputEventHandler}
