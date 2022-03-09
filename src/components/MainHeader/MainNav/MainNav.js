@@ -7,18 +7,8 @@ import MainNavButton from "./MainNavButton/MainNavButton";
 import { authActions } from "../../../store/auth-slice";
 import { keyGen } from "../../../util/keyGen";
 
-const MainNav = (props) => {
-  const { isExpanded } = props;
+const MainNav = ({ isExpanded, onBackdropClick }) => {
   const dispatch = useDispatch();
-  // const auth = useContext(AuthContext);
-
-  const navBarClasses = isExpanded
-    ? `${classes["nav-bar"]} ${classes["expanded"]}`
-    : `${classes["nav-bar"]}`;
-
-  const backdropClasses = isExpanded
-    ? `${classes["backdrop"]} ${classes["expanded"]}`
-    : `${classes["backdrop"]}`;
 
   const mainNavItems = [
     // { title: "Servicios", path: "/services" },
@@ -33,8 +23,19 @@ const MainNav = (props) => {
 
   return (
     <>
-      <div className={backdropClasses} onClick={props.onBackdropClick}></div>
-      <nav className={navBarClasses}>
+      <div 
+        className={`
+          ${classes["backdrop"]} 
+          ${isExpanded ? classes["expanded"]: ""}
+        `} 
+        onClick={onBackdropClick}
+      />
+      <nav
+        className={`
+          ${classes["nav-bar"]} 
+          ${isExpanded ? classes["expanded"] : ""}
+        `}
+      >
         <ul>
           {mainNavItems.map((item) => (
             <MainNavItem key={keyGen()} to={item.path}>

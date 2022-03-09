@@ -20,7 +20,10 @@ const MainHeader = () => {
   return (
     <header className={classes["main-header"]}>
       <SpyLogo />
-      <ToggleButton onClick={toggleButtonClicHandler} />
+      <ToggleButton 
+        onClick={toggleButtonClicHandler} 
+        clicked={isMainNavExpanded}
+      />
       <MainNav
         onBackdropClick={backdropClickHandler}
         isExpanded={isMainNavExpanded}
