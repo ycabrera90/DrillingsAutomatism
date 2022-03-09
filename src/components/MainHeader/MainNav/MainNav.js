@@ -21,10 +21,10 @@ const MainNav = (props) => {
     : `${classes["backdrop"]}`;
 
   const mainNavItems = [
-    { title: "Servicios", path: "/services" },
+    // { title: "Servicios", path: "/services" },
     { title: "Sistemas", path: "/sistems" },
-    { title: "Históricos", path: "/history" },
-    { title: "Ayuda", path: "/help" },
+    // { title: "Históricos", path: "/history" },
+    // { title: "Ayuda", path: "/help" },
   ];
 
   const onLogoutButtonHandler = () => {

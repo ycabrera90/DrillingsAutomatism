@@ -26,9 +26,6 @@ const DetailedView = () => {
     return state.data.systemDatas[sysId];
   });
 
-  // console.log(drill.control)
-  console.log(drill.control.workModes)
-
   // is there is no data for the system, redirect to the quick view
   if (!service) {
     return <Redirect to="/sistems" />;
@@ -57,7 +54,6 @@ const DetailedView = () => {
       }
     }
   }
-
 
   return (
     <DetailedViewLayout service={service}>
@@ -191,16 +187,6 @@ const DetailedView = () => {
                     sysId={sysId}
                     modes={drill.control.workModes}
                   />
-                  {/* <UpDownInput
-                    label="Nivel superior"
-                    sysId={sysId}
-                    type="high"
-                  />
-                  <UpDownInput
-                    label="Nivel inferior"
-                    sysId={sysId}
-                    type="low"
-                  /> */}
                   <UpDownInput
                     label="Nivel superior"
                     type="stopLevel"

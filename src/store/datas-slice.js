@@ -29,6 +29,7 @@ const DUMMY_SYSTEMS = {
           auto: { title: "Automático", active: false, color: "#03eb92" },
           remote: { title: "Remoto", active: false, color: "#ffa600" },
           buoy: { title: "Boya", active: true, color: "#0cf" },
+          timer: { title: "Timer", active: false, color: "#ff4343" },
         },
         startLevel: { value: 0.5, unit: "mts" },
         stopLevel: { value: 1.5, unit: "mts" },

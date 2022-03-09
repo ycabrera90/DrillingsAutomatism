@@ -8,7 +8,7 @@ const LayOut = (props) => {
     <>
       <section className={classes.background} />
       <MainHeader />
-      <main>{props.children}</main>
+      <main className={classes.main}>{props.children}</main>
     </>
   );
 };

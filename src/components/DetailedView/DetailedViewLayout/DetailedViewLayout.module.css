@@ -2,7 +2,6 @@
   position: relative;
   display: flex;
   min-width: 22rem;
-  margin-top: 3.5rem;
   justify-content: space-between;
   align-items: center;
   background: #303641;
@@ -24,4 +23,4 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
-}/*# sourceMappingURL=DetailedViewLayout.module.css.map */
+}

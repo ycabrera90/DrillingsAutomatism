@@ -22,6 +22,7 @@ const ModeSelection = ({ className, sysId, modes }) => {
       </FormLabel>
       <RadioGroup
         name="mode"
+        className={classes['mode-container']}
         value={Object.entries(modes).find(([, param]) => param.active)[0]}
         onChange={handleChange}
       >

@@ -1,5 +1,13 @@
-:global {
+.mode-container {
+    @media (min-width: 40rem) {
+        height: 6rem;
+        flex-wrap: nowrap !important;
+        overflow: auto;
+    }
+}
 
+
+:global {
     label.label {
         color: #fff;
         font-size: 1.3rem;
@@ -11,7 +19,6 @@
             opacity: 0.9;
         }
     }
-
     .mode {
         opacity: 0.7;
         height: 2rem;
