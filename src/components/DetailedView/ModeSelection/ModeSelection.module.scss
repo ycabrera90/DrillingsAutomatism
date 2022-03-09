@@ -1,6 +1,6 @@
 :global {
 
-    label.mode-selection__label {
+    label.label {
         color: #fff;
         font-size: 1.3rem;
         font-family: inherit;
@@ -8,14 +8,14 @@
 
         &.Mui-focused {
             color: #fff;
-
             opacity: 0.9;
         }
     }
 
-    .mode-selection__auto {
+    .mode {
         opacity: 0.7;
         height: 2rem;
+        color: #fff;
 
         &.active,
         &:hover {
@@ -24,37 +24,8 @@
 
         span {
             font-family: inherit;
-            color: #03eb92;
+            color: inherit !important;
         }
     }
-
-    .mode-selection__remote {
-        opacity: 0.7;
-        height: 2rem;
-
-        &.active,
-        &:hover {
-            opacity: 0.9;
-        }
-
-        span {
-            color: #ffa600;
-            font-family: inherit;
-        }
-    }
-
-    .mode-selection__timer {
-        opacity: 0.7;
-        height: 2rem;
-
-        &.active,
-        &:hover {
-            opacity: 0.9;
-        }
-
-        span {
-            color: #0cf;
-            font-family: inherit;
-        }
-    }
+   
 }

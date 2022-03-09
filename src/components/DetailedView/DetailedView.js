@@ -22,6 +22,9 @@ const DetailedView = () => {
     return state.data.systemDatas[sysId];
   });
 
+  // console.log(drill.control)
+  console.log(drill.control.workModes)
+
   // is there is no data for the system, redirect to the quick view
   if (!service) {
     return <Redirect to="/sistems" />;
@@ -125,27 +128,31 @@ const DetailedView = () => {
                     className={classes.data}
                     title="Modo:"
                     titlePosition="left"
-                    value="Automático"
+                    value={drill.control.workModes[drill.workinkMode].title}
+                    color={drill.control.workModes[drill.workinkMode].color}
                   />
                   <Data
                     className={classes.data}
                     title="Superior:"
                     titlePosition="left"
-                    value={tank.alarms.high.value}
-                    unit="mts"
+                    value={drill.control.stopLevel.value}
+                    unit={drill.control.stopLevel.unit}
                   />
                   <Data
                     className={classes.data}
                     title="Inferior:"
                     titlePosition="left"
-                    value={tank.alarms.low.value}
-                    unit="mts"
+                    value={drill.control.startLevel.value}
+                    unit={drill.control.startLevel.unit}
                   />
                 </section>
               }
               largeView={
-                <div className={classes["largeView-control-container"]}>
-                  <ModeSelection className={classes.mode} />
+                <section className={classes["largeView-control-container"]}>
+                  <ModeSelection
+                    className={classes.mode}
+                    modes={drill.control.workModes}
+                  />
                   <UpDownInput
                     label="Nivel superior"
                     sysId={sysId}
@@ -156,7 +163,7 @@ const DetailedView = () => {
                     sysId={sysId}
                     type="low"
                   />
-                </div>
+                </section>
               }
             />
           </section>

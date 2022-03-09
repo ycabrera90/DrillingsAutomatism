@@ -7,39 +7,39 @@ import FormLabel from "@mui/material/FormLabel";
 
 import classes from "./ModeSelection.module.css";
 
-const ModeSelection = ({className}) => {
+const ModeSelection = ({className, modes}) => {
     const [value, setValue] = React.useState("auto");
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
-};
+    console.log(modes);
+    console.log(Object.entries(modes).find(([key, param]) => param.active)[0]);
+    
 
-console.log(value);
+  const handleChange = (event) => {
+    console.log(event.target.value);
+    // setValue(event.target.value);
+  };
+
 
   return (
     <FormControl className={className}>
-      <FormLabel className="mode-selection__label" id="mode-selection">
+      <FormLabel className="label" id="mode-selection">
         Modo
       </FormLabel>
-      <RadioGroup name="mode" value={value} onChange={handleChange}>
-        <FormControlLabel
-          className={`mode-selection__auto ${value==="auto" ? "active" : ""}`}
-          value="auto"
-          control={<Radio />}
-          label="Automático"
-        />
-        <FormControlLabel
-          className={`mode-selection__remote ${value==="remote" ? "active" : ""}`}
-          value="remote"
-          control={<Radio />}
-          label="Remoto"
-        />
-        <FormControlLabel
-          className={`mode-selection__timer ${value==="timer" ? "active" : ""}`}
-          value="timer"
-          control={<Radio />}
-          label="Timer"
-        />
+      <RadioGroup
+        name="mode"
+        value={Object.entries(modes).find(([, param]) => param.active)[0]}
+        onChange={handleChange}
+      >
+        {Object.entries(modes).map(([key, param]) => (
+          <FormControlLabel
+            key={key}
+            className={`mode ${param.active ? "active" : ""}`}
+            value={key}
+            control={<Radio />}
+            label={param.title}
+            style={{ color: param.color }}
+          />
+        ))}
       </RadioGroup>
     </FormControl>
   );

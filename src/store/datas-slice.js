@@ -13,7 +13,7 @@ const DUMMY_SYSTEMS = {
       name: "PERF 01",
       dateData: "10/10/2022 21:41",
       isTx: false,
-      workinkMode: "AUTO",
+      workinkMode: "buoy",
       pumpSt: false,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
@@ -25,10 +25,14 @@ const DUMMY_SYSTEMS = {
         total: { hours: 5040 },
       },
       control: {
-        mode: "Automatico",
+        workModes: {
+          auto: { title: "Automático", active: false, color: "#03eb92" },
+          remote: { title: "Remoto", active: false, color: "#ffa600" },
+          buoy: { title: "Boya", active: true, color: "#0cf" },
+        },
         startLevel: { value: 0.5, unit: "mts" },
         stopLevel: { value: 1.5, unit: "mts" },
-      }
+      },
     },
 
     tank: {
@@ -58,7 +62,7 @@ const DUMMY_SYSTEMS = {
       name: "PERF 02",
       dateData: "10/10/2022 21:41",
       isTx: true,
-      workinkMode: "LOCAL",
+      workinkMode: "remote",
       pumpSt: true,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
@@ -70,10 +74,14 @@ const DUMMY_SYSTEMS = {
         total: { hours: 3017 },
       },
       control: {
-        mode: "Remoto",
+        workModes: {
+          auto: { title: "Automático", active: false, color: "#03eb92" },
+          remote: { title: "Remoto", active: true, color: "#ffa600" },
+          buoy: { title: "Boya", active: false, color: "#0cf" },
+        },
         startLevel: { value: 0.7, unit: "mts" },
         stopLevel: { value: 1.2, unit: "mts" },
-      }
+      },
     },
 
     tank: {
@@ -99,7 +107,7 @@ const DUMMY_SYSTEMS = {
       name: "RIVPERF22",
       dateData: "10/10/2022 21:41",
       isTx: true,
-      workinkMode: "REMOTO",
+      workinkMode: "auto",
       pumpSt: false,
       measures: {
         ps: { title: "Presión", value: 1.25, unit: "bar" },
@@ -111,10 +119,14 @@ const DUMMY_SYSTEMS = {
         total: { hours: 1202 },
       },
       control: {
-        mode: "Timer",
+        workModes: {
+          auto: { title: "Automático", active: true, color: "#03eb92" },
+          remote: { title: "Remoto", active: false, color: "#ffa600" },
+          timer: { title: "Timer", active: false, color: "#0cf" },
+        },
         startLevel: { value: 2.6, unit: "mts" },
         stopLevel: { value: 3.2, unit: "mts" },
-      }
+      },
     },
 
     tank: {
