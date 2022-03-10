@@ -40,6 +40,8 @@ const DUMMY_SYSTEMS = {
       name: "Tanque de Moirones 1",
       dateData: "10/10/2022 21:41",
       isTx: true,
+      minLevel: 0,
+      maxLevel: 2.5,
       measures: {
         htq: { title: "Altura", value: 1.61, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
@@ -89,8 +91,10 @@ const DUMMY_SYSTEMS = {
       name: "Tanque de Moirones 2",
       dateData: "10/10/2022 21:41",
       isTx: true,
+      minLevel: 0,
+      maxLevel: 3,
       measures: {
-        htq: { title: "Altura", value: 1.61, unit: "mts" },
+        htq: { title: "Altura", value: 0.3, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
         vol: { title: "Volumen", value: 22, unit: "m3" },
       },
@@ -134,8 +138,10 @@ const DUMMY_SYSTEMS = {
       name: "Tanque de Moirones 3",
       dateData: "10/10/2022 21:41",
       isTx: true,
+      minLevel: 0,
+      maxLevel: 3.5,
       measures: {
-        htq: { title: "Altura", value: 1.61, unit: "mts" },
+        htq: { title: "Altura", value: 2.8, unit: "mts" },
         prc: { title: "Porciento", value: 28.3, unit: "%" },
         vol: { title: "Volumen", value: 22, unit: "m3" },
       },

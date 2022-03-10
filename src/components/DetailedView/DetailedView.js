@@ -1,8 +1,6 @@
 import { useParams, Redirect } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
-
-
 import { dataActions } from "../../store/datas-slice";
 import DetailedViewLayout from "./DetailedViewLayout/DetailedViewLayout";
 import CardContainer from "./CardContainer/CardContainer";
@@ -25,6 +23,8 @@ const DetailedView = () => {
     }
     return state.data.systemDatas[sysId];
   });
+
+  console.log(tank);
 
   // is there is no data for the system, redirect to the quick view
   if (!service) {
@@ -66,7 +66,13 @@ const DetailedView = () => {
         }}
       >
         <section className={classes["tank-card__body"]}>
-          <Tank className={classes["tank-image"]} />
+          <Tank 
+            className={classes["tank-image"]}
+            maxValue={tank.maxLevel}
+            minValue={tank.minLevel}
+            value={tank.measures.htq.value}
+            unit={tank.measures.htq.unit}
+          />
           <CardData className={classes["tank-datas"]} title="Nivel de Agua">
             <Data
               className={classes.data}
